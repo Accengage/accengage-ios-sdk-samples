@@ -1,0 +1,25 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+@import Foundation;
+@import UIKit;
+@import CoreGraphics;
+@import QuartzCore;
+
+#import <Accengage/Accengage.h>
+#import "SCLAlertView.h"
+#import "SampleHelpers.h"
+
+#endif
+
+
+static NSString * const kSampleBeaconsServiceKey       = @"com.accengage.sample.beacons.key";
+static NSString * const kSampleGeofencingServiceKey    = @"com.accengage.sample.geofence.key";
+
+#define SAMPLE_BLUE_COLOR [UIColor colorWithRed:(44./255.) green:(147./255.) blue:(255./255.) alpha:1.]

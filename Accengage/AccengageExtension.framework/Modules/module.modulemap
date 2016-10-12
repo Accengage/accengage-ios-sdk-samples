@@ -1,0 +1,6 @@
+framework module AccengageExtension {
+  umbrella header "AccengageExtension.h"
+
+  export *
+  module * { export * }
+}
