@@ -24,9 +24,11 @@ Accengage In-App Notifications enables you to create rich and customizable in-ap
 To ensure a good and a smooth usage of this sample, there are a few important steps that you need to take.
 
 1. Configuration file
-Complete the **AccengageConfig.plist** with your own `partner id` and `private key`.
+
+  Complete the **AccengageConfig.plist** with your own `partner id` and `private key`.
 
 2. Add a new In-App template
+  
   In your application target you need to add a new In-App template. From the Settings panel press the :heavy_plus_sign: in the right of the **INAPP TEMPLATES**. When prompted, complete the fields with the next values:
   
   |                 |                                                     |
@@ -106,14 +108,14 @@ IMPORTANT:heavy_exclamation_mark: If a required attribute is missing the related
 | udi               | Execute `Accengage updateDeviceInfo:`         |
 | url               | Open an URL with `UIApplication openURL:`     |
 | event             | Execute `Accengage trackEvent:withParameters:`|
-| request           | Send an asyn GET request                      |
+| request           | Send an async GET request                      |
 
 ## Examples
 
 ### UDI 
 To update a `custom_field` with the value `new_value` when the clic on the left button:
 
-| BAdditional display parameters KEY | Additional display parameters VALUE | 
+| Additional display parameters KEY | Additional display parameters VALUE | 
 |------------------------------------|-------------------------------------|
 | left.btn.action.type               | udi                                 |
 | left.btn.action.value              | custom_field                        |
