@@ -100,12 +100,12 @@ IMPORTANT:heavy_exclamation_mark: If a required attribute is missing the related
 # Actions
 
 ## Types
-| Action type       | Description                         |
-|-------------------|-------------------------------------|
-| udi               | The image URL or name               |
-| url               | The buttom action                   |
-| event             | The image URL or name               |
-| request           | The image URL or name               |
+| Action type       | Description                                   |
+|-------------------|-----------------------------------------------|
+| udi               | Execute `Accengage updateDeviceInfo:`         |
+| url               | Open an URL with `UIApplication openURL:`     |
+| event             | Execute `Accengage trackEvent:withParameters:`|
+| request           | Send an asyn GET request                      |
 
 ## Examples
 
