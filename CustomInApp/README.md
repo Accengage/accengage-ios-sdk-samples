@@ -82,12 +82,13 @@ IMPORTANT:heavy_exclamation_mark: If a required attribute is missing the related
 | Label attributes  | Description                         | Required |
 |-------------------|-------------------------------------|----------|
 | text              | Specifies the content of the label. |     :white_check_mark:    |
-| color             | The color of the text.              |
+| color             | The text color.                     |          |
 
 ### Button attributes 
 | Button attributes | Description                         | Required |
 |-------------------|-------------------------------------|----------|
 | text              | Specifies the title of the button.  |     :white_check_mark:   except for Close Button |
+| color             | The text color.                     |          |
 | action.type       | The buttom action                   |          |
 | action.value      | The action's value                  |          |
 | action.extra      | The action's extra parameters       |          |
@@ -125,7 +126,7 @@ The action will be:
 ```
 
 ### Event 
-To trigger an Event with a type `1010` and extra param `auth` when the clic on the left button:
+To trigger an Event with a type `1050` and extra param `auth` when the clic on the left button:
 
 | BAdditional display parameters KEY | Additional display parameters VALUE | 
 |------------------------------------|-------------------------------------|
