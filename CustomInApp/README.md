@@ -130,7 +130,7 @@ The action will be:
 ### Event 
 To trigger an Event with a type `1050` and extra param `auth` when the clic on the left button:
 
-| BAdditional display parameters KEY | Additional display parameters VALUE | 
+| Additional display parameters KEY | Additional display parameters VALUE | 
 |------------------------------------|-------------------------------------|
 | left.btn.action.type               | event                               |
 | left.btn.action.value              | 1050                                |
