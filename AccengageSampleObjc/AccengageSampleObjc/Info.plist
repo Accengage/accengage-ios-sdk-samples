@@ -22,8 +22,6 @@
 	<array>
 		<string>bma4sreceiver</string>
 	</array>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -35,6 +33,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string></string>
 	<key>UIBackgroundModes</key>

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FBD2DD731DE30E2300C7384B /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; };
+		FBD2DD741DE30E2300C7384B /* AccengageConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */; };
+		FBD2DD751DE30E2300C7384B /* AccengageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; };
+		FBD2DD761DE30E2800C7384B /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; };
+		FBD2DD781DE30E2E00C7384B /* AccengageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; };
+		FBD2DD791DE30E3B00C7384B /* AccengageExtension.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FBE4B9A71DAE7F3D005FE5AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE4B9A61DAE7F3D005FE5AB /* main.m */; };
 		FBE4B9AA1DAE7F3D005FE5AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE4B9A91DAE7F3D005FE5AB /* AppDelegate.m */; };
 		FBE4B9B01DAE7F3D005FE5AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE4B9AE1DAE7F3D005FE5AB /* Main.storyboard */; };
@@ -45,11 +51,6 @@
 		FBE4BA2F1DAE8A21005FE5AB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA2E1DAE8A21005FE5AB /* libz.tbd */; };
 		FBE4BA311DAE8A25005FE5AB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA301DAE8A25005FE5AB /* libsqlite3.tbd */; };
 		FBE4BA321DAE8A60005FE5AB /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA261DAE8A0E005FE5AB /* UserNotifications.framework */; };
-		FBE4BA451DAE9979005FE5AB /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA421DAE9979005FE5AB /* Accengage.framework */; };
-		FBE4BA461DAE9979005FE5AB /* AccengageConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBE4BA431DAE9979005FE5AB /* AccengageConfig.plist */; };
-		FBE4BA481DAE9984005FE5AB /* AccengageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA441DAE9979005FE5AB /* AccengageExtension.framework */; };
-		FBE4BA491DAE998A005FE5AB /* AccengageExtension.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FBE4BA441DAE9979005FE5AB /* AccengageExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FBE4BA4A1DAE9992005FE5AB /* Accengage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FBE4BA421DAE9979005FE5AB /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +70,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FBE4BA4A1DAE9992005FE5AB /* Accengage.framework in CopyFiles */,
+				FBD2DD791DE30E3B00C7384B /* AccengageExtension.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,19 +85,12 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FBE4BA1A1DAE8702005FE5AB /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				FBE4BA491DAE998A005FE5AB /* AccengageExtension.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FBD2DD701DE30E2300C7384B /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
+		FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AccengageConfig.plist; sourceTree = "<group>"; };
+		FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccengageExtension.framework; sourceTree = "<group>"; };
 		FBE4B9A21DAE7F3D005FE5AB /* AccengageSampleObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccengageSampleObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE4B9A61DAE7F3D005FE5AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBE4B9A81DAE7F3D005FE5AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -160,9 +154,6 @@
 		FBE4BA2C1DAE8A1D005FE5AB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FBE4BA2E1DAE8A21005FE5AB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		FBE4BA301DAE8A25005FE5AB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		FBE4BA421DAE9979005FE5AB /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
-		FBE4BA431DAE9979005FE5AB /* AccengageConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AccengageConfig.plist; sourceTree = "<group>"; };
-		FBE4BA441DAE9979005FE5AB /* AccengageExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccengageExtension.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,14 +166,16 @@
 				FBE4BA041DAE81B3005FE5AB /* AdSupport.framework in Frameworks */,
 				FBE4BA2D1DAE8A1D005FE5AB /* CFNetwork.framework in Frameworks */,
 				FBE4BA1F1DAE89FB005FE5AB /* CoreGraphics.framework in Frameworks */,
+				FBD2DD761DE30E2800C7384B /* Accengage.framework in Frameworks */,
 				FBE4BA211DAE8A00005FE5AB /* CoreLocation.framework in Frameworks */,
-				FBE4BA451DAE9979005FE5AB /* Accengage.framework in Frameworks */,
+				FBD2DD731DE30E2300C7384B /* Accengage.framework in Frameworks */,
 				FBE4BA2B1DAE8A19005FE5AB /* CoreTelephony.framework in Frameworks */,
 				FBE4BA231DAE8A04005FE5AB /* Foundation.framework in Frameworks */,
 				FBE4BA1D1DAE89DD005FE5AB /* iAd.framework in Frameworks */,
 				FBE4BA291DAE8A14005FE5AB /* SystemConfiguration.framework in Frameworks */,
 				FBE4BA251DAE8A08005FE5AB /* UIKit.framework in Frameworks */,
 				FBE4BA271DAE8A0E005FE5AB /* UserNotifications.framework in Frameworks */,
+				FBD2DD751DE30E2300C7384B /* AccengageExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,13 +184,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE4BA321DAE8A60005FE5AB /* UserNotifications.framework in Frameworks */,
-				FBE4BA481DAE9984005FE5AB /* AccengageExtension.framework in Frameworks */,
+				FBD2DD781DE30E2E00C7384B /* AccengageExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FBD2DD6F1DE30E2300C7384B /* Accengage */ = {
+			isa = PBXGroup;
+			children = (
+				FBD2DD701DE30E2300C7384B /* Accengage.framework */,
+				FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */,
+				FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */,
+			);
+			name = Accengage;
+			path = ../../Accengage;
+			sourceTree = "<group>";
+		};
 		FBE4B9991DAE7F3D005FE5AB = {
 			isa = PBXGroup;
 			children = (
@@ -305,7 +309,7 @@
 		FBE4B9E01DAE816C005FE5AB /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				FBE4BA411DAE9979005FE5AB /* Accengage */,
+				FBD2DD6F1DE30E2300C7384B /* Accengage */,
 				FBE4B9E51DAE816C005FE5AB /* SCLAlertView */,
 			);
 			name = Vendors;
@@ -365,17 +369,6 @@
 			path = NoticationServiceSample;
 			sourceTree = "<group>";
 		};
-		FBE4BA411DAE9979005FE5AB /* Accengage */ = {
-			isa = PBXGroup;
-			children = (
-				FBE4BA421DAE9979005FE5AB /* Accengage.framework */,
-				FBE4BA441DAE9979005FE5AB /* AccengageExtension.framework */,
-				FBE4BA431DAE9979005FE5AB /* AccengageConfig.plist */,
-			);
-			name = Accengage;
-			path = ../../Accengage;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -406,7 +399,6 @@
 				FBE4BA081DAE86C6005FE5AB /* Sources */,
 				FBE4BA091DAE86C6005FE5AB /* Frameworks */,
 				FBE4BA0A1DAE86C6005FE5AB /* Resources */,
-				FBE4BA1A1DAE8702005FE5AB /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -471,7 +463,7 @@
 				FBE4B9B51DAE7F3D005FE5AB /* LaunchScreen.storyboard in Resources */,
 				FBE4B9B21DAE7F3D005FE5AB /* Assets.xcassets in Resources */,
 				FBE4B9B01DAE7F3D005FE5AB /* Main.storyboard in Resources */,
-				FBE4BA461DAE9979005FE5AB /* AccengageConfig.plist in Resources */,
+				FBD2DD741DE30E2300C7384B /* AccengageConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
