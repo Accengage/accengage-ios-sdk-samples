@@ -91,7 +91,7 @@ IMPORTANT:heavy_exclamation_mark: If a required attribute is missing the related
 |-------------------|-------------------------------------|----------|
 | text              | Specifies the title of the button.  |     :white_check_mark:   except for Close Button |
 | color             | The text color.                     |          |
-| action.type       | The buttom action                   |          |
+| action.type       | The button action                   |          |
 | action.value      | The action's value                  |          |
 | action.extra      | The action's extra parameters       |          |
 
@@ -113,7 +113,7 @@ IMPORTANT:heavy_exclamation_mark: If a required attribute is missing the related
 ## Examples
 
 ### UDI 
-To update a `custom_field` with the value `new_value` when the clic on the left button:
+To update a `custom_field` with the value `new_value` when the user clicks on the left button:
 
 | Additional display parameters KEY | Additional display parameters VALUE | 
 |------------------------------------|-------------------------------------|
@@ -128,7 +128,7 @@ The action will be:
 ```
 
 ### Event 
-To trigger an Event with a type `1050` and extra param `auth` when the clic on the left button:
+To trigger an Event with a type `1050` and extra param `auth` when the user clicks on the left button:
 
 | Additional display parameters KEY | Additional display parameters VALUE | 
 |------------------------------------|-------------------------------------|
@@ -143,7 +143,7 @@ The action will be:
 ```
 
 ### URL 
-To open an URL when the clic on the left button:
+To open an URL when the user clicks on the left button:
 
 | Additional display parameters KEY | Additional display parameters VALUE | 
 |------------------------------------|-------------------------------------|
