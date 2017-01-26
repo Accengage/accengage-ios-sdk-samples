@@ -18,11 +18,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		FiZ/zIP6MrafepDpVXYoK7X3p/g=
+		8Uz6Ulv89FgGR9WH1rnqiYao3I8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		1p8ztGVGw0il3rALI6TSRX/XiaI=
+		</data>
+		<key>strip-frameworks.sh</key>
+		<data>
+		XomtPUMVMTmEHLZs8uFeke3pC+g=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -69,6 +73,17 @@
 			<key>hash2</key>
 			<data>
 			nTE2bQ2clSqqDx3V4vdVICVpkzReKEss7rjpwQJWjpU=
+			</data>
+		</dict>
+		<key>strip-frameworks.sh</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XomtPUMVMTmEHLZs8uFeke3pC+g=
+			</data>
+			<key>hash2</key>
+			<data>
+			MhFh/dbxevaqx8UeLmmQLgFpkgIMFKjK6D1oDtMRtEY=
 			</data>
 		</dict>
 	</dict>
