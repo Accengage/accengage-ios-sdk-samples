@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FBD2DD731DE30E2300C7384B /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; };
+		FB448CF71E3A3E65003871E1 /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; };
+		FB448CF81E3A3E65003871E1 /* Accengage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FB448CFB1E3A3E74003871E1 /* AccengageExtension.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FBD2DD741DE30E2300C7384B /* AccengageConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */; };
-		FBD2DD751DE30E2300C7384B /* AccengageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; };
-		FBD2DD761DE30E2800C7384B /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; };
 		FBD2DD781DE30E2E00C7384B /* AccengageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; };
-		FBD2DD791DE30E3B00C7384B /* AccengageExtension.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FBE4B9A71DAE7F3D005FE5AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE4B9A61DAE7F3D005FE5AB /* main.m */; };
 		FBE4B9AA1DAE7F3D005FE5AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE4B9A91DAE7F3D005FE5AB /* AppDelegate.m */; };
 		FBE4B9B01DAE7F3D005FE5AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE4B9AE1DAE7F3D005FE5AB /* Main.storyboard */; };
@@ -36,20 +35,8 @@
 		FBE4B9FF1DAE816C005FE5AB /* SCLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE4B9F21DAE816C005FE5AB /* SCLTextView.m */; };
 		FBE4BA001DAE816C005FE5AB /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE4B9F41DAE816C005FE5AB /* SCLTimerDisplay.m */; };
 		FBE4BA011DAE816C005FE5AB /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE4B9F61DAE816C005FE5AB /* UIImage+ImageEffects.m */; };
-		FBE4BA041DAE81B3005FE5AB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA031DAE81B3005FE5AB /* AdSupport.framework */; };
 		FBE4BA101DAE86C6005FE5AB /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE4BA0F1DAE86C6005FE5AB /* NotificationService.m */; };
 		FBE4BA141DAE86C6005FE5AB /* NoticationServiceSample.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FBE4BA0C1DAE86C6005FE5AB /* NoticationServiceSample.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FBE4BA1D1DAE89DD005FE5AB /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA1C1DAE89DD005FE5AB /* iAd.framework */; };
-		FBE4BA1F1DAE89FB005FE5AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA1E1DAE89FB005FE5AB /* CoreGraphics.framework */; };
-		FBE4BA211DAE8A00005FE5AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA201DAE8A00005FE5AB /* CoreLocation.framework */; };
-		FBE4BA231DAE8A04005FE5AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA221DAE8A04005FE5AB /* Foundation.framework */; };
-		FBE4BA251DAE8A08005FE5AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA241DAE8A08005FE5AB /* UIKit.framework */; };
-		FBE4BA271DAE8A0E005FE5AB /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA261DAE8A0E005FE5AB /* UserNotifications.framework */; };
-		FBE4BA291DAE8A14005FE5AB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA281DAE8A14005FE5AB /* SystemConfiguration.framework */; };
-		FBE4BA2B1DAE8A19005FE5AB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA2A1DAE8A19005FE5AB /* CoreTelephony.framework */; };
-		FBE4BA2D1DAE8A1D005FE5AB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA2C1DAE8A1D005FE5AB /* CFNetwork.framework */; };
-		FBE4BA2F1DAE8A21005FE5AB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA2E1DAE8A21005FE5AB /* libz.tbd */; };
-		FBE4BA311DAE8A25005FE5AB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA301DAE8A25005FE5AB /* libsqlite3.tbd */; };
 		FBE4BA321DAE8A60005FE5AB /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA261DAE8A0E005FE5AB /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,13 +51,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FBE4BA051DAE82DB005FE5AB /* CopyFiles */ = {
+		FB448CF91E3A3E65003871E1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FBD2DD791DE30E3B00C7384B /* AccengageExtension.framework in CopyFiles */,
+				FB448CF81E3A3E65003871E1 /* Accengage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB448CFA1E3A3E6C003871E1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FB448CFB1E3A3E74003871E1 /* AccengageExtension.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +89,7 @@
 		FBD2DD701DE30E2300C7384B /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
 		FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AccengageConfig.plist; sourceTree = "<group>"; };
 		FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccengageExtension.framework; sourceTree = "<group>"; };
-		FBE4B9A21DAE7F3D005FE5AB /* AccengageSampleObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccengageSampleObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBE4B9A21DAE7F3D005FE5AB /* ACCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE4B9A61DAE7F3D005FE5AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBE4B9A81DAE7F3D005FE5AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBE4B9A91DAE7F3D005FE5AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -161,21 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBE4BA311DAE8A25005FE5AB /* libsqlite3.tbd in Frameworks */,
-				FBE4BA2F1DAE8A21005FE5AB /* libz.tbd in Frameworks */,
-				FBE4BA041DAE81B3005FE5AB /* AdSupport.framework in Frameworks */,
-				FBE4BA2D1DAE8A1D005FE5AB /* CFNetwork.framework in Frameworks */,
-				FBE4BA1F1DAE89FB005FE5AB /* CoreGraphics.framework in Frameworks */,
-				FBD2DD761DE30E2800C7384B /* Accengage.framework in Frameworks */,
-				FBE4BA211DAE8A00005FE5AB /* CoreLocation.framework in Frameworks */,
-				FBD2DD731DE30E2300C7384B /* Accengage.framework in Frameworks */,
-				FBE4BA2B1DAE8A19005FE5AB /* CoreTelephony.framework in Frameworks */,
-				FBE4BA231DAE8A04005FE5AB /* Foundation.framework in Frameworks */,
-				FBE4BA1D1DAE89DD005FE5AB /* iAd.framework in Frameworks */,
-				FBE4BA291DAE8A14005FE5AB /* SystemConfiguration.framework in Frameworks */,
-				FBE4BA251DAE8A08005FE5AB /* UIKit.framework in Frameworks */,
-				FBE4BA271DAE8A0E005FE5AB /* UserNotifications.framework in Frameworks */,
-				FBD2DD751DE30E2300C7384B /* AccengageExtension.framework in Frameworks */,
+				FB448CF71E3A3E65003871E1 /* Accengage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +200,7 @@
 		FBE4B9A31DAE7F3D005FE5AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBE4B9A21DAE7F3D005FE5AB /* AccengageSampleObjc.app */,
+				FBE4B9A21DAE7F3D005FE5AB /* ACCSample.app */,
 				FBE4BA0C1DAE86C6005FE5AB /* NoticationServiceSample.appex */,
 			);
 			name = Products;
@@ -379,8 +363,10 @@
 				FBE4B99E1DAE7F3D005FE5AB /* Sources */,
 				FBE4B99F1DAE7F3D005FE5AB /* Frameworks */,
 				FBE4B9A01DAE7F3D005FE5AB /* Resources */,
-				FBE4BA051DAE82DB005FE5AB /* CopyFiles */,
 				FBE4BA181DAE86C6005FE5AB /* Embed App Extensions */,
+				FB448CF91E3A3E65003871E1 /* Embed Frameworks */,
+				FB448CFA1E3A3E6C003871E1 /* CopyFiles */,
+				FB448CF21E3A3D92003871E1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -389,7 +375,7 @@
 			);
 			name = AccengageSampleObjc;
 			productName = AccengageSampleObjc;
-			productReference = FBE4B9A21DAE7F3D005FE5AB /* AccengageSampleObjc.app */;
+			productReference = FBE4B9A21DAE7F3D005FE5AB /* ACCSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FBE4BA0B1DAE86C6005FE5AB /* NoticationServiceSample */ = {
@@ -475,6 +461,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FB448CF21E3A3D92003871E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Accengage.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FBE4B99E1DAE7F3D005FE5AB /* Sources */ = {
@@ -648,7 +650,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.objc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ACCSample;
 			};
 			name = Debug;
 		};
@@ -668,7 +670,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.objc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ACCSample;
 			};
 			name = Release;
 		};
