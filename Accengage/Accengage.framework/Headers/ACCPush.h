@@ -388,7 +388,7 @@ typedef NS_OPTIONS(NSUInteger, ACCNotificationOptions) {
  *  @param notifId The identifier of the notification
  *  @param params  The additional parameters
  *
- *  @note This method is called only if the application is in forground.
+ *  @note This method is called only if the application is in forgeround.
  */
 - (void)didReceiveNotificationWithId:(NSString *)notifId
                           parameters:(NSDictionary *)params;
