@@ -58,7 +58,7 @@
 /* Begin PBXFileReference section */
 		FB3F0DE31DE45149006A93D0 /* NSObject+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Helper.h"; sourceTree = "<group>"; };
 		FB3F0DE41DE45149006A93D0 /* NSObject+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Helper.m"; sourceTree = "<group>"; };
-		FBD2DD4B1DE30D1900C7384B /* CustomInApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomInApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD2DD4B1DE30D1900C7384B /* ACCCustomInApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACCCustomInApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD2DD4F1DE30D1900C7384B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBD2DD511DE30D1900C7384B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBD2DD521DE30D1900C7384B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		FBD2DD4C1DE30D1900C7384B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBD2DD4B1DE30D1900C7384B /* CustomInApp.app */,
+				FBD2DD4B1DE30D1900C7384B /* ACCCustomInApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -308,7 +308,7 @@
 			);
 			name = CustomInApp;
 			productName = CustomInApp;
-			productReference = FBD2DD4B1DE30D1900C7384B /* CustomInApp.app */;
+			productReference = FBD2DD4B1DE30D1900C7384B /* ACCCustomInApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -516,7 +516,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.app.recette;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ACCCustomInApp;
 			};
 			name = Debug;
 		};
@@ -533,7 +533,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.app.recette;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ACCCustomInApp;
 			};
 			name = Release;
 		};
