@@ -18,6 +18,7 @@ FOUNDATION_EXPORT const unsigned char AccengageVersionString[];
 #import <Accengage/ACCPush.h>
 #import <Accengage/ACCCartItem.h>
 #import <Accengage/ACCConfiguration.h>
+#import <Accengage/ACCWKWebView.h>
 #import <Accengage/UIViewController+Accengage.h>
 
 /**
@@ -43,6 +44,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*! The startWithConfig: method must be called on the main thread. */
 FOUNDATION_EXPORT NSString *const ACCStartMainThreadException;
+
+typedef NS_ENUM(NSUInteger, ACCWebViewTrackingFramework) {
+    ACCUIWebViewFramework,
+    ACCWKWebViewFramework
+};
 
 /*!
  *  @brief Provides all Accengage available services and methods.
@@ -374,6 +380,91 @@ FOUNDATION_EXPORT NSString *const ACCStartMainThreadException;
  *  @param screenID The screen's identifier as an @c NSString
  */
 + (void)trackScreenDismiss:(NSString *)screenID;
+
+///-----------------------------------------------------------------------------
+/// @name  Web Tracking
+///-----------------------------------------------------------------------------
+
+/*!
+ *  @brief Returns the Accengage script message names.
+ *  @since 6.1.0
+ *
+ *  @details Used for the manual script injection with WKWebView component.
+ *  @code
+ *  WKUserContentController *contentController = [WKUserContentController new];
+ *
+ *  WKUserScript *script = [[WKUserScript alloc] initWithSource:[Accengage trackingScriptForWebView:ACCWKWebViewFramework]
+ *                                                injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+ *                                             forMainFrameOnly:YES];
+ *
+ *  [contentController addUserScript:script];
+ *
+ *  NSSet *scripts = [Accengage scriptMessagesNames];
+ *  for (NSString *name in scripts) {
+ *      [contentController addScriptMessageHandler:self name:name];
+ *  }
+ *
+ *  WKWebViewConfiguration *configuration = [WKWebViewConfiguration new];
+ *  configuration.userContentController = contentController;
+ *
+ *  WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
+ *  @endcode
+ *
+ *  @return The Accengage script message names.
+ */
++ (NSSet<NSString *> *)scriptMessagesNames;
+
+/*!
+ *  @brief Returns the Accengage tracking script.
+ *  @since 6.1.0
+ *
+ *  @details Used for the manual script injection with WKWebView component.
+ *  @code
+ *  WKUserContentController *contentController = [WKUserContentController new];
+ *
+ *  WKUserScript *script = [[WKUserScript alloc] initWithSource:[Accengage trackingScriptForWebView:ACCWKWebViewFramework]
+ *                                                injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+ *                                             forMainFrameOnly:YES];
+ *
+ *  [contentController addUserScript:script];
+ *
+ *  NSSet *scripts = [Accengage scriptMessagesNames];
+ *  for (NSString *name in scripts) {
+ *      [contentController addScriptMessageHandler:self name:name];
+ *  }
+ *
+ *  WKWebViewConfiguration *configuration = [WKWebViewConfiguration new];
+ *  configuration.userContentController = contentController;
+ *
+ *  WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
+ *  @endcode
+ *
+ *  @param component The list of the lists to which we want to be subscribed.
+ *
+ *  @return The Accengage tracking script.
+ */
++ (nullable NSString *)trackingScriptForWebView:(ACCWebViewTrackingFramework)component;
+
+/*!
+ *  @brief Handle received script message.
+ *  @since 6.1.0
+ *
+ *  @details Call it from
+ *  @code
+ *  - (void)userContentController:(WKUserContentController *)userContentController
+ *        didReceiveScriptMessage:(WKScriptMessage *)message {
+ *      if ([Accengage didReceiveScriptMessageWithName:message.name body:message.body]) {
+ *          return;
+ *      }
+ *  }
+ *  @endcode
+ *
+ *  @param name The Message's name.
+ *  @param body The Message's body.
+ *
+ *  @return @c YES if the message was triggered by the Accengage script.
+ */
++ (BOOL)didReceiveScriptMessageWithName:(NSString *)name body:(id)body;
 
 ///-----------------------------------------------------------------------------
 /// @name  Lists

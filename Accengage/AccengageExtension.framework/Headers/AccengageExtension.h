@@ -16,3 +16,4 @@ FOUNDATION_EXPORT const unsigned char AccengageExtensionVersionString[];
 
 #import <AccengageExtension/ACCNotificationServiceExtension.h>
 #import <AccengageExtension/ACCNotificationContentExtension.h>
+#import <AccengageExtension/ACCNotificationContentViewController.h>
