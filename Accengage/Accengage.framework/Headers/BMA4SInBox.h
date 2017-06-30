@@ -61,12 +61,11 @@ typedef void(^BMA4SInBoxMessageError)(NSUInteger requestedIndex);
  If you want to use this feature, Accengage servers will send all messages information to your app, but you will need to handle yourself the display part
  */
 @interface BMA4SInBox : NSObject
-
-/** Call this class method to retrieve the inbox object from device
- @param completionHandler callback for the download result
+/** Call this class method to retrieve the inbox object from members/device
+ @param ids Array of ids members for which you want the messages. Can be nil
+ @param handler Return object InBox in Callback
  */
-
-+ (void)obtainMessagesWithCompletionHandler:(BMA4SInBoxLoadedWithResult)completionHandler;
++(void)obtainMessagesForMembers:(NSArray*)ids withHandler:(BMA4SInBoxLoadedWithResult)handler;
 
 /** Call this class to retrieve message from inbox object
  @param index Index of message
@@ -84,17 +83,5 @@ typedef void(^BMA4SInBoxMessageError)(NSUInteger requestedIndex);
  Int value that defines the number of unread messages
  */
 -(NSUInteger)unreadMessageCount;
-
-//------------------------------------------------------------------------------
-/** @name Deprecated */
-//------------------------------------------------------------------------------
-
-/** Call this class method to retrieve the inbox object from members/device
- @param ids Array of ids members for which you want the messages. Can be nil
- @param handler Return object InBox in Callback
- @note Please use `[BMA4SInBox obtainMessagesWithCompletionHandler:]`
- */
-
-+(void)obtainMessagesForMembers:(NSArray*)ids withHandler:(BMA4SInBoxLoadedWithResult)handler __attribute__((deprecated("This method is deprecated starting from version 6.1.0. Use [BMA4SInBox obtainMessagesWithCompletionHandler:] instead")));
 
 @end

@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD8A376F1F068E610056256D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA261DAE8A0E005FE5AB /* UserNotifications.framework */; };
-		BD8A37711F068E610056256D /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8A37701F068E610056256D /* UserNotificationsUI.framework */; };
-		BD8A37751F068E610056256D /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8A37741F068E610056256D /* NotificationViewController.m */; };
-		BD8A37781F068E610056256D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8A37761F068E610056256D /* MainInterface.storyboard */; };
-		BD8A377C1F068E610056256D /* Carousel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BD8A376E1F068E610056256D /* Carousel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BD8A37801F068EA00056256D /* AccengageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; };
 		FB448CF71E3A3E65003871E1 /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; };
 		FB448CF81E3A3E65003871E1 /* Accengage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB448CFB1E3A3E74003871E1 /* AccengageExtension.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -47,13 +41,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BD8A377A1F068E610056256D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FBE4B99A1DAE7F3D005FE5AB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BD8A376D1F068E610056256D;
-			remoteInfo = Carousel;
-		};
 		FBE4BA121DAE86C6005FE5AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FBE4B99A1DAE7F3D005FE5AB /* Project object */;
@@ -91,7 +78,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				BD8A377C1F068E610056256D /* Carousel.appex in Embed App Extensions */,
 				FBE4BA141DAE86C6005FE5AB /* NoticationServiceSample.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -100,12 +86,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BD8A376E1F068E610056256D /* Carousel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Carousel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD8A37701F068E610056256D /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
-		BD8A37731F068E610056256D /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
-		BD8A37741F068E610056256D /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
-		BD8A37771F068E610056256D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		BD8A37791F068E610056256D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBD2DD701DE30E2300C7384B /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
 		FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AccengageConfig.plist; sourceTree = "<group>"; };
 		FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccengageExtension.framework; sourceTree = "<group>"; };
@@ -175,16 +155,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BD8A376B1F068E610056256D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BD8A37711F068E610056256D /* UserNotificationsUI.framework in Frameworks */,
-				BD8A376F1F068E610056256D /* UserNotifications.framework in Frameworks */,
-				BD8A37801F068EA00056256D /* AccengageExtension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FBE4B99F1DAE7F3D005FE5AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,17 +175,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BD8A37721F068E610056256D /* Carousel */ = {
-			isa = PBXGroup;
-			children = (
-				BD8A37731F068E610056256D /* NotificationViewController.h */,
-				BD8A37741F068E610056256D /* NotificationViewController.m */,
-				BD8A37761F068E610056256D /* MainInterface.storyboard */,
-				BD8A37791F068E610056256D /* Info.plist */,
-			);
-			path = Carousel;
-			sourceTree = "<group>";
-		};
 		FBD2DD6F1DE30E2300C7384B /* Accengage */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +192,6 @@
 				FBE4B9E01DAE816C005FE5AB /* Vendors */,
 				FBE4B9A41DAE7F3D005FE5AB /* AccengageSampleObjc */,
 				FBE4BA0D1DAE86C6005FE5AB /* NoticationServiceSample */,
-				BD8A37721F068E610056256D /* Carousel */,
 				FBE4B9A31DAE7F3D005FE5AB /* Products */,
 				FBE4BA021DAE81B3005FE5AB /* Frameworks */,
 			);
@@ -244,7 +202,6 @@
 			children = (
 				FBE4B9A21DAE7F3D005FE5AB /* ACCSample.app */,
 				FBE4BA0C1DAE86C6005FE5AB /* NoticationServiceSample.appex */,
-				BD8A376E1F068E610056256D /* Carousel.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -382,7 +339,6 @@
 				FBE4BA1E1DAE89FB005FE5AB /* CoreGraphics.framework */,
 				FBE4BA1C1DAE89DD005FE5AB /* iAd.framework */,
 				FBE4BA031DAE81B3005FE5AB /* AdSupport.framework */,
-				BD8A37701F068E610056256D /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -400,23 +356,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BD8A376D1F068E610056256D /* Carousel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BD8A377D1F068E610056256D /* Build configuration list for PBXNativeTarget "Carousel" */;
-			buildPhases = (
-				BD8A376A1F068E610056256D /* Sources */,
-				BD8A376B1F068E610056256D /* Frameworks */,
-				BD8A376C1F068E610056256D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Carousel;
-			productName = Carousel;
-			productReference = BD8A376E1F068E610056256D /* Carousel.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		FBE4B9A11DAE7F3D005FE5AB /* AccengageSampleObjc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBE4B9B91DAE7F3D005FE5AB /* Build configuration list for PBXNativeTarget "AccengageSampleObjc" */;
@@ -433,7 +372,6 @@
 			);
 			dependencies = (
 				FBE4BA131DAE86C6005FE5AB /* PBXTargetDependency */,
-				BD8A377B1F068E610056256D /* PBXTargetDependency */,
 			);
 			name = AccengageSampleObjc;
 			productName = AccengageSampleObjc;
@@ -463,12 +401,9 @@
 		FBE4B99A1DAE7F3D005FE5AB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Yassir Barchi";
 				TargetAttributes = {
-					BD8A376D1F068E610056256D = {
-						CreatedOnToolsVersion = 9.0;
-					};
 					FBE4B9A11DAE7F3D005FE5AB = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
@@ -502,20 +437,11 @@
 			targets = (
 				FBE4B9A11DAE7F3D005FE5AB /* AccengageSampleObjc */,
 				FBE4BA0B1DAE86C6005FE5AB /* NoticationServiceSample */,
-				BD8A376D1F068E610056256D /* Carousel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BD8A376C1F068E610056256D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BD8A37781F068E610056256D /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FBE4B9A01DAE7F3D005FE5AB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -553,14 +479,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BD8A376A1F068E610056256D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BD8A37751F068E610056256D /* NotificationViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FBE4B99E1DAE7F3D005FE5AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,11 +517,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BD8A377B1F068E610056256D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BD8A376D1F068E610056256D /* Carousel */;
-			targetProxy = BD8A377A1F068E610056256D /* PBXContainerItemProxy */;
-		};
 		FBE4BA131DAE86C6005FE5AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FBE4BA0B1DAE86C6005FE5AB /* NoticationServiceSample */;
@@ -612,14 +525,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BD8A37761F068E610056256D /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD8A37771F068E610056256D /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		FBE4B9AE1DAE7F3D005FE5AB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -639,52 +544,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BD8A377E1F068E610056256D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../**",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Carousel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.objc.Carousel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		BD8A377F1F068E610056256D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/../**",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Carousel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.objc.Carousel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		FBE4B9B71DAE7F3D005FE5AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -694,9 +553,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -704,12 +561,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -749,9 +601,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -759,12 +609,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -795,7 +640,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = AccengageSampleObjc/AccengageSampleObjc.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -816,7 +660,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = AccengageSampleObjc/AccengageSampleObjc.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -866,14 +709,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BD8A377D1F068E610056256D /* Build configuration list for PBXNativeTarget "Carousel" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BD8A377E1F068E610056256D /* Debug */,
-				BD8A377F1F068E610056256D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		FBE4B99D1DAE7F3D005FE5AB /* Build configuration list for PBXProject "AccengageSampleObjc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

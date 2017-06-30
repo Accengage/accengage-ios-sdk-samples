@@ -25,10 +25,4 @@ FOUNDATION_EXTERN NSString *const BMA4SInBoxButtonWillInteract;
  */
 -(void)interact;
 
-/**
- Call this method to track the click on the button
- */
-
-- (void)trackClick;
-
 @end
