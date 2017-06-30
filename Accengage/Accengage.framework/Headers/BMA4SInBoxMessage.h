@@ -28,49 +28,54 @@ typedef void (^BMA4SInBoxDisplayHandler)(BMA4SInBoxMessage *message, BMA4SInBoxM
 @interface BMA4SInBoxMessage : NSObject
 
 /**
- This property define the title of BMA4SInBoxMessage object
+ This property defines the title of BMA4SInBoxMessage object
  */
 @property (weak, nonatomic, readonly) NSString *title;
 
 /**
- This property define the text of BMA4SInBoxMessage object
+ This property defines the text of BMA4SInBoxMessage object
  */
 @property (weak, nonatomic, readonly) NSString *text;
 
 /**
- This property define the sender of BMA4SInBoxMessage object
+ This property defines the sender of BMA4SInBoxMessage object
  */
 @property (weak, nonatomic, readonly) NSString *from;
 
 /**
- This property define the category of BMA4SInBoxMessage object
+ This property defines the category of BMA4SInBoxMessage object
  */
 @property (weak, nonatomic, readonly) NSString *category;
 
 /**
- This property define the date when the BMA4SInBoxMessage object was sent
+ This property defines the date when the BMA4SInBoxMessage object was sent
  */
 @property (weak, nonatomic, readonly) NSDate *date;
 
 /**
- This property define the url of the icon who appear in BMA4SInBoxMessage object
+ This property defines the url of the icon who appear in BMA4SInBoxMessage object
  */
 @property (weak, nonatomic, readonly) NSString *iconUrl;
 
 /**
- This property define the custom params of BMA4SInBoxMessage object
+ This property defines the custom params of BMA4SInBoxMessage object
  */
 @property (weak, nonatomic, readonly) NSDictionary *customParams;
 
 /**
- This property define if the BMA4SInBoxMessage object is read by the user
+ This property defines if the BMA4SInBoxMessage object is read by the user
  */
 @property (nonatomic, readonly) BOOL isRead;
 
 /**
- This property define if the BMA4SInBoxMessage object is expired
+ This property defines if the BMA4SInBoxMessage object is expired
  */
 @property (nonatomic, readonly) BOOL isExpired;
+
+/**
+ This property defines if the BMA4SInBoxMessage object has been displayed
+ */
+@property (nonatomic, readonly) BOOL isDisplayed;
 
 /**
  Call message 'interactWithDisplayHandler' method to hand the message to the SDK
@@ -89,6 +94,18 @@ typedef void (^BMA4SInBoxDisplayHandler)(BMA4SInBoxMessage *message, BMA4SInBoxM
 -(void)markAsUnread;
 
 /**
+ Call this method if you want to mark a BMA4SInBoxMessage object as displayed
+ */
+
+- (void)markAsDisplayed;
+
+/**
+ Call this method if you want to mark a BMA4SInBoxMessage object as undisplayed
+ */
+
+- (void)markAsUndisplayed;
+
+/**
  Call this method if you want to know if a BMA4SInBoxMessage object was archived
  */
 -(BOOL)isArchived;
@@ -104,5 +121,17 @@ typedef void (^BMA4SInBoxDisplayHandler)(BMA4SInBoxMessage *message, BMA4SInBoxM
  A BMA4SInBoxMessage object can't be unarchive if was deleted
  */
 -(void)unarchive;
+
+/**
+ Call this method to track the display of a BMA4SInBoxMessage object
+ */
+
+- (void)trackDisplay;
+
+/**
+ Call this method to track the opening of a BMA4SInBoxMessage object
+ */
+
+- (void)trackOpening;
 
 @end
