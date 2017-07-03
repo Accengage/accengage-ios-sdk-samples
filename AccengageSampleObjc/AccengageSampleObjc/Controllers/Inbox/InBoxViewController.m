@@ -128,12 +128,10 @@
 
 //------------------------------------------------------------------------------
 - (void)reloadData {
-  [BMA4SInBox obtainMessagesForMembers:nil
-                           withHandler:^(BMA4SInBoxLoadingResult result,
-                                         BMA4SInBox *inbox) {
-                             self.inbox = inbox;
-                             [self updateUIandData];
-                           }];
+  [BMA4SInBox obtainMessagesWithCompletionHandler:^(BMA4SInBoxLoadingResult result, BMA4SInBox *inbox) {
+      self.inbox = inbox;
+      [self updateUIandData];
+  }];
 }
 
 #pragma mark - UI management
@@ -231,11 +229,7 @@
         if (cell.index == requestedIndex)
           [cell setMessage:message];
       }
-      onError:^(NSUInteger requestedIndex) {
-        if (cell.index == requestedIndex) {
-          // Error
-        }
-      }];
+      onError:nil];
 
   cell.accessoryType = UITableViewCellAccessoryNone;
   return cell;
@@ -250,6 +244,16 @@
 #pragma mark Table view delegate
 
 //------------------------------------------------------------------------------
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSInteger index = indexPath.row;
+  [self.inbox obtainMessageAtIndex:index loaded:^(BMA4SInBoxMessage *message, NSUInteger requestedIndex) {
+    if (index == requestedIndex && !message.isDisplayed) {
+      [message trackDisplay];
+    }
+  } onError:nil];
+}
+
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
@@ -257,6 +261,7 @@
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
         [self.inbox obtainMessageAtIndex:indexPath.row
                                   loaded:^(BMA4SInBoxMessage *message, NSUInteger requestedIndex) {
+                                      [message trackOpening];
                                       [message interactWithDisplayHandler:^(BMA4SInBoxMessage *message, BMA4SInBoxMessageContent *content) {
                                            InboxDetailsViewController *controller = (InboxDetailsViewController *)[self.storyboard instantiateViewControllerWithIdentifier: @"InboxDetailsViewController"];
                                            if (controller) {
@@ -267,10 +272,7 @@
                                            }
                                        }];
                                   }
-                                 onError:^(NSUInteger requestedIndex){
-                                     // should not happen
-                                     NSLog(@"Error");
-                                 }];
+                                 onError:nil];
     }
 }
 
