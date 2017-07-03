@@ -249,6 +249,7 @@
   NSInteger index = indexPath.row;
   [self.inbox obtainMessageAtIndex:index loaded:^(BMA4SInBoxMessage *message, NSUInteger requestedIndex) {
     if (index == requestedIndex && !message.isDisplayed) {
+      [message markAsDisplayed];
       [message trackDisplay];
     }
   } onError:nil];
