@@ -1,8 +1,8 @@
 FRAMEWORKS_DIRECTORY="${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}"
-ACCENGAGE_FRAMEWORKS=`find $FRAMEWORKS_DIRECTORY -type d -name "Accengage*.framework"`
 
-for framework in $ACCENGAGE_FRAMEWORKS; do
-    framework_name=`basename $framework`
+find "$FRAMEWORKS_DIRECTORY" -name 'Accengage*.framework' -type d | while read -r framework
+do
+    framework_name=`basename "$framework"`
     framework_binary_path=$framework"/${framework_name%.*}"
 
     archs="$(lipo -info "${framework_binary_path}" | rev | cut -d ':' -f1 | rev)"

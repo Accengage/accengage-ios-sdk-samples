@@ -249,7 +249,9 @@
 //------------------------------------------------------------------------------
 - (void)interact:(id)sender {
   NSInteger tag = [sender tag];
-  [self.content.buttons[tag] interact];
+  BMA4SInBoxButton *button = self.content.buttons[tag];
+  [button interact];
+  [button trackClick];
 }
 
 - (IBAction)showDetailView:(id)sender {
@@ -278,8 +280,7 @@
 
 #pragma mark - Orientation change notification
 
-- (void)deviceOrientationDidChangeNotification:(NSNotification*)note
-{
+- (void)deviceOrientationDidChangeNotification:(NSNotification*)note {
   UIInterfaceOrientation newOrientation = [UIApplication sharedApplication].statusBarOrientation;
   UIInterfaceOrientation oldOrientation = (UIInterfaceOrientation)[note.userInfo[UIApplicationStatusBarOrientationUserInfoKey] integerValue];
   

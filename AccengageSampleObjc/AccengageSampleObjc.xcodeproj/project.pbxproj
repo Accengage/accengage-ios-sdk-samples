@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD5971381F0A285400405EB7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA261DAE8A0E005FE5AB /* UserNotifications.framework */; };
+		BD59713A1F0A285400405EB7 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5971391F0A285400405EB7 /* UserNotificationsUI.framework */; };
+		BD59713E1F0A285400405EB7 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD59713D1F0A285400405EB7 /* NotificationViewController.m */; };
+		BD5971411F0A285400405EB7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD59713F1F0A285400405EB7 /* MainInterface.storyboard */; };
+		BD5971451F0A285400405EB7 /* Carousel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BD5971371F0A285400405EB7 /* Carousel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BD5971491F0A294400405EB7 /* AccengageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; };
 		FB448CF71E3A3E65003871E1 /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; };
 		FB448CF81E3A3E65003871E1 /* Accengage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB448CFB1E3A3E74003871E1 /* AccengageExtension.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -41,6 +47,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BD5971431F0A285400405EB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBE4B99A1DAE7F3D005FE5AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD5971361F0A285400405EB7;
+			remoteInfo = Carousel;
+		};
 		FBE4BA121DAE86C6005FE5AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FBE4B99A1DAE7F3D005FE5AB /* Project object */;
@@ -78,6 +91,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				BD5971451F0A285400405EB7 /* Carousel.appex in Embed App Extensions */,
 				FBE4BA141DAE86C6005FE5AB /* NoticationServiceSample.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -86,6 +100,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BD5971371F0A285400405EB7 /* Carousel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Carousel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD5971391F0A285400405EB7 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		BD59713C1F0A285400405EB7 /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		BD59713D1F0A285400405EB7 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		BD5971401F0A285400405EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		BD5971421F0A285400405EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBD2DD701DE30E2300C7384B /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
 		FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AccengageConfig.plist; sourceTree = "<group>"; };
 		FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccengageExtension.framework; sourceTree = "<group>"; };
@@ -155,6 +175,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BD5971341F0A285400405EB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD59713A1F0A285400405EB7 /* UserNotificationsUI.framework in Frameworks */,
+				BD5971381F0A285400405EB7 /* UserNotifications.framework in Frameworks */,
+				BD5971491F0A294400405EB7 /* AccengageExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBE4B99F1DAE7F3D005FE5AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +205,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD59713B1F0A285400405EB7 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				BD59713C1F0A285400405EB7 /* NotificationViewController.h */,
+				BD59713D1F0A285400405EB7 /* NotificationViewController.m */,
+				BD59713F1F0A285400405EB7 /* MainInterface.storyboard */,
+				BD5971421F0A285400405EB7 /* Info.plist */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
 		FBD2DD6F1DE30E2300C7384B /* Accengage */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +233,7 @@
 				FBE4B9E01DAE816C005FE5AB /* Vendors */,
 				FBE4B9A41DAE7F3D005FE5AB /* AccengageSampleObjc */,
 				FBE4BA0D1DAE86C6005FE5AB /* NoticationServiceSample */,
+				BD59713B1F0A285400405EB7 /* Carousel */,
 				FBE4B9A31DAE7F3D005FE5AB /* Products */,
 				FBE4BA021DAE81B3005FE5AB /* Frameworks */,
 			);
@@ -202,6 +244,7 @@
 			children = (
 				FBE4B9A21DAE7F3D005FE5AB /* ACCSample.app */,
 				FBE4BA0C1DAE86C6005FE5AB /* NoticationServiceSample.appex */,
+				BD5971371F0A285400405EB7 /* Carousel.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -339,6 +382,7 @@
 				FBE4BA1E1DAE89FB005FE5AB /* CoreGraphics.framework */,
 				FBE4BA1C1DAE89DD005FE5AB /* iAd.framework */,
 				FBE4BA031DAE81B3005FE5AB /* AdSupport.framework */,
+				BD5971391F0A285400405EB7 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -356,6 +400,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BD5971361F0A285400405EB7 /* Carousel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD5971461F0A285400405EB7 /* Build configuration list for PBXNativeTarget "Carousel" */;
+			buildPhases = (
+				BD5971331F0A285400405EB7 /* Sources */,
+				BD5971341F0A285400405EB7 /* Frameworks */,
+				BD5971351F0A285400405EB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Carousel;
+			productName = Carousel;
+			productReference = BD5971371F0A285400405EB7 /* Carousel.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FBE4B9A11DAE7F3D005FE5AB /* AccengageSampleObjc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBE4B9B91DAE7F3D005FE5AB /* Build configuration list for PBXNativeTarget "AccengageSampleObjc" */;
@@ -372,6 +433,7 @@
 			);
 			dependencies = (
 				FBE4BA131DAE86C6005FE5AB /* PBXTargetDependency */,
+				BD5971441F0A285400405EB7 /* PBXTargetDependency */,
 			);
 			name = AccengageSampleObjc;
 			productName = AccengageSampleObjc;
@@ -404,6 +466,10 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Yassir Barchi";
 				TargetAttributes = {
+					BD5971361F0A285400405EB7 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+					};
 					FBE4B9A11DAE7F3D005FE5AB = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
@@ -437,11 +503,20 @@
 			targets = (
 				FBE4B9A11DAE7F3D005FE5AB /* AccengageSampleObjc */,
 				FBE4BA0B1DAE86C6005FE5AB /* NoticationServiceSample */,
+				BD5971361F0A285400405EB7 /* Carousel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BD5971351F0A285400405EB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD5971411F0A285400405EB7 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBE4B9A01DAE7F3D005FE5AB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -479,6 +554,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BD5971331F0A285400405EB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD59713E1F0A285400405EB7 /* NotificationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBE4B99E1DAE7F3D005FE5AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,6 +600,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BD5971441F0A285400405EB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD5971361F0A285400405EB7 /* Carousel */;
+			targetProxy = BD5971431F0A285400405EB7 /* PBXContainerItemProxy */;
+		};
 		FBE4BA131DAE86C6005FE5AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FBE4BA0B1DAE86C6005FE5AB /* NoticationServiceSample */;
@@ -525,6 +613,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		BD59713F1F0A285400405EB7 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD5971401F0A285400405EB7 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		FBE4B9AE1DAE7F3D005FE5AB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -544,6 +640,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BD5971471F0A285400405EB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../**",
+				);
+				INFOPLIST_FILE = Carousel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.objc.Carousel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BD5971481F0A285400405EB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../**",
+				);
+				INFOPLIST_FILE = Carousel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.objc.Carousel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		FBE4B9B71DAE7F3D005FE5AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -709,6 +843,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BD5971461F0A285400405EB7 /* Build configuration list for PBXNativeTarget "Carousel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD5971471F0A285400405EB7 /* Debug */,
+				BD5971481F0A285400405EB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		FBE4B99D1DAE7F3D005FE5AB /* Build configuration list for PBXProject "AccengageSampleObjc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
