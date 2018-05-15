@@ -73,6 +73,12 @@ typedef NS_ENUM(NSUInteger, ACCConfigTrackingMode) {
 @property (nonatomic, assign, getter=isIDFACollectionEnabled) BOOL IDFACollectionEnabled;
 
 /*!
+ *  @brief Allow Accengage SDK to collect crash reports if set to @c YES. Default is @c YES.
+ *  @since 6.1.4
+ */
+@property (nonatomic, assign, getter=isCrashReportingEnabled) BOOL crashReportingEnabled;
+
+/*!
  *  @brief Allow Accengage SDK to automatically intercept notification-related app delegate calls. Default is @c YES.
  *  @since 6.0.0
  *
@@ -118,6 +124,19 @@ typedef NS_ENUM(NSUInteger, ACCConfigTrackingMode) {
  *  @warning Use it only if you <b>really really really know what you're doing</b>.
  */
 @property (nonatomic, copy, nullable) NSString *webTrackingJSURL;
+
+/*!
+ *  @brief The launchOptions dictionary passed as parameter of the following UIApplicationDelegate method:
+ *  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+ *
+ *  @since 6.1.6
+ *
+ *  @details By default, the SDK automatically collects the information needed for the optimal SDK launch. However, if you need to delay the SDK launch, you'll need to pass the launchOptions dictionary to the SDK.
+ *  @note Use only if you need to delay the SDK launch.
+ *
+ */
+@property (nonatomic, copy, nullable) NSDictionary *launchOptions;
+
 
 ///-----------------------------------------------------------------------------
 /// @name  Factory Methods

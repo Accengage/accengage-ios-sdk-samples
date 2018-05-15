@@ -20,9 +20,12 @@ FOUNDATION_EXTERN NSInteger const BMA4SInAppOverlayViewSafariTag;
 
 typedef void(^BMA4SInAppClickCompletionHandler)(NSString *buttonID);
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wstrict-prototypes"
 typedef void(^BMA4SInAppDismissCompletionHandler)();
 
 typedef void(^BMA4SInAppDisplayCompletionHandler)();
+#pragma GCC diagnostic pop
 
 @interface BMA4SInAppMessage : NSObject
 

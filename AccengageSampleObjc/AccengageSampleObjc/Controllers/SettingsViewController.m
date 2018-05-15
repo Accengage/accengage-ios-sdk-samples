@@ -59,7 +59,11 @@ static NSString * const cellDetailsKey = @"cellDetailsKey";
                                 cellTitleKey: @"Enable geofencing service",
                                 cellDetailsKey: @"On: if you want to enable geofencing service \nOff: to disable it"};
     
-    self.settings = @[userName, inappLock, beacons, geofences ];
+    NSDictionary *dataOptin = @{cellTypeKey: @(SettingsCellTypeSwitch),
+                                cellTitleKey: @"Disable user data collection (GDPR)",
+                                cellDetailsKey: @"On: if you want to disable data collection\nOff: to authorize the collection of data"};
+    
+    self.settings = @[userName, inappLock, beacons, geofences, dataOptin ];
     
     self.accengageAlias = @"SETTINGS";
 }
@@ -176,6 +180,12 @@ heightForFooterInSection:(NSInteger)section {
         case 3:
             [SampleHelpers setGeofenceServiceEnabled:status];
             break;
+        case 4:
+            [Accengage setDataOptInEnabled:status];
+            if (status) {
+                [[Accengage push]registerForUserNotificationsWithOptions:ACCNotificationOptionAlert|ACCNotificationOptionBadge|ACCNotificationOptionSound];
+            }
+            break;
             
         default:
             break;
@@ -204,7 +214,8 @@ heightForFooterInSection:(NSInteger)section {
             return  [SampleHelpers isBeaconServiceEnabled];
         case 3:
             return  [SampleHelpers isGeofenceServiceEnabled];
-            
+        case 4:
+            return  [Accengage isDataOptInEnabled];
         default:
             return NO;
     }

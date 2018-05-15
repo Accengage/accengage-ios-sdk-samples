@@ -74,7 +74,7 @@ __attribute__((deprecated("Starting from version 6.0. Use ACCList.")))
  *
  *  @since Available in SDK 5.4.0 and later
  */
-- (instancetype)initWithId:(NSString*)arg;
+- (nullable instancetype)initWithId:(NSString*)arg;
 
 /**
  *  Returns an BMA4SList object initialized with the given id.
@@ -85,7 +85,7 @@ __attribute__((deprecated("Starting from version 6.0. Use ACCList.")))
  *
  *  @since Available in SDK 5.4.0 and later
  */
-+ (instancetype)listWithId:(NSString*)arg;
++ (nullable instancetype)listWithId:(NSString*)arg;
 
 /**
  *  Returns an BMA4SList object initialized with the given id and 
@@ -98,7 +98,7 @@ __attribute__((deprecated("Starting from version 6.0. Use ACCList.")))
  *
  *  @since Available in SDK 5.4.0 and later
  */
-- (instancetype)initWithId:(NSString*)arg1
+- (nullable instancetype)initWithId:(NSString*)arg1
             expirationDate:(nullable NSDate*)arg2 NS_DESIGNATED_INITIALIZER;
 
 /**
@@ -112,7 +112,7 @@ __attribute__((deprecated("Starting from version 6.0. Use ACCList.")))
  *
  *  @since Available in SDK 5.4.0 and later
  */
-+ (instancetype)listWithId:(NSString*)arg1
++ (nullable instancetype)listWithId:(NSString*)arg1
             expirationDate:(nullable NSDate*)arg2;
 
 @end

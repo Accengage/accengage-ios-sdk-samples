@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <Accengage/ACCPush.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class CLLocation;
 @class UILocalNotification;
 
@@ -39,7 +41,7 @@ __attribute__((deprecated("Starting from version 6.0. Use ACCPush.")))
 /**
  Get the Singleton
  */
-+ (BMA4SNotification *)sharedBMA4S;
++ (nullable BMA4SNotification *)sharedBMA4S;
 
 /** ----------------------------------------------------------------------------
  * @name Notifications display options
@@ -250,4 +252,7 @@ __attribute__((deprecated("Starting from version 6.0. Use ACCPush.")))
  */
 - (void)updateLocation:(CLLocation*)location __attribute__((deprecated("This method is deprecated starting from version 5.5.0. Use [BMA4SLocationServices updateLocation:] instead")));
 
+
 @end
+
+NS_ASSUME_NONNULL_END

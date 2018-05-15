@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** This class controller is the main controller of the SDK. You need to call the following method to launch the tracker
  
     + (void) trackWithPartnerId:(NSString *)partnerId privateKey:(NSString *)privateKey options:(NSDictionary *)launchOptions;
@@ -50,7 +52,7 @@ Max length: 128 bytes
 /** Call this class method to return the reported own userID
   @return The reported own userID as a NSString
  */
-+ (NSString *) userID;
++ (nullable NSString *) userID;
 
 /** Call this class method to return Accengage internal ID
  @return The Accengage internal ID as a NSString (Mobinaute ID)
@@ -64,7 +66,7 @@ Max length: 128 bytes
  And remove the observer when suitable:
    [[NSNotificationCenter defaultCenter] removeObserver:self name:BMA4STrackerReadyNotification object:nil];
  */
-+ (NSString*) A4SID;
++ (nullable NSString*) A4SID;
 
 /**  Synchronize new value of the device profile
  @param values This Values is a NSDictionary with values that you want to synchronize
@@ -114,3 +116,5 @@ Max length: 128 bytes
 + (BOOL) setRestrictedConnection:(BOOL)value;
 
 @end
+
+NS_ASSUME_NONNULL_END
