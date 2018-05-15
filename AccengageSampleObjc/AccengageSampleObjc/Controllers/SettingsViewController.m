@@ -60,8 +60,8 @@ static NSString * const cellDetailsKey = @"cellDetailsKey";
                                 cellDetailsKey: @"On: if you want to enable geofencing service \nOff: to disable it"};
     
     NSDictionary *dataOptin = @{cellTypeKey: @(SettingsCellTypeSwitch),
-                                cellTitleKey: @"Disable user data collection (GDPR)",
-                                cellDetailsKey: @"On: if you want to disable data collection\nOff: to authorize the collection of data"};
+                                cellTitleKey: @"Disable user data collection",
+                                cellDetailsKey: @"On: if you want to disable user data collection\nOff: to authorize user data collection"};
     
     self.settings = @[userName, inappLock, beacons, geofences, dataOptin ];
     
