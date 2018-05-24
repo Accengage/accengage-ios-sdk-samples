@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Bastien MATTHAI on 24/05/2018.
+  
+*/
+
+"TITLE_DATA_COLLECTION_POPUP" = "Allow \"%@\" to collect your navigation data ?";
+"MESSAGE_DATA_COLLECTION_POPUP" = "This is mandatory to use all the features of the SDK Accengage";
+"ACCEPT_DATA_COLLECTION_POPUP" = "Allow";
+"DECLINE_DATA_COLLECTION_POPUP" = "Don't Allow";

@@ -49,19 +49,19 @@ static NSString * const cellDetailsKey = @"cellDetailsKey";
     
     NSDictionary *inappLock = @{cellTypeKey: @(SettingsCellTypeSwitch),
                                 cellTitleKey: @"Lock InApp messages display",
-                                cellDetailsKey: @"On: if you want to disable inApp Notifications \nOff: to enable inApp Notifications"};
+                                cellDetailsKey: @"On : if you want to disable inApp Notifications \nOff : to enable inApp Notifications"};
     
     NSDictionary *beacons = @{cellTypeKey: @(SettingsCellTypeSwitch),
                               cellTitleKey: @"Enable beacons service",
-                              cellDetailsKey: @"On: if you want to enable beacons service \nOff: to disable it"};
+                              cellDetailsKey: @"On : if you want to enable beacons service \nOff : to disable it"};
     
     NSDictionary *geofences = @{cellTypeKey: @(SettingsCellTypeSwitch),
                                 cellTitleKey: @"Enable geofencing service",
-                                cellDetailsKey: @"On: if you want to enable geofencing service \nOff: to disable it"};
+                                cellDetailsKey: @"On : if you want to enable geofencing service \nOff : to disable it"};
     
     NSDictionary *dataOptin = @{cellTypeKey: @(SettingsCellTypeSwitch),
-                                cellTitleKey: @"Disable user data collection",
-                                cellDetailsKey: @"On: if you want to disable user data collection\nOff: to authorize user data collection"};
+                                cellTitleKey: @"Enable user data collection",
+                                cellDetailsKey: @"On : if you want to enable user data collection\nOff : to disable user data collection"};
     
     self.settings = @[userName, inappLock, beacons, geofences, dataOptin ];
     
@@ -182,8 +182,14 @@ heightForFooterInSection:(NSInteger)section {
             break;
         case 4:
             [Accengage setDataOptInEnabled:status];
-            if (status) {
+            [Accengage setGeolocOptInEnabled:status];
+            [[NSUserDefaults standardUserDefaults] setBool:status forKey:@"optin"];
+            if (status == YES) {
                 [[Accengage push]registerForUserNotificationsWithOptions:ACCNotificationOptionAlert|ACCNotificationOptionBadge|ACCNotificationOptionSound];
+            } else {
+                [SampleHelpers setGeofenceServiceEnabled:NO];
+                [SampleHelpers setBeaconServiceEnabled:NO];
+                [self updateSelectionsAnimated:NO];
             }
             break;
             
