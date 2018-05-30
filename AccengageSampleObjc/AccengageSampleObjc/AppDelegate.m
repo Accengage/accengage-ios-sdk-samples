@@ -26,12 +26,18 @@
     NSNumber *optin = [[NSUserDefaults standardUserDefaults] objectForKey:@"optin"];
     
     if (!optin) {
+        
+        // Creating the popup optin data
         UIAlertController *popupDataOptin = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"TITLE_DATA_COLLECTION_POPUP", nil),    [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleNameKey]]
                                                                                 message:NSLocalizedString(@"MESSAGE_DATA_COLLECTION_POPUP", nil)
                                                                          preferredStyle:UIAlertControllerStyleAlert];
         
+        
+        // Creating the button to refuse the data collection
         UIAlertAction *refuseDataOptinAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"DECLINE_DATA_COLLECTION_POPUP", nil) style:UIAlertActionStyleDefault
                                                                       handler:^(UIAlertAction *action) {
+                                                                          
+                                                                          // In the case where the user accept the data collection : persist the var "optin" in standardUserDefaults with value "NO" and set the associated variables to its appropriate values.
                                                                           [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"optin"];
                                                                           [Accengage setGeolocOptInEnabled:NO];
                                                                           [Accengage setDataOptInEnabled:NO];
@@ -39,10 +45,13 @@
                                                                           [SampleHelpers setGeofenceServiceEnabled:NO];
                                                                       }];
         
+        // Creating the button to accept the data collection
         UIAlertAction *acceptDataOptinAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"ACCEPT_DATA_COLLECTION_POPUP", nil) style:UIAlertActionStyleDefault
-                                                
                                                                       handler:^(UIAlertAction *action) {
                                                                           
+//                                                                          In the case where the user accept the data collection : persist the var "optin" in standardUserDefaults with value "YES" and set the associated variables to its appropriate values.
+//                                                                          Also displaying the iOS Push Notification popup and Gelolocation popup.
+                                                                
                                                                           [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"optin"];
                                                                           [Accengage setDataOptInEnabled:YES];
                                                                           [Accengage setGeolocOptInEnabled:YES];
@@ -56,14 +65,20 @@
                                                                           [BMA4SInAppNotification setDataSource:self];
                                                                           
                                                                       }];
+        
+        // Adding the buttons accept/decline data collection to the popup
         [popupDataOptin addAction:refuseDataOptinAction];
         [popupDataOptin addAction:acceptDataOptinAction];
         [popupDataOptin setPreferredAction:acceptDataOptinAction];
         
+        // Display asynchronously the popup optin data
         dispatch_async(dispatch_get_main_queue(), ^{
             [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:popupDataOptin animated:YES completion:nil];
         });
     } else {
+        
+        // Case where the user has already answered to the popup optin data
+        
         if (optin.intValue == 1) {
             [Accengage setDataOptInEnabled:YES];
             [Accengage setGeolocOptInEnabled:YES];

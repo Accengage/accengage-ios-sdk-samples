@@ -181,6 +181,9 @@ heightForFooterInSection:(NSInteger)section {
             [SampleHelpers setGeofenceServiceEnabled:status];
             break;
         case 4:
+            
+            // Updating data collection parameters according to UISwitch value given by parameter "status".
+            
             [Accengage setDataOptInEnabled:status];
             [Accengage setGeolocOptInEnabled:status];
             [[NSUserDefaults standardUserDefaults] setBool:status forKey:@"optin"];
