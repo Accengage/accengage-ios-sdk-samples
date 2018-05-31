@@ -37,7 +37,7 @@
         UIAlertAction *refuseDataOptinAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"DECLINE_DATA_COLLECTION_POPUP", nil) style:UIAlertActionStyleDefault
                                                                       handler:^(UIAlertAction *action) {
                                                                           
-                                                                          // In the case where the user accept the data collection : persist the var "optin" in standardUserDefaults with value "NO" and set the associated variables to its appropriate values.
+                                                                          // In the case where the user refuses the data collection : persist the var "optin" in standardUserDefaults with value "NO" and set the associated variables to its appropriate values.
                                                                           [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"optin"];
                                                                           [Accengage setGeolocOptInEnabled:NO];
                                                                           [Accengage setDataOptInEnabled:NO];
@@ -49,7 +49,7 @@
         UIAlertAction *acceptDataOptinAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"ACCEPT_DATA_COLLECTION_POPUP", nil) style:UIAlertActionStyleDefault
                                                                       handler:^(UIAlertAction *action) {
                                                                           
-//                                                                          In the case where the user accept the data collection : persist the var "optin" in standardUserDefaults with value "YES" and set the associated variables to its appropriate values.
+//                                                                          In the case where the user accepts the data collection : persist the var "optin" in standardUserDefaults with value "YES" and set the associated variables to its appropriate values.
 //                                                                          Also displaying the iOS Push Notification popup and Gelolocation popup.
                                                                 
                                                                           [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"optin"];
