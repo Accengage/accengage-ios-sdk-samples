@@ -376,9 +376,12 @@ Here is the list of the required/optional subviews of each message type :
  @param completionHandler A block to call when you are finished performing the animation.
  @since Available in SDK 5.3.0 and later.
  */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wstrict-prototypes"
 - (void)BMA4SWillDismissInAppMessage:(BMA4SInAppMessage*)message
                                 view:(UIView*)view
                    completionHandler:(void (^)())completionHandler;
+#pragma GCC diagnostic pop
 
 /**
  *  Tells that the specified inapp is now dismissed.

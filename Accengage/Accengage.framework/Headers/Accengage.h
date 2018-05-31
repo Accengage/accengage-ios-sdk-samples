@@ -50,6 +50,11 @@ typedef NS_ENUM(NSUInteger, ACCWebViewTrackingFramework) {
     ACCWKWebViewFramework
 };
 
+typedef NS_ENUM(NSUInteger, ACCOptIn) {
+    ACCOptInEnabled,
+    ACCOptInDisabled
+};
+
 /*!
  *  @brief Provides all Accengage available services and methods.
  *
@@ -97,7 +102,7 @@ typedef NS_ENUM(NSUInteger, ACCWebViewTrackingFramework) {
  *
  *  @return The shared @c ACCPush instance.
  */
-+ (ACCPush *)push;
++ (nullable ACCPush *)push;
 
 ///-----------------------------------------------------------------------------
 /// @name Lifecycle
@@ -147,6 +152,107 @@ typedef NS_ENUM(NSUInteger, ACCWebViewTrackingFramework) {
  *  @param config The configuration to use.
  */
 + (void)startWithConfig:(ACCConfiguration *)config;
+
+/*!
+ *  @brief Initializes and starts all @c Accengage services and performs all necessary setup.
+ *  @since 6.2.0
+ *
+ *  @details This method serves as the entry point to @c Accengage services. It @b must be
+ *  called in the scope of @c applicationDidFinishLaunching method, and it may be called only once.
+ *  Use this method if your application manages the user opt-in or if you wish to explicitly indicate that it's not
+ *  the case.
+ *  @code
+ *
+ *  @endcode
+ *
+ *  @warning This method @b must be called on the @b main @b thread. Otherwise it will throw
+ *  an exception.
+ *
+ *  @throw ACCStartMainThreadException
+ *
+ *  @see start
+ *
+ *  @param optIn If @c ACCOptInEnabled, Accengage SDK will wait until @c setDataOptInEnabled method is called.
+ *               If @c ACCOptInDisabled, Accengage will start with all services enabled.
+ */
++ (void)startWithOptIn:(ACCOptIn)optIn;
+
+/*!
+ *  @brief Initializes and starts all @c Accengage services and performs all necessary setup.
+ *  @since 6.2.0
+ *
+ *  @details This method serves as the entry point to @c Accengage services. It @b must be
+ *  called in the scope of @c applicationDidFinishLaunching method, and it may be called only once.
+ *  Use this method if your application manages the user opt-in or if you wish to explicitly indicate that it's not
+ *  the case.
+ *  @code
+ *
+ *  @endcode
+ *
+ *  @warning This method @b must be called on the @b main @b thread. Otherwise it will throw
+ *  an exception.
+ *
+ *  @throw ACCStartMainThreadException
+ *
+ *  @see startWithConfig
+ *
+ *  @param optIn If @c ACCOptInEnabled, Accengage SDK will wait until @c setDataOptInEnabled method is called.
+ *               If @c ACCOptInDisabled, Accengage will start with all services enabled.
+ *  @param config The configuration to use.
+ */
++ (void)startWithConfig:(ACCConfiguration *)config optIn:(ACCOptIn)optIn;
+
+/*!
+ *  @brief Enable or disable the data opt-in.
+ *  @since 6.2.0
+ *
+ *  @details If you used @c startWithOptin or @c startWithConfig:optIn method to enable ACCOptIn, you'll need to use
+ *  this method to pass the opt-in information. Passing @b YES means that Accengage SDK will start (or resume). Note
+ *  that you'll need to call @c setGeofenceServiceEnabled and @c setBeaconServiceEnabled to enable these services. Also,
+ *  you'll need to call @c registerForUserNotificationWithOptions after this method to enable push notifications.
+ *  Passing @b NO means that all Accengage services will be stopped.
+ *
+ *  @see isDataOptInEnabled
+ *
+ *  @param enabled If @c YES, Accengage SDK will start (or resume).
+ *                 If @c NO, All Accengage services will be stopped.
+ */
++ (void)setDataOptInEnabled:(BOOL)enabled;
+
+/*!
+ *  @brief Checks if data opt-in is enabled and returns the status.
+ *  @since 6.2.0
+ *
+ *  @see setDataOptInEnabled:
+ *
+ *  @return @c YES if data opt-in is enabled.
+ */
++ (BOOL)isDataOptInEnabled;
+
+/*!
+ *  @brief Enable or disable the geolocation data opt-in.
+ *  @since 6.2.0
+ *
+ *  @details If you used @c startWithOptin or @c startWithConfig:optIn method to enable ACCOptIn, you'll need to use
+ *  this method to pass the opt-in information. Note that calling this method with @b YES as param will have no effect
+ *  if data opt-in is not enabled.
+ *
+ *  @see isGeolocOptInEnabled
+ *
+ *  @param enabled If @c YES, Geolocation data opt-in will be enabled.
+ *
+ */
++ (void)setGeolocOptInEnabled:(BOOL)enabled;
+
+/*!
+ *  @brief Checks if geoloc opt-in is enabled and returns the status.
+ *  @since 6.2.0
+ *
+ *  @see setGeolocOptInEnabled:
+ *
+ *  @return @c YES if geoloc opt-in is enabled.
+ */
++ (BOOL)isGeolocOptInEnabled;
 
 /*!
  *  @brief Suspends or resumes all Accengage services.
@@ -412,7 +518,7 @@ typedef NS_ENUM(NSUInteger, ACCWebViewTrackingFramework) {
  *
  *  @return The Accengage script message names.
  */
-+ (NSSet<NSString *> *)scriptMessagesNames;
++ (nullable NSSet<NSString *> *)scriptMessagesNames;
 
 /*!
  *  @brief Returns the Accengage tracking script.
@@ -546,7 +652,7 @@ typedef NS_ENUM(NSUInteger, ACCWebViewTrackingFramework) {
  *
  *  @param date Arbitrary @c NSDate object to normalize.
  */
-+ (NSString *)normalizedStringForDate:(NSDate *)date;
++ (nullable NSString *)normalizedStringForDate:(NSDate *)date;
 
 ///-----------------------------------------------------------------------------
 /// @name  Factory Methods

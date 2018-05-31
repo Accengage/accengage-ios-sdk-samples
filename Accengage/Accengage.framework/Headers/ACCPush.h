@@ -83,7 +83,7 @@ typedef NS_OPTIONS(NSUInteger, ACCNotificationOptions) {
  *  @see customCategories
  *  @see registerForUserNotificationsWithOptions
  */
-@property (nonatomic, readonly) NSSet *accengageCategories;
+@property (nonatomic, readonly, nullable) NSSet *accengageCategories;
 
 /*!
  *  @brief Custom notification categories.
@@ -246,6 +246,8 @@ typedef NS_OPTIONS(NSUInteger, ACCNotificationOptions) {
  *
  *  @note Call this method @b only if you set @c ACCConfiguration::automaticPushDelegateEnabled to @c NO
  */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 - (void)didReceiveLocalNotification:(UILocalNotification *)notification;
 
 /*!
@@ -298,6 +300,7 @@ typedef NS_OPTIONS(NSUInteger, ACCNotificationOptions) {
 - (void)handleActionWithIdentifier:(nullable NSString *)identifier
               forLocalNotification:(UILocalNotification *)notification
                   withResponseInfo:(NSDictionary *)responseInfo;
+#pragma GCC diagnostic pop
 
 ///-----------------------------------------------------------------------------
 /// @name  Handling User Notifications (iOS 10)

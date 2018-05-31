@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		764223DD20AB2B5E00637DEF /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764223DC20AB2B5D00637DEF /* Accengage.framework */; };
+		764223E120AB2BD000637DEF /* Accengage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 764223DC20AB2B5D00637DEF /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		76C1DF9520B70AF50096A09E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76C1DF9020B708F40096A09E /* Localizable.strings */; };
 		BD5971381F0A285400405EB7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA261DAE8A0E005FE5AB /* UserNotifications.framework */; };
 		BD59713A1F0A285400405EB7 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5971391F0A285400405EB7 /* UserNotificationsUI.framework */; };
 		BD59713E1F0A285400405EB7 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD59713D1F0A285400405EB7 /* NotificationViewController.m */; };
 		BD5971411F0A285400405EB7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD59713F1F0A285400405EB7 /* MainInterface.storyboard */; };
 		BD5971451F0A285400405EB7 /* Carousel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BD5971371F0A285400405EB7 /* Carousel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BD5971491F0A294400405EB7 /* AccengageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; };
-		FB448CF71E3A3E65003871E1 /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; };
-		FB448CF81E3A3E65003871E1 /* Accengage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD701DE30E2300C7384B /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FB448CFB1E3A3E74003871E1 /* AccengageExtension.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FBD2DD741DE30E2300C7384B /* AccengageConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */; };
 		FBD2DD781DE30E2E00C7384B /* AccengageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */; };
 		FBE4B9A71DAE7F3D005FE5AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE4B9A61DAE7F3D005FE5AB /* main.m */; };
@@ -64,25 +64,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		764223E020AB2BC300637DEF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				764223E120AB2BD000637DEF /* Accengage.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB448CF91E3A3E65003871E1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FB448CF81E3A3E65003871E1 /* Accengage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FB448CFA1E3A3E6C003871E1 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				FB448CFB1E3A3E74003871E1 /* AccengageExtension.framework in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FBE4BA181DAE86C6005FE5AB /* Embed App Extensions */ = {
@@ -100,13 +99,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		764223DC20AB2B5D00637DEF /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
+		76C1DF8F20B708F40096A09E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		76C1DF9120B708F90096A09E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BD5971371F0A285400405EB7 /* Carousel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Carousel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD5971391F0A285400405EB7 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		BD59713C1F0A285400405EB7 /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		BD59713D1F0A285400405EB7 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		BD5971401F0A285400405EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		BD5971421F0A285400405EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBD2DD701DE30E2300C7384B /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
 		FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AccengageConfig.plist; sourceTree = "<group>"; };
 		FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccengageExtension.framework; sourceTree = "<group>"; };
 		FBE4B9A21DAE7F3D005FE5AB /* ACCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,7 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB448CF71E3A3E65003871E1 /* Accengage.framework in Frameworks */,
+				764223DD20AB2B5E00637DEF /* Accengage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +220,7 @@
 		FBD2DD6F1DE30E2300C7384B /* Accengage */ = {
 			isa = PBXGroup;
 			children = (
-				FBD2DD701DE30E2300C7384B /* Accengage.framework */,
+				764223DC20AB2B5D00637DEF /* Accengage.framework */,
 				FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */,
 				FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */,
 			);
@@ -269,6 +270,7 @@
 		FBE4B9A51DAE7F3D005FE5AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				76C1DF9020B708F40096A09E /* Localizable.strings */,
 				FBE4B9BC1DAE80A1005FE5AB /* AccengageSampleObjc-Prefix.pch */,
 				FBE4B9B61DAE7F3D005FE5AB /* Info.plist */,
 				FBE4B9A61DAE7F3D005FE5AB /* main.m */,
@@ -426,8 +428,8 @@
 				FBE4B9A01DAE7F3D005FE5AB /* Resources */,
 				FBE4BA181DAE86C6005FE5AB /* Embed App Extensions */,
 				FB448CF91E3A3E65003871E1 /* Embed Frameworks */,
-				FB448CFA1E3A3E6C003871E1 /* CopyFiles */,
-				FB448CF21E3A3D92003871E1 /* ShellScript */,
+				764223E020AB2BC300637DEF /* CopyFiles */,
+				764223E220AB2BE200637DEF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -468,10 +470,12 @@
 				TargetAttributes = {
 					BD5971361F0A285400405EB7 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = Z56W3DXA37;
 						ProvisioningStyle = Automatic;
 					};
 					FBE4B9A11DAE7F3D005FE5AB = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = Z56W3DXA37;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -484,6 +488,7 @@
 					};
 					FBE4BA0B1DAE86C6005FE5AB = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = Z56W3DXA37;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -495,6 +500,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = FBE4B9991DAE7F3D005FE5AB;
 			productRefGroup = FBE4B9A31DAE7F3D005FE5AB /* Products */;
@@ -521,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C1DF9520B70AF50096A09E /* Localizable.strings in Resources */,
 				FBE4B9B51DAE7F3D005FE5AB /* LaunchScreen.storyboard in Resources */,
 				FBE4B9B21DAE7F3D005FE5AB /* Assets.xcassets in Resources */,
 				FBE4B9B01DAE7F3D005FE5AB /* Main.storyboard in Resources */,
@@ -538,7 +545,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FB448CF21E3A3D92003871E1 /* ShellScript */ = {
+		764223E220AB2BE200637DEF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -549,7 +556,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Accengage.framework/strip-frameworks.sh\"";
+			shellScript = "FRAMEWORKS_DIRECTORY=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\nfind \"$FRAMEWORKS_DIRECTORY\" -name 'Accengage*.framework' -type d | while read -r framework\ndo\nframework_name=`basename \"$framework\"`\nframework_binary_path=$framework\"/${framework_name%.*}\"\n\narchs=\"$(lipo -info \"${framework_binary_path}\" | rev | cut -d ':' -f1 | rev)\"\nstripped=\"\"\nfor arch in $archs; do\nif ! [[ \"${VALID_ARCHS}\" == *\"$arch\"* ]]; then\nlipo -remove \"$arch\" -output \"$framework_binary_path\" \"$framework_binary_path\" || exit 1\nstripped=\"$stripped $arch\"\nfi\ndone\nif [[ \"$stripped\" != \"\" ]]; then\necho \"Stripped $framework_binary_path of architectures:$stripped\"\nif [ \"${CODE_SIGNING_REQUIRED}\" == \"YES\" ]; then\n/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"${framework_binary_path}\"\nfi\nfi\ndone\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -613,6 +620,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		76C1DF9020B708F40096A09E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76C1DF8F20B708F40096A09E /* en */,
+				76C1DF9120B708F90096A09E /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		BD59713F1F0A285400405EB7 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -645,7 +661,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z56W3DXA37;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../**",
@@ -664,7 +680,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z56W3DXA37;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../**",
@@ -774,7 +790,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = AccengageSampleObjc/AccengageSampleObjc.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z56W3DXA37;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../**",
@@ -794,7 +810,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = AccengageSampleObjc/AccengageSampleObjc.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z56W3DXA37;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../**",
@@ -811,7 +827,7 @@
 		FBE4BA161DAE86C6005FE5AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z56W3DXA37;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../**",
@@ -827,7 +843,7 @@
 		FBE4BA171DAE86C6005FE5AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z56W3DXA37;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../**",
@@ -850,6 +866,7 @@
 				BD5971481F0A285400405EB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FBE4B99D1DAE7F3D005FE5AB /* Build configuration list for PBXProject "AccengageSampleObjc" */ = {
 			isa = XCConfigurationList;

@@ -16,9 +16,14 @@ FOUNDATION_EXTERN NSString *const BMA4SInBoxButtonWillInteract;
 @interface BMA4SInBoxButton : NSObject
 
 /**
- This property define the title of BMA4SInBoxButton object
+ This property defines the title of a BMA4SInBoxButton object
  */
 @property (nonatomic, readonly) NSString *title;
+
+/**
+ This property defines the custom parameters of a BMA4SInBoxButton object
+ */
+@property (nonatomic, copy, readonly) NSDictionary *customParams;
 
 /** 
  Call 'interact' method on appropriate BMA4SInBoxButton object

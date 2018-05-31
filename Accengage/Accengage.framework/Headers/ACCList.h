@@ -72,7 +72,7 @@ typedef NS_ENUM(NSInteger, ACCListSubscriptionStatus) {
  *
  *  @param identifier The list id.
  */
-- (instancetype)initWithId:(NSString *)identifier;
+- (nullable instancetype)initWithId:(NSString *)identifier;
 
 /*!
  *  @brief Returns an @c ACCList object initialized with the given id.
@@ -82,7 +82,7 @@ typedef NS_ENUM(NSInteger, ACCListSubscriptionStatus) {
  *
  *  @param identifier The list id.
  */
-+ (instancetype)listWithId:(NSString *)identifier;
++ (nullable instancetype)listWithId:(NSString *)identifier;
 
 /*!
  *  @brief Returns an @c ACCList object initialized with the given id and the expiration date.
@@ -93,7 +93,7 @@ typedef NS_ENUM(NSInteger, ACCListSubscriptionStatus) {
  *  @param identifier The list id
  *  @param date The expiration date
  */
-- (instancetype)initWithId:(NSString *)identifier
+- (nullable instancetype)initWithId:(NSString *)identifier
             expirationDate:(nullable NSDate *)date NS_DESIGNATED_INITIALIZER;
 
 /*!
@@ -105,7 +105,7 @@ typedef NS_ENUM(NSInteger, ACCListSubscriptionStatus) {
  *  @param identifier The list id
  *  @param date The expiration date
  */
-+ (instancetype)listWithId:(NSString *)identifier expirationDate:(nullable NSDate *)date;
++ (nullable instancetype)listWithId:(NSString *)identifier expirationDate:(nullable NSDate *)date;
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
