@@ -16,10 +16,14 @@ FOUNDATION_EXPORT const unsigned char AccengageVersionString[];
 
 #import <Accengage/ACCList.h>
 #import <Accengage/ACCPush.h>
+#import <Accengage/ACCUserProfile.h>
 #import <Accengage/ACCCartItem.h>
 #import <Accengage/ACCConfiguration.h>
 #import <Accengage/ACCWKWebView.h>
 #import <Accengage/UIViewController+Accengage.h>
+#import <Accengage/ACCDeviceTag.h>
+#import <Accengage/ACCDeviceInformationSet.h>
+#import <Accengage/ACCCustomEventParams.h>
 
 /**
  * Old Headers
@@ -102,7 +106,17 @@ typedef NS_ENUM(NSUInteger, ACCOptIn) {
  *
  *  @return The shared @c ACCPush instance.
  */
+
 + (nullable ACCPush *)push;
+
+/*!
+ *  @brief Returns the shared @c ACCUserProfile instance.
+ *  @since 6.3.0
+ *
+ *  @return The shared @c ACCUserProfile instance.
+ */
+
++ (ACCUserProfile *)profile;
 
 ///-----------------------------------------------------------------------------
 /// @name Lifecycle
@@ -330,7 +344,7 @@ typedef NS_ENUM(NSUInteger, ACCOptIn) {
  *
  *  @param fields The @c NSDictionary with values that you want to synchronize.
  */
-+ (void)updateDeviceInfo:(NSDictionary<NSString *, NSString *> *)fields;
++ (void)updateDeviceInfo:(NSDictionary<NSString *, NSString *> *)fields __attribute__((deprecated("This method is deprecated starting from version 6.3.0. Use the updateDeviceInformation: method from ACCUserProfile class")));
 
 ///-----------------------------------------------------------------------------
 /// @name Track Events
@@ -353,9 +367,20 @@ typedef NS_ENUM(NSUInteger, ACCOptIn) {
  *  The values below @c 1000 are reserved for Accengage internal usage. You can use custom event type starting from @c 1001.
  *
  *  @param parameters  Arbitrary parameter array of characteristics. The values are expected to be @c NSString
+ *  @deprecated This method is deprecated starting from version 6.3.0
  */
-+ (void)trackEvent:(NSUInteger)eventType
-    withParameters:(NSArray<NSString *>  *)parameters;
++ (void)trackEvent:(NSUInteger)eventType withParameters:(NSArray<NSString *>  *)parameters __attribute__((deprecated("This method is deprecated starting from version 6.3.0. Use [Accengage trackEvent: withCustomParameters:] instead")));
+
+/*!
+ *  @brief Tracks an event with a type and a custom parameters object.
+ *  @since 6.3.0
+ *
+ *  @param eventType   The type of the event to record. The event type is a @c NSUInteger. @n
+ *  The values below @c 1000 are reserved for Accengage internal usage. You can use custom event type starting from @c 1001.
+ *
+ *  @param customParameters  ACCCustomEventParams object. Set the parameters by implementing ACCDataFormatting protocol methods.
+ */
++ (void)trackEvent:(NSUInteger)eventType withCustomParameters:(ACCCustomEventParams *)customParameters;
 
 /*!
  *  @brief Tracks a purchase of the specified amount and items, in the specified currency.
@@ -488,6 +513,21 @@ typedef NS_ENUM(NSUInteger, ACCOptIn) {
 + (void)trackScreenDismiss:(NSString *)screenID;
 
 ///-----------------------------------------------------------------------------
+/// @name  States
+///-----------------------------------------------------------------------------
+
+/*!
+ *  @brief Set a state.
+ *  @since 6.3.0
+ *
+ *  @param name  The state name.
+ *
+ *  @param value The state value.
+ */
+
++ (void)setState:(nullable NSString *)value forKey:(NSString *)name;
+
+///-----------------------------------------------------------------------------
 /// @name  Web Tracking
 ///-----------------------------------------------------------------------------
 
@@ -611,7 +651,6 @@ typedef NS_ENUM(NSUInteger, ACCOptIn) {
  */
 + (void)listOfSubscriptions:(void (^)(NSArray<ACCList *> * _Nullable result,
                                       NSError * _Nullable error))completionHandler;
-
 
 ///-----------------------------------------------------------------------------
 /// @name  Opening a URL

@@ -9,7 +9,7 @@
 #import "MainViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate () <CLLocationManagerDelegate, ACCPushDelegate>
+@interface AppDelegate () <CLLocationManagerDelegate, ACCPushDelegate, BMA4SInAppNotificationDataSource>
 
 @end
 

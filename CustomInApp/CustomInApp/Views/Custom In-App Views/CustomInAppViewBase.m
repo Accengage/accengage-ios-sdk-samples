@@ -122,7 +122,13 @@
         if ([actionType isEqualToString:CIActionTypeUDI]) {
             if (actionExtra) {
                 return ^() {
-                    [Accengage updateDeviceInfo:@{actionValue: actionExtra}];
+                    ACCDeviceInformationSet *deviceInfo = [[ACCDeviceInformationSet alloc] init];
+                    [deviceInfo setString:actionExtra forKey:actionValue];
+                    [[Accengage profile] updateDeviceInformation:deviceInfo withCompletionHandler:^(NSError * _Nullable error) {
+                        if (error) {
+                            NSLog(@"*** UDI error : %@", [error localizedDescription]);
+                        }
+                    }];
                     if (defaultAction) {
                         defaultAction();
                     }
@@ -143,7 +149,9 @@
         // Event
         else if ([actionType isEqualToString:CIActionTypeEvent]) {
             return ^() {
-                [Accengage trackEvent:actionValue.integerValue withParameters:@[actionExtra?:@""]];
+                ACCCustomEventParams *customParams = [[ACCCustomEventParams alloc] init];
+                [customParams setString:actionExtra?:@"" forKey:@"value"];
+                [Accengage trackEvent:[actionValue integerValue] withCustomParameters:customParams];
                 if (defaultAction) {
                     defaultAction();
                 }
