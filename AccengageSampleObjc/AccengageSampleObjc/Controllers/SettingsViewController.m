@@ -159,7 +159,13 @@ heightForFooterInSection:(NSInteger)section {
         
         NSString* text = textField.text ?: @"";
         [[NSUserDefaults standardUserDefaults] setValue:text forKey:@"user.name"];
-        [Accengage updateDeviceInfo:@{@"user_name": text}];
+        ACCDeviceInformationSet *deviceInfo = [[ACCDeviceInformationSet alloc] init];
+        [deviceInfo setString:text forKey:@"user_name"];
+        [[Accengage profile] updateDeviceInformation:deviceInfo withCompletionHandler:^(NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"*** UDI error : %@", [error localizedDescription]);
+            }
+        }];
     }];
     
     NSString *name =[[NSUserDefaults standardUserDefaults] valueForKey:@"user.name"];

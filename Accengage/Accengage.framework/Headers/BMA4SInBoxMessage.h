@@ -28,6 +28,11 @@ typedef void (^BMA4SInBoxDisplayHandler)(BMA4SInBoxMessage *message, BMA4SInBoxM
 @interface BMA4SInBoxMessage : NSObject
 
 /**
+ This property defines the identifier of BMA4SInBoxMessage object
+ */
+@property (nonatomic, readonly) NSString *identifier;
+
+/**
  This property defines the title of BMA4SInBoxMessage object
  */
 @property (weak, nonatomic, readonly) NSString *title;

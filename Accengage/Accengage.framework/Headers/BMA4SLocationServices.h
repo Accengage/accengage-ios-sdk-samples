@@ -105,4 +105,29 @@
  */
 + (BOOL)isBeaconMonitoringAvailible;
 
+
+//------------------------------------------------------------------------------
+/** @name Monitoring */
+//------------------------------------------------------------------------------
+
+/**
+ *  Allows you to limit the number of regions monitored simultaneously by the SDK. Accepted values are between 0
+ *  and 20. The default value is 20.
+ *
+ *  @param count Maximum number of regions (geofence and beacons) monitored simultaneously by the SDK
+ *
+ *  @since 6.3.0
+ */
++ (void)setMonitoredRegionCount:(NSInteger)count;
+
+
+/**
+ *  @return Maximum number of regions (geofence and beacons) monitored simultaneously by the SDK
+ *
+ *  @see setMonitoredRegionCount
+ *
+ *  @since 6.3.0
+ */
++ (NSInteger)monitoredRegionCount;
+
 @end
