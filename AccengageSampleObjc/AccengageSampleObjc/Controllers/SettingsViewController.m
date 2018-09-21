@@ -8,37 +8,15 @@
 #import "SettingsViewController.h"
 #import "AppDelegate.h"
 
-@implementation SettingsCell
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    [self.status setOn:selected animated:animated];
-}
-
-@end
-
-typedef NS_ENUM(NSUInteger, SettingsCellType) {
-    SettingsCellTypeSample,
-    SettingsCellTypeSwitch
-};
+/*
+ * Push notification setting segue identifier
+ */
+static NSString * const pushNotificationSettingIdentifier = @"showPushNotificationSettings";
 
 @interface SettingsViewController ()
-@property(nonatomic, strong) NSArray *settings;
 @end
 
 @implementation SettingsViewController
-
-static NSString * const reuseIdentifierSample = @"SimpleCell";
-static NSString * const reuseIdentifierSwitch = @"SwitchCell";
-static NSString * const reuseIdentifierFooter = @"FooterCell";
-
-static NSString * const cellTypeKey = @"cellTypeKey";
-static NSString * const cellTitleKey = @"cellTitleKey";
-static NSString * const cellDetailsKey = @"cellDetailsKey";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,7 +41,10 @@ static NSString * const cellDetailsKey = @"cellDetailsKey";
                                 cellTitleKey: @"Enable user data collection",
                                 cellDetailsKey: @"On : if you want to enable user data collection\nOff : to disable user data collection"};
     
-    self.settings = @[userName, inappLock, beacons, geofences, dataOptin ];
+    NSDictionary *pushNotificationSetting = @{cellTypeKey: @(SettingsCellTypeSample),
+                                cellTitleKey: @"Push notifications settings"};
+    
+    self.settings = @[userName, inappLock, beacons, geofences, dataOptin, pushNotificationSetting];
     
     self.accengageAlias = @"SETTINGS";
 }
@@ -73,38 +54,21 @@ static NSString * const cellDetailsKey = @"cellDetailsKey";
     [self updateSelectionsAnimated:NO];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.settings.count;
-}
+#pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = nil;
-    
-    NSDictionary *item =  self.settings[indexPath.section];
-    
-    SettingsCellType type = [item[cellTypeKey] integerValue];
-    
-    if (type == SettingsCellTypeSwitch) {
-        cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierSwitch];
-        
-        ((SettingsCell*)cell).title.text = item[cellTitleKey];
-    }
-    else {
-        cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierSample];
-        cell.textLabel.text = item[cellTitleKey];
-    }
-    
-    return cell;
-}
-
+/**
+ * Called once the specified row is selected.
+ */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     switch (indexPath.section) {
         case 0:{
             [self setUserName];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            break;
+        }
+        case 5:{
+            [self performSegueWithIdentifier:pushNotificationSettingIdentifier sender:self];
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             break;
         }
@@ -114,6 +78,9 @@ static NSString * const cellDetailsKey = @"cellDetailsKey";
     }
 }
 
+/**
+ * Called once the specified row is deselected.
+ */
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *item =  self.settings[indexPath.section];
     SettingsCellType type = [item[cellTypeKey] integerValue];
@@ -124,31 +91,7 @@ static NSString * const cellDetailsKey = @"cellDetailsKey";
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView
-viewForFooterInSection:(NSInteger)section {
-    UITableViewCell *view = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierFooter];
-    
-    NSDictionary *item =  self.settings[section];
-    NSString *details = item[cellDetailsKey];
-    
-    if (!details) {
-        return nil;
-    }
-    
-    view.textLabel.text = details;
-    view.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    view.textLabel.numberOfLines = 0;
-    return view;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView
-heightForFooterInSection:(NSInteger)section {
-    
-    return [self heightForText:self.settings[section][cellDetailsKey]];
-}
-
 #pragma mark - Actions
-
 
 - (void)setUserName {
     SCLAlertView *alert = [self editionAlertView];
@@ -172,7 +115,6 @@ heightForFooterInSection:(NSInteger)section {
     NSString *subtitle = name ? [NSString stringWithFormat:@"The current name is: %@", name] : @"";
     [alert showEdit:nil title:@"User's name" subTitle:subtitle closeButtonTitle:@"Cancel" duration:0.0f];
 }
-
 
 - (void)setStatus:(BOOL)status forIndex:(NSInteger)index {
     switch (index) {
@@ -249,18 +191,5 @@ heightForFooterInSection:(NSInteger)section {
     }
 }
 
-- (float)heightForText:(NSString *)text {
-    CGSize maximumLabelSize =
-    CGSizeMake(self.tableView.bounds.size.width, FLT_MAX);
-    
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated"
-    CGSize expectedLabelSize = [text sizeWithFont:[UIFont systemFontOfSize:14.]
-                                constrainedToSize:maximumLabelSize
-                                    lineBreakMode:NSLineBreakByWordWrapping];
-#pragma clang diagnostic pop
-    
-    return expectedLabelSize.height + 10;
-}
 
 @end
