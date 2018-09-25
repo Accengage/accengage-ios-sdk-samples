@@ -10,6 +10,8 @@
 		764223DD20AB2B5E00637DEF /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764223DC20AB2B5D00637DEF /* Accengage.framework */; };
 		764223E120AB2BD000637DEF /* Accengage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 764223DC20AB2B5D00637DEF /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76C1DF9520B70AF50096A09E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76C1DF9020B708F40096A09E /* Localizable.strings */; };
+		87E792B52151003B0022526E /* PushNotificationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E792B42151003B0022526E /* PushNotificationSettingsViewController.m */; };
+		87E792B8215103D80022526E /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E792B7215103D80022526E /* SettingsCell.m */; };
 		BD5971381F0A285400405EB7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA261DAE8A0E005FE5AB /* UserNotifications.framework */; };
 		BD59713A1F0A285400405EB7 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD5971391F0A285400405EB7 /* UserNotificationsUI.framework */; };
 		BD59713E1F0A285400405EB7 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD59713D1F0A285400405EB7 /* NotificationViewController.m */; };
@@ -102,6 +104,10 @@
 		764223DC20AB2B5D00637DEF /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
 		76C1DF8F20B708F40096A09E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		76C1DF9120B708F90096A09E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		87E792B32151003B0022526E /* PushNotificationSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushNotificationSettingsViewController.h; sourceTree = "<group>"; };
+		87E792B42151003B0022526E /* PushNotificationSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushNotificationSettingsViewController.m; sourceTree = "<group>"; };
+		87E792B6215103D80022526E /* SettingsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsCell.h; sourceTree = "<group>"; };
+		87E792B7215103D80022526E /* SettingsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsCell.m; sourceTree = "<group>"; };
 		BD5971371F0A285400405EB7 /* Carousel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Carousel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD5971391F0A285400405EB7 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		BD59713C1F0A285400405EB7 /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
@@ -289,6 +295,10 @@
 				FBE4B9CC1DAE80A1005FE5AB /* ProductsViewController.m */,
 				FBE4B9CD1DAE80A1005FE5AB /* SettingsViewController.h */,
 				FBE4B9CE1DAE80A1005FE5AB /* SettingsViewController.m */,
+				87E792B32151003B0022526E /* PushNotificationSettingsViewController.h */,
+				87E792B42151003B0022526E /* PushNotificationSettingsViewController.m */,
+				87E792B6215103D80022526E /* SettingsCell.h */,
+				87E792B7215103D80022526E /* SettingsCell.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -573,6 +583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87E792B52151003B0022526E /* PushNotificationSettingsViewController.m in Sources */,
 				FBE4B9AA1DAE7F3D005FE5AB /* AppDelegate.m in Sources */,
 				FBE4B9FB1DAE816C005FE5AB /* SCLAlertViewResponder.m in Sources */,
 				FBE4B9D71DAE80A1005FE5AB /* InBoxViewController.m in Sources */,
@@ -580,6 +591,7 @@
 				FBE4B9FD1DAE816C005FE5AB /* SCLButton.m in Sources */,
 				FBE4B9D81DAE80A1005FE5AB /* MainViewController.m in Sources */,
 				FBE4B9FC1DAE816C005FE5AB /* SCLAlertViewStyleKit.m in Sources */,
+				87E792B8215103D80022526E /* SettingsCell.m in Sources */,
 				FBE4B9DB1DAE80A1005FE5AB /* InboxTools.m in Sources */,
 				FBE4B9FF1DAE816C005FE5AB /* SCLTextView.m in Sources */,
 				FBE4B9FE1DAE816C005FE5AB /* SCLSwitchView.m in Sources */,

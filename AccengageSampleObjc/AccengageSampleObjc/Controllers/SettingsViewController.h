@@ -6,14 +6,7 @@
 //
 
 #import "BaseTableViewController.h"
-
-@interface SettingsCell : UITableViewCell
-
-@property (strong, nonatomic) IBOutlet UILabel *title;
-@property (strong, nonatomic) IBOutlet UISwitch *status;
-
-@end
-
+#import "SettingsCell.h"
 
 @interface SettingsViewController : BaseTableViewController
 
