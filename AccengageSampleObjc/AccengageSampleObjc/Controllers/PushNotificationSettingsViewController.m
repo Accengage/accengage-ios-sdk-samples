@@ -24,19 +24,19 @@ static NSString * const MY_CATEGORY = @"item";
     
     NSDictionary *multimedia = @{cellTypeKey: @(SettingsCellTypeSwitch),
                                 cellTitleKey: @"Multimedia",
-                                cellDetailsKey: @"On : if you want to add the multimedia identifier\nOff : to delete the multimedia identifier"};
+                                cellDetailsKey: @"On : if you want to receive multimedia notifications\nOff : to not receive multimedia notifications"};
     
     NSDictionary *technology = @{cellTypeKey: @(SettingsCellTypeSwitch),
                                  cellTitleKey: @"Technology",
-                                 cellDetailsKey: @"On : if you want to add the technology identifier\nOff : to delete the technology identifier"};
+                                 cellDetailsKey: @"On : if you want to receive technology notifications\nOff : to not receive technology notifications"};
     
     NSDictionary *artEtDesign = @{cellTypeKey: @(SettingsCellTypeSwitch),
                                  cellTitleKey: @"Art et design",
-                                 cellDetailsKey: @"On : if you want to add the art et design identifier\nOff : to delete the art and design identifier"};
+                                 cellDetailsKey: @"On : if you want to receive art and design notifications\nOff : to not receive art and design notifications"};
     
     NSDictionary *business = @{cellTypeKey: @(SettingsCellTypeSwitch),
                                  cellTitleKey: @"Business",
-                                 cellDetailsKey: @"On : if you want to add the business identifier\nOff : to delete the business identifier"};
+                                 cellDetailsKey: @"On : if you want to receive business notifications\nOff : to not receive business notifications"};
     
     super.settings = @[multimedia, technology, artEtDesign, business];
     
