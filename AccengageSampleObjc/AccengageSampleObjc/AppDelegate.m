@@ -7,15 +7,20 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "PushNotificationSettingsViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate () <CLLocationManagerDelegate, ACCPushDelegate, BMA4SInAppNotificationDataSource>
+static NSString *ACC_PUSH_NOTIFICATION_STORYBOARD_ID = @"pushNotificationSettingsID";
+
+@interface AppDelegate () <CLLocationManagerDelegate, UNUserNotificationCenterDelegate,ACCPushDelegate, BMA4SInAppNotificationDataSource>
 
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     
     ACCConfiguration *config = [ACCConfiguration defaultConfig];
     [Accengage startWithConfig:config optIn:ACCOptInEnabled];
@@ -57,7 +62,7 @@
                                                                           [Accengage setGeolocOptInEnabled:YES];
                                                                           [Accengage setLoggingEnabled:YES];
                                                                           
-                                                                          [[Accengage push] registerForUserNotificationsWithOptions:ACCNotificationOptionAlert|ACCNotificationOptionBadge|ACCNotificationOptionSound];
+                                                                          [[Accengage push] registerForUserNotificationsWithOptions:ACCNotificationOptionAlert|ACCNotificationOptionBadge|ACCNotificationOptionSound|ACCNotificationOptionProvisional|ACCAuthorizationOptionProvidesAppNotificationSettings];
                                                                           
                                                                           [SampleHelpers setBeaconServiceEnabled:YES];
                                                                           [SampleHelpers setGeofenceServiceEnabled:YES];
@@ -86,6 +91,9 @@
             [Accengage setDataOptInEnabled:NO];
             [Accengage setGeolocOptInEnabled:NO];
         }
+        
+        // Initiate the registration process with APNS. It will request for notifications authorization with the given options
+        [[Accengage push] registerForUserNotificationsWithOptions:ACCNotificationOptionAlert|ACCNotificationOptionBadge|ACCNotificationOptionSound|ACCNotificationOptionProvisional|ACCAuthorizationOptionProvidesAppNotificationSettings];
     }
     
     return YES;
@@ -103,6 +111,17 @@
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     [self handleURL:url];
     return YES;
+}
+
+///--------------------------------------
+#pragma mark - User notifocation center delegate
+///--------------------------------------
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    PushNotificationSettingsViewController *pushVC = [storyboard instantiateViewControllerWithIdentifier:ACC_PUSH_NOTIFICATION_STORYBOARD_ID];
+    [self.window.rootViewController presentViewController:pushVC animated:YES completion:nil];
 }
 
 ///--------------------------------------

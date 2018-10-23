@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		764223DD20AB2B5E00637DEF /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764223DC20AB2B5D00637DEF /* Accengage.framework */; };
-		764223E120AB2BD000637DEF /* Accengage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 764223DC20AB2B5D00637DEF /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76C1DF9520B70AF50096A09E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76C1DF9020B708F40096A09E /* Localizable.strings */; };
+		8736D639217F18A2007F6C47 /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8736D638217F18A2007F6C47 /* Accengage.framework */; };
+		8736D63A217F2866007F6C47 /* Accengage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8736D638217F18A2007F6C47 /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		87E792B52151003B0022526E /* PushNotificationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E792B42151003B0022526E /* PushNotificationSettingsViewController.m */; };
 		87E792B8215103D80022526E /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E792B7215103D80022526E /* SettingsCell.m */; };
 		BD5971381F0A285400405EB7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4BA261DAE8A0E005FE5AB /* UserNotifications.framework */; };
@@ -72,7 +72,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				764223E120AB2BD000637DEF /* Accengage.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +81,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8736D63A217F2866007F6C47 /* Accengage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,9 +101,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		764223DC20AB2B5D00637DEF /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
 		76C1DF8F20B708F40096A09E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		76C1DF9120B708F90096A09E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8736D638217F18A2007F6C47 /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
 		87E792B32151003B0022526E /* PushNotificationSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushNotificationSettingsViewController.h; sourceTree = "<group>"; };
 		87E792B42151003B0022526E /* PushNotificationSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushNotificationSettingsViewController.m; sourceTree = "<group>"; };
 		87E792B6215103D80022526E /* SettingsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsCell.h; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				764223DD20AB2B5E00637DEF /* Accengage.framework in Frameworks */,
+				8736D639217F18A2007F6C47 /* Accengage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +226,7 @@
 		FBD2DD6F1DE30E2300C7384B /* Accengage */ = {
 			isa = PBXGroup;
 			children = (
-				764223DC20AB2B5D00637DEF /* Accengage.framework */,
+				8736D638217F18A2007F6C47 /* Accengage.framework */,
 				FBD2DD711DE30E2300C7384B /* AccengageConfig.plist */,
 				FBD2DD721DE30E2300C7384B /* AccengageExtension.framework */,
 			);

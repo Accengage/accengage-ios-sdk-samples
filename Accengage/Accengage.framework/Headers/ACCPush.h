@@ -24,7 +24,11 @@ typedef NS_OPTIONS(NSUInteger, ACCNotificationOptions) {
     /*! The ability to display alerts. */
     ACCNotificationOptionAlert   = (1 << 2),
     /*! The ability to display notifications in a CarPlay environment. */
-    ACCNotificationOptionCarPlay = (1 << 3)
+    ACCNotificationOptionCarPlay = (1 << 3),
+    /*! An option indicating the system should display a button for in-app notification settings. */
+    ACCAuthorizationOptionProvidesAppNotificationSettings = (1 << 5),
+    /*! The ability to post noninterrupting notifications provisionally to the Notification Center. */
+    ACCNotificationOptionProvisional = (1 << 6)
 };
 
 @protocol ACCPushDelegate;
@@ -385,26 +389,62 @@ typedef NS_OPTIONS(NSUInteger, ACCNotificationOptions) {
 
 @optional
 /*!
- *  @brief Called when your app has received a remote notification sended by our platform.
+ *  @brief Called when your app receives a remote notification sent by our platform.
  *  @since 6.0.0
  *
  *  @param notifId The identifier of the notification
- *  @param params  The additional parameters
+ *  @param params  The custom parameters
  *
- *  @note This method is called only if the application is in forgeround.
+ *  @note This method is called only if the application is in foreground.
  */
 - (void)didReceiveNotificationWithId:(NSString *)notifId
                           parameters:(NSDictionary *)params;
 
 /*!
- *  @brief Called when the user has clicked on remote notification.
+ *  @brief Called when your app receives a remote notification sent by our platform.
+ *  @since 6.3.1
+ *
+ *  @param notifId The identifier of the notification
+ *  @param allParams  All the parameters
+ *
+ *  @note This method is called only if the application is in foreground.
+ */
+- (void)didReceiveNotificationWithId:(NSString *)notifId allParameters:(NSDictionary *)allParams;
+
+/*!
+ *  @brief Called when the user clicks on a remote notification.
  *  @since 6.0.0
  *
  *  @param notifId The identifier of the notification
- *  @param params  The additional parameters
+ *  @param params  The custom parameters
  */
 - (void)didOpenNotificationWithId:(NSString *)notifId
                        parameters:(NSDictionary *)params;
+
+/*!
+ *  @brief Called when the user clicks on a remote notification.
+ *  @since 6.3.1
+ *
+ *  @param notifId The identifier of the notification
+ *  @param allParams  All the parameters
+ */
+- (void)didOpenNotificationWithId:(NSString *)notifId allParameters:(NSDictionary *)allParams;
+
+/*!
+ *  @brief Called when the user taps an action button in an alert displayed
+ *  in response to a remote notification.
+ *  @since 6.3.1
+ *
+ *  @param actionId The identifier associated with the custom action.
+ *  @param notifId  The identifier of the notification.
+ *  @param allParams  All the parameters associated with the notification.
+ *  @param actionParams  The additional parameters associated with the action
+ */
+- (void)didClickOnActionWithIdentifier:(NSString *)actionId
+           forRemoteNotificationWithId:(NSString *)notifId
+                allNotificationParameters:(NSDictionary *)allParams
+                      actionParameters:(NSDictionary *)actionParams;
+
 
 /*!
  *  @brief Called when the user taps an action button in an alert displayed
@@ -413,8 +453,8 @@ typedef NS_OPTIONS(NSUInteger, ACCNotificationOptions) {
  *
  *  @param actionId The identifier associated with the custom action.
  *  @param notifId  The identifier of the notification
- *  @param params1  The additional parameters associated with the notification
- *  @param params2  The additional parameters associated with the action
+ *  @param params1  The custom parameters associated with the notification
+ *  @param params2  The custom parameters associated with the action
  */
 - (void)didClickOnActionWithIdentifier:(NSString *)actionId
            forRemoteNotificationWithId:(NSString *)notifId
