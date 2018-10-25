@@ -44,7 +44,11 @@ static NSString * const pushNotificationSettingIdentifier = @"showPushNotificati
     NSDictionary *pushNotificationSetting = @{cellTypeKey: @(SettingsCellTypeSample),
                                 cellTitleKey: @"Push notifications settings"};
     
-    self.settings = @[userName, inappLock, beacons, geofences, dataOptin, pushNotificationSetting];
+    NSDictionary *registerRemoteNotification = @{
+                                                 cellTypeKey: @(SettingsCellTypeSample),
+                                                 cellTitleKey: @"Register for remote notifications"};
+    
+    self.settings = @[userName, inappLock, beacons, geofences, dataOptin, pushNotificationSetting, registerRemoteNotification];
     
     self.accengageAlias = @"SETTINGS";
 }
@@ -55,6 +59,17 @@ static NSString * const pushNotificationSettingIdentifier = @"showPushNotificati
 }
 
 #pragma mark - Table view data source
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    if (cell) {
+        if (indexPath.section == 6) {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
+    }
+    return cell;
+}
 
 /**
  * Called once the specified row is selected.
@@ -69,6 +84,11 @@ static NSString * const pushNotificationSettingIdentifier = @"showPushNotificati
         }
         case 5:{
             [self performSegueWithIdentifier:pushNotificationSettingIdentifier sender:self];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            break;
+        }
+        case 6:{
+            [[Accengage push] registerForUserNotificationsWithOptions:ACCNotificationOptionAlert|ACCNotificationOptionBadge|ACCNotificationOptionSound];
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             break;
         }
