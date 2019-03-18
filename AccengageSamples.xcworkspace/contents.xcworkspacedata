@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:GoogleTagManagerBridge/GoogleTagManagerBridge.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:/Users/bmatthai/Dev/accengage-ios-sdk-samples/AccengageSampleObjc/AccengageSampleObjc/Localizable.strings">
    </FileRef>
    <FileRef
