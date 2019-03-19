@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Firebase/Firebase.h"
 
 @interface ViewController ()
 
@@ -20,8 +21,8 @@
 }
 
 - (IBAction)trackLeadAction:(id)sender {
-    
-    
+    [FIRAnalytics logEventWithName:@"track_lead" parameters:    @{@"acc_lead_label":@"testlabel", @"acc_lead_value":@"test_value"}];
+
 }
 
 @end

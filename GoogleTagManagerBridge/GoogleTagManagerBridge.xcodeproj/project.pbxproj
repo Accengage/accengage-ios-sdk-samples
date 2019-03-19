@@ -18,6 +18,7 @@
 		76CFFC84223FFC6900597C96 /* GoogleTagManagerBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CFFC83223FFC6900597C96 /* GoogleTagManagerBridgeTests.m */; };
 		76CFFC8F223FFC6900597C96 /* GoogleTagManagerBridgeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CFFC8E223FFC6900597C96 /* GoogleTagManagerBridgeUITests.m */; };
 		76CFFC9E223FFF8F00597C96 /* ACCCustomTagProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CFFC9D223FFF8F00597C96 /* ACCCustomTagProvider.m */; };
+		76DEFCE92241013900AA1686 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76DEFCE82241013900AA1686 /* GoogleService-Info.plist */; };
 		7AF00014C255345D46B6E8F7 /* libPods-GoogleTagManagerBridgeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB4FF9609FF79A8C521150DC /* libPods-GoogleTagManagerBridgeUITests.a */; };
 		86F68F0149F3BA3E8EA0EEE7 /* libPods-GoogleTagManagerBridgeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AB3DD6B14C4EE74A4BF03B /* libPods-GoogleTagManagerBridgeTests.a */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		76CFFC90223FFC6900597C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76CFFC9C223FFF8F00597C96 /* ACCCustomTagProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACCCustomTagProvider.h; sourceTree = "<group>"; };
 		76CFFC9D223FFF8F00597C96 /* ACCCustomTagProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACCCustomTagProvider.m; sourceTree = "<group>"; };
+		76DEFCE82241013900AA1686 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B34861029675A3F2E6304C1A /* Pods-GoogleTagManagerBridgeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridgeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridgeUITests/Pods-GoogleTagManagerBridgeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B5AB3DD6B14C4EE74A4BF03B /* libPods-GoogleTagManagerBridgeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleTagManagerBridgeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0A6293D546E03913CDB493 /* Pods-GoogleTagManagerBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridge.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridge/Pods-GoogleTagManagerBridge.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,17 +113,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		76136B3B22400ED600350B7D /* container */ = {
-			isa = PBXGroup;
-			children = (
-				76136B3C22400ED600350B7D /* GTM-W5JF7QW.json */,
-			);
-			path = container;
-			sourceTree = "<group>";
-		};
 		76CFFC5E223FFC6800597C96 = {
 			isa = PBXGroup;
 			children = (
+				76DEFCE52240FF1100AA1686 /* container */,
 				76CFFC69223FFC6800597C96 /* GoogleTagManagerBridge */,
 				76CFFC82223FFC6900597C96 /* GoogleTagManagerBridgeTests */,
 				76CFFC8D223FFC6900597C96 /* GoogleTagManagerBridgeUITests */,
@@ -144,7 +139,6 @@
 		76CFFC69223FFC6800597C96 /* GoogleTagManagerBridge */ = {
 			isa = PBXGroup;
 			children = (
-				76136B3B22400ED600350B7D /* container */,
 				76CFFC6A223FFC6800597C96 /* AppDelegate.h */,
 				76CFFC6B223FFC6800597C96 /* AppDelegate.m */,
 				76CFFC6D223FFC6800597C96 /* ViewController.h */,
@@ -153,6 +147,7 @@
 				76CFFC73223FFC6900597C96 /* Assets.xcassets */,
 				76CFFC75223FFC6900597C96 /* LaunchScreen.storyboard */,
 				76CFFC78223FFC6900597C96 /* Info.plist */,
+				76DEFCE82241013900AA1686 /* GoogleService-Info.plist */,
 				76CFFC79223FFC6900597C96 /* main.m */,
 				76CFFC9C223FFF8F00597C96 /* ACCCustomTagProvider.h */,
 				76CFFC9D223FFF8F00597C96 /* ACCCustomTagProvider.m */,
@@ -176,6 +171,14 @@
 				76CFFC90223FFC6900597C96 /* Info.plist */,
 			);
 			path = GoogleTagManagerBridgeUITests;
+			sourceTree = "<group>";
+		};
+		76DEFCE52240FF1100AA1686 /* container */ = {
+			isa = PBXGroup;
+			children = (
+				76136B3C22400ED600350B7D /* GTM-W5JF7QW.json */,
+			);
+			path = container;
 			sourceTree = "<group>";
 		};
 		D8468484E18D440685F4627F /* Frameworks */ = {
@@ -297,6 +300,7 @@
 			files = (
 				76CFFC77223FFC6900597C96 /* LaunchScreen.storyboard in Resources */,
 				76CFFC74223FFC6900597C96 /* Assets.xcassets in Resources */,
+				76DEFCE92241013900AA1686 /* GoogleService-Info.plist in Resources */,
 				76CFFC72223FFC6800597C96 /* Main.storyboard in Resources */,
 				76136B3D22400ED700350B7D /* GTM-W5JF7QW.json in Resources */,
 			);

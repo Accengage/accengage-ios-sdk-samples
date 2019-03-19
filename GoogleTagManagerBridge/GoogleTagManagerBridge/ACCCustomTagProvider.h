@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ACCCustomTagProvider : NSObject <TAGCustomFunction>
 
+- (void) trackLead:(NSDictionary*)parameters;
+
 @end
 
 NS_ASSUME_NONNULL_END
