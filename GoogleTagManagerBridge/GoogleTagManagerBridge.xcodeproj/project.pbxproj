@@ -21,6 +21,8 @@
 		76DEFCE92241013900AA1686 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76DEFCE82241013900AA1686 /* GoogleService-Info.plist */; };
 		7AF00014C255345D46B6E8F7 /* libPods-GoogleTagManagerBridgeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB4FF9609FF79A8C521150DC /* libPods-GoogleTagManagerBridgeUITests.a */; };
 		86F68F0149F3BA3E8EA0EEE7 /* libPods-GoogleTagManagerBridgeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AB3DD6B14C4EE74A4BF03B /* libPods-GoogleTagManagerBridgeTests.a */; };
+		870B9BAA2241423D00BDCF08 /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870B9BA92241423D00BDCF08 /* Accengage.framework */; };
+		870B9BAC2241425200BDCF08 /* Accengage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 870B9BA92241423D00BDCF08 /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,19 @@
 			remoteInfo = GoogleTagManagerBridge;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		870B9BAB2241424B00BDCF08 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				870B9BAC2241425200BDCF08 /* Accengage.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1947E357F2837C2AFC66D79A /* Pods-GoogleTagManagerBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridge/Pods-GoogleTagManagerBridge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +79,7 @@
 		76CFFC9C223FFF8F00597C96 /* ACCCustomTagProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACCCustomTagProvider.h; sourceTree = "<group>"; };
 		76CFFC9D223FFF8F00597C96 /* ACCCustomTagProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACCCustomTagProvider.m; sourceTree = "<group>"; };
 		76DEFCE82241013900AA1686 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		870B9BA92241423D00BDCF08 /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
 		B34861029675A3F2E6304C1A /* Pods-GoogleTagManagerBridgeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridgeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridgeUITests/Pods-GoogleTagManagerBridgeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B5AB3DD6B14C4EE74A4BF03B /* libPods-GoogleTagManagerBridgeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleTagManagerBridgeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0A6293D546E03913CDB493 /* Pods-GoogleTagManagerBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridge.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridge/Pods-GoogleTagManagerBridge.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8DDC718A2B09E1DC4AAB89 /* libPods-GoogleTagManagerBridge.a in Frameworks */,
+				870B9BAA2241423D00BDCF08 /* Accengage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +156,7 @@
 		76CFFC69223FFC6800597C96 /* GoogleTagManagerBridge */ = {
 			isa = PBXGroup;
 			children = (
+				870B9BA92241423D00BDCF08 /* Accengage.framework */,
 				76CFFC6A223FFC6800597C96 /* AppDelegate.h */,
 				76CFFC6B223FFC6800597C96 /* AppDelegate.m */,
 				76CFFC6D223FFC6800597C96 /* ViewController.h */,
@@ -203,6 +221,7 @@
 				76CFFC64223FFC6800597C96 /* Frameworks */,
 				76CFFC65223FFC6800597C96 /* Resources */,
 				816962C617D2103B3C382D41 /* [CP] Copy Pods Resources */,
+				870B9BAB2241424B00BDCF08 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -595,6 +614,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z56W3DXA37;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleTagManagerBridge",
+				);
 				INFOPLIST_FILE = GoogleTagManagerBridge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -614,6 +637,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z56W3DXA37;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleTagManagerBridge",
+				);
 				INFOPLIST_FILE = GoogleTagManagerBridge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
