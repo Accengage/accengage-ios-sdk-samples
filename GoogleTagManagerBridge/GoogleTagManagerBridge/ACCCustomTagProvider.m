@@ -62,44 +62,47 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
         return nil;
     }
     
+    NSMutableDictionary *mutableDictionnary = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+    [mutableDictionnary removeObjectForKey:KEY_ACTION];
+    NSDictionary *accengageParamters = mutableDictionnary;
+    
     if ([acccengageAction isEqualToString:ACTION_TRACK_EVENT]) {
         
-        [self parseTrackEventMessage:parameters];
+        [self parseTrackEventMessage:accengageParamters];
         
     } else if([acccengageAction isEqualToString:ACTION_TRACK_LEAD]) {
         
-        [self parseTrackLeadMessage:parameters];
+        [self parseTrackLeadMessage:accengageParamters];
         
     } else if ([acccengageAction isEqualToString:ACTION_TRACK_ADD_TO_CART]) {
         
-        [self parseTrackCartMessage:parameters];
+        [self parseTrackCartMessage:accengageParamters];
         
     } else if([acccengageAction isEqualToString:ACTION_TRACK_PURCHASE]) {
         
-        [self parseTrackPurchaseMessage:parameters];
+        [self parseTrackPurchaseMessage:accengageParamters];
         
     } else if([acccengageAction isEqualToString:ACTION_SET_UDI]) {
         
-        [self parseTrackSetUdi:parameters];
+        [self parseTrackSetUdi:accengageParamters];
         
     } else if([acccengageAction isEqualToString:ACTION_INCREMENT_UDI]) {
         
-        [self parseTrackIncrementUdi:parameters];
+        [self parseTrackIncrementUdi:accengageParamters];
         
     } else if([acccengageAction isEqualToString:ACTION_DECREMENT_UDI]) {
         
-        [self parseTrackDecrementUdi:parameters];
+        [self parseTrackDecrementUdi:accengageParamters];
         
     } else if([acccengageAction isEqualToString:ACTION_DELETE_UDI]) {
         
-        [self parseTrackDeleteUdi:parameters];
+        [self parseTrackDeleteUdi:accengageParamters];
         
     }
+    
     return nil;
     
 }
-
-
 
 ///--------------------------------------
 #pragma mark - Tracking -
@@ -117,18 +120,22 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     
     ACCCustomEventParams *customEventParams = [[ACCCustomEventParams alloc] init];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        if (![@[KEY_EVENT_ID, KEY_ACTION] containsObject:key]) {
-            if ([obj isKindOfClass:[NSString class]]) {
-                NSDate *date = [self dateFromString:obj];
-                if (date) {
-                    [customEventParams setDate:date forKey:key];
-                } else {
-                    [customEventParams setString:obj forKey:key];
-                }
-            } else if ([obj isKindOfClass:[NSNumber class]]) {
-                [customEventParams setNumber:obj forKey:key];
-            }
+        
+        if (!obj) {
+            return;
         }
+        
+        if ([obj isKindOfClass:[NSString class]]) {
+            NSDate *date = [self dateFromString:obj];
+            if (date) {
+                [customEventParams setDate:date forKey:key];
+            } else {
+                [customEventParams setString:obj forKey:key];
+            }
+        } else if ([obj isKindOfClass:[NSNumber class]]) {
+            [customEventParams setNumber:obj forKey:key];
+        }
+        
     }];
     
     [Accengage trackEvent:[type integerValue] withCustomParameters:customEventParams];
@@ -200,18 +207,22 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
     
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        if (![key isEqualToString:KEY_ACTION]) {
-            if ([obj isKindOfClass:[NSString class]]) {
-                NSDate *date = [self dateFromString:obj];
-                if (date) {
-                    [deviceInformationSet setDate:date forKey:key];
-                } else {
-                    [deviceInformationSet setString:obj forKey:key];
-                }
-            } else if ([obj isKindOfClass:[NSNumber class]]) {
-                [deviceInformationSet setNumber:obj forKey:key];
-            }
+        
+        if (!obj) {
+            return;
         }
+        
+        if ([obj isKindOfClass:[NSString class]]) {
+            NSDate *date = [self dateFromString:obj];
+            if (date) {
+                [deviceInformationSet setDate:date forKey:key];
+            } else {
+                [deviceInformationSet setString:obj forKey:key];
+            }
+        } else if ([obj isKindOfClass:[NSNumber class]]) {
+            [deviceInformationSet setNumber:obj forKey:key];
+        }
+        
     }];
     
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
@@ -226,9 +237,12 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     
     ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        if (![key isEqualToString:KEY_ACTION]) {
-            [deviceInformationSet deleteValueForKey:key];
+        
+        if (!obj) {
+            return;
         }
+        
+        [deviceInformationSet deleteValueForKey:key];
     }];
     
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
@@ -243,12 +257,16 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     
     ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        if (![key isEqualToString:KEY_ACTION]) {
-            if (![obj isKindOfClass:[NSNumber class]]) {
-                NSLog(@"The value of %@ should be of type NSNumber", key);
-            }
-            [deviceInformationSet incrementValueBy:obj forKey:key];
+        
+        if (!obj) {
+            return;
         }
+        
+        if (![obj isKindOfClass:[NSNumber class]]) {
+            NSLog(@"The value of %@ should be of type NSNumber", key);
+        }
+        [deviceInformationSet incrementValueBy:obj forKey:key];
+        
     }];
     
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
@@ -263,12 +281,16 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     
     ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        if (![key isEqualToString:KEY_ACTION]) {
-            if (![obj isKindOfClass:[NSNumber class]]) {
-                NSLog(@"The value of %@ should be of type NSNumber", key);
-            }
-            [deviceInformationSet decrementValueBy:obj forKey:key];
+        
+        if (!obj) {
+            return;
         }
+        
+        if (![obj isKindOfClass:[NSNumber class]]) {
+            NSLog(@"The value of %@ should be of type NSNumber", key);
+        }
+        [deviceInformationSet decrementValueBy:obj forKey:key];
+        
     }];
     
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
@@ -286,7 +308,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
 
 /**
  * Convert a given NSString date to NSDate Format.
-
+ 
  @param stringDate The given date in NSString format.
  @return the formatted date in NSDate format.
  */
