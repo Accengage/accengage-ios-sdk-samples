@@ -122,6 +122,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
+            NSLog(@"The value of %@ is nil", key);
             return;
         }
         
@@ -209,6 +210,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
+            NSLog(@"The value of %@ is nil", key);
             return;
         }
         
@@ -239,6 +241,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
+            NSLog(@"The value of %@ is nil", key);
             return;
         }
         
@@ -259,6 +262,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
+            NSLog(@"The value of %@ is nil", key);
             return;
         }
         
@@ -283,6 +287,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
+            NSLog(@"The value of %@ is nil", key);
             return;
         }
         
