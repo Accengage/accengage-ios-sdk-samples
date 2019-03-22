@@ -125,6 +125,9 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
             NSLog(@"The value of %@ is nil", key);
             return;
         }
+        if ([key isEqualToString:KEY_EVENT_ID]) {
+            return;
+        }
         
         if ([obj isKindOfClass:[NSString class]]) {
             NSDate *date = [self dateFromString:obj];
