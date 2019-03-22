@@ -1,10 +1,9 @@
-//
-//  ACCCustomTagProvider.m
-//  GoogleTagManagerBridge
-//
-//  Created by Bastien MATTHAI on 18/03/2019.
-//  Copyright © 2019 ACC. All rights reserved.
-//
+/*!
+ * @file ACCCustomTagProvider.h
+ * @author Accengage
+ * @copyright  © 2010 - present Accengage, Inc. All rights reserved.
+ */
+
 
 #import "ACCCustomTagProvider.h"
 #import "Accengage/Accengage.h"
@@ -46,6 +45,10 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
 
 @implementation ACCCustomTagProvider
 
+///--------------------------------------
+#pragma mark - TAGCustomFunction delegate -
+///--------------------------------------
+
 - (NSObject*)executeWithParameters:(NSDictionary*)parameters {
     
     if (!parameters) {
@@ -75,19 +78,19 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
         
         [self parseTrackPurchaseMessage:parameters];
         
-    } else if([acccengageAction isEqualToString:@"set_udi"]) {
+    } else if([acccengageAction isEqualToString:ACTION_SET_UDI]) {
         
         [self parseTrackSetUdi:parameters];
         
-    } else if([acccengageAction isEqualToString:@"increment_udi"]) {
+    } else if([acccengageAction isEqualToString:ACTION_INCREMENT_UDI]) {
         
         [self parseTrackIncrementUdi:parameters];
         
-    } else if([acccengageAction isEqualToString:@"decrement_udi"]) {
+    } else if([acccengageAction isEqualToString:ACTION_DECREMENT_UDI]) {
         
         [self parseTrackDecrementUdi:parameters];
         
-    } else if([acccengageAction isEqualToString:@"delete_udi"]) {
+    } else if([acccengageAction isEqualToString:ACTION_DELETE_UDI]) {
         
         [self parseTrackDeleteUdi:parameters];
         
@@ -112,27 +115,24 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
         return;
     }
     
-    //    NSNumber *type = [parameters[KEY_EVENT_ID] isKindOfClass:[NSNumber class]];
-    //    NSDictionary *value = [message[ACCWTEventValueKey] acc_asClass:[NSDictionary class]];
-    //    if (!type || !value) {
-    //        NSLog(@"The type and the Value are required %@ ", msg);
-    //        return;
-    //    }
-    
     ACCCustomEventParams *customEventParams = [[ACCCustomEventParams alloc] init];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        if (![key isEqualToString:KEY_EVENT_ID]) {
+        if (![@[KEY_EVENT_ID, KEY_ACTION] containsObject:key]) {
             if ([obj isKindOfClass:[NSString class]]) {
-                [customEventParams setString:obj forKey:key];
+                NSDate *date = [self dateFromString:obj];
+                if (date) {
+                    [customEventParams setDate:date forKey:key];
+                } else {
+                    [customEventParams setString:obj forKey:key];
+                }
             } else if ([obj isKindOfClass:[NSNumber class]]) {
                 [customEventParams setNumber:obj forKey:key];
-            } else if ([obj isKindOfClass:[NSDate class]]) {
-                [customEventParams setDate:obj forKey:key];
             }
         }
     }];
     
     [Accengage trackEvent:[type integerValue] withCustomParameters:customEventParams];
+    
 }
 
 #pragma mark Track Lead
@@ -148,6 +148,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     }
     
     [Accengage trackLead:label value:value];
+    
 }
 
 #pragma mark Track Cart
@@ -179,69 +180,60 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
 - (void)parseTrackPurchaseMessage:(NSDictionary *)parameters {
     
     NSString *purchaseId = parameters[KEY_PURCHASE_ID];
-    NSNumber *currency = parameters[KEY_PURCHASE_CURRENCY];
+    NSString *currency = parameters[KEY_PURCHASE_CURRENCY];
     NSNumber *price = parameters[KEY_PURCHASE_TOTAL_PRICE];
     NSArray *items = parameters[KEY_PURCHASE_ITEMS];
     
-    
-    if (!purchaseId || !currency) {
-        NSLog(@"The purchaseId and currency are required %@ ", parameters);
+    if (!purchaseId || !currency || !price) {
+        NSLog(@"The purchaseId, currency and price are required %@ ", parameters);
         return;
     }
     
-    //    NSMutableArray<ACCCartItem *> *cartItems = @[].mutableCopy;
-    
-    //    for (id item in items) {
-    //        ACCCartItem *cartItem = [self parseCartItem:item];
-    //
-    //        if (cartItem) {
-    //            [cartItems addObject:cartItem];
-    //        }
-    //    }
-    
     [Accengage trackPurchase:purchaseId currency:currency items:items amount:price];
+    
 }
 
-
-///--------------------------------------
-#pragma mark - User Profile : UDI -
-///--------------------------------------
+#pragma mark User Profile : UDI
 
 - (void)parseTrackSetUdi:(NSDictionary *)parameters {
     
     ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
     
-    for (NSString *key in parameters) {
-        id value = parameters[key];
+    [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         if (![key isEqualToString:KEY_ACTION]) {
-            if ([value isKindOfClass:[NSString class]]) {
-                [deviceInformationSet setString:value forKey:key];
-            } else if ([value isKindOfClass:[NSNumber class]]) {
-                [deviceInformationSet setNumber:value forKey:key];
-            } else if ([value isKindOfClass:[NSDate class]]) {
-                [deviceInformationSet setDate:value forKey:key];
+            if ([obj isKindOfClass:[NSString class]]) {
+                NSDate *date = [self dateFromString:obj];
+                if (date) {
+                    [deviceInformationSet setDate:date forKey:key];
+                } else {
+                    [deviceInformationSet setString:obj forKey:key];
+                }
+            } else if ([obj isKindOfClass:[NSNumber class]]) {
+                [deviceInformationSet setNumber:obj forKey:key];
             }
         }
-    }
+    }];
     
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
         if (error) {
-            NSLog(@"UDI error %@", error.localizedDescription);
+            NSLog(@"Set UDI error %@", error.localizedDescription);
         }
     }];
+    
 }
 
 - (void)parseTrackDeleteUdi:(NSDictionary *)parameters {
     
     ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
-    for (NSString *key in parameters) {
+    [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         if (![key isEqualToString:KEY_ACTION]) {
             [deviceInformationSet deleteValueForKey:key];
         }
-    }
+    }];
+    
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
         if (error) {
-            NSLog(@"UDI error %@", error.localizedDescription);
+            NSLog(@"Delete UDI error %@", error.localizedDescription);
         }
     }];
     
@@ -250,17 +242,18 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
 - (void)parseTrackIncrementUdi:(NSDictionary *)parameters {
     
     ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
-    for (NSString *key in parameters) {
+    [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         if (![key isEqualToString:KEY_ACTION]) {
-            if (![parameters[key] isKindOfClass:[NSNumber class]]) {
+            if (![obj isKindOfClass:[NSNumber class]]) {
                 NSLog(@"The value of %@ should be of type NSNumber", key);
             }
-            [deviceInformationSet incrementValueBy:parameters[key] forKey:key];
+            [deviceInformationSet incrementValueBy:obj forKey:key];
         }
-    }
+    }];
+    
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
         if (error) {
-            NSLog(@"UDI error %@", error.localizedDescription);
+            NSLog(@"Increment UDI error %@", error.localizedDescription);
         }
     }];
     
@@ -269,19 +262,39 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
 - (void)parseTrackDecrementUdi:(NSDictionary *)parameters {
     
     ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
-    for (NSString *key in parameters) {
+    [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         if (![key isEqualToString:KEY_ACTION]) {
-            if (![parameters[key] isKindOfClass:[NSNumber class]]) {
+            if (![obj isKindOfClass:[NSNumber class]]) {
                 NSLog(@"The value of %@ should be of type NSNumber", key);
             }
-            [deviceInformationSet decrementValueBy:parameters[key] forKey:key];
-        }
-    }
-    [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"UDI error %@", error.localizedDescription);
+            [deviceInformationSet decrementValueBy:obj forKey:key];
         }
     }];
+    
+    [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Decrement UDI error %@", error.localizedDescription);
+        }
+    }];
+    
+}
+
+///--------------------------------------
+#pragma mark - Utils Methods -
+///--------------------------------------
+
+
+/**
+ * Convert a given NSString date to NSDate Format.
+
+ @param stringDate The given date in NSString format.
+ @return the formatted date in NSDate format.
+ */
+- (NSDate *)dateFromString:(NSString *)stringDate {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+    return [dateFormatter dateFromString:stringDate];
     
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Accengage/Accengage.h>
 #import "Firebase/Firebase.h"
 
 @interface AppDelegate ()
@@ -19,6 +20,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [FIRApp configure];
+    ACCConfiguration *configuration = [ACCConfiguration defaultConfig];
+    configuration.appId = @"comptedemosdka04ca212eb81160";
+    configuration.appPrivateKey = @"cb7aef9229bc078272f29bc5adee849725159f9e";
+    [Accengage startWithConfig:configuration];
+    [Accengage setLoggingEnabled:YES];
+    
     return YES;
 }
 

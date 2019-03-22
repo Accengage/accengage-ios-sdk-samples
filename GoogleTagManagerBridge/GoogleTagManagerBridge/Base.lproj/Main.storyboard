@@ -19,11 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TBF-u0-9BF">
-                                <rect key="frame" x="109.5" y="143.5" width="156" height="380"/>
+                                <rect key="frame" x="85.5" y="103.5" width="204" height="460"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8S-VJ-jdZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="204" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="uAF-ww-rcO"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Track event !">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,7 +36,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwQ-r9-k1Z">
-                                        <rect key="frame" x="0.0" y="50" width="85" height="30"/>
+                                        <rect key="frame" x="0.0" y="60" width="204" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Track lead !">
@@ -44,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwO-VV-8cW">
-                                        <rect key="frame" x="0.0" y="100" width="134" height="30"/>
+                                        <rect key="frame" x="0.0" y="120" width="204" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Track add to cart !">
@@ -55,7 +58,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIP-zm-EQL">
-                                        <rect key="frame" x="0.0" y="150" width="122" height="30"/>
+                                        <rect key="frame" x="0.0" y="180" width="204" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Track purchase !">
@@ -66,7 +69,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCV-8F-fF5">
-                                        <rect key="frame" x="0.0" y="200" width="105" height="30"/>
+                                        <rect key="frame" x="0.0" y="240" width="204" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Track set Udi !">
@@ -77,10 +80,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKh-GF-7fd">
-                                        <rect key="frame" x="0.0" y="250" width="156" height="30"/>
+                                        <rect key="frame" x="0.0" y="300" width="204" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Track increment Udi !">
+                                        <state key="normal" title="       Track increment Udi !      ">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -88,7 +91,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULK-wh-i9e">
-                                        <rect key="frame" x="0.0" y="300" width="153" height="30"/>
+                                        <rect key="frame" x="0.0" y="360" width="204" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Track decrment Udi !">
@@ -99,7 +102,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLC-X2-Rab">
-                                        <rect key="frame" x="0.0" y="350" width="128" height="30"/>
+                                        <rect key="frame" x="0.0" y="420" width="204" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Track delete Udi !">
@@ -110,6 +113,22 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="KKh-GF-7fd" firstAttribute="width" secondItem="l8S-VJ-jdZ" secondAttribute="width" id="2lC-nh-HWj"/>
+                                    <constraint firstItem="BIP-zm-EQL" firstAttribute="width" secondItem="l8S-VJ-jdZ" secondAttribute="width" id="7jY-V8-XqY"/>
+                                    <constraint firstItem="UCV-8F-fF5" firstAttribute="height" secondItem="l8S-VJ-jdZ" secondAttribute="height" id="8J0-8x-Tnz"/>
+                                    <constraint firstItem="KKh-GF-7fd" firstAttribute="height" secondItem="l8S-VJ-jdZ" secondAttribute="height" id="CAC-ZV-dQD"/>
+                                    <constraint firstItem="BIP-zm-EQL" firstAttribute="height" secondItem="l8S-VJ-jdZ" secondAttribute="height" id="FAU-Mr-zEx"/>
+                                    <constraint firstItem="ULK-wh-i9e" firstAttribute="height" secondItem="l8S-VJ-jdZ" secondAttribute="height" id="LFt-EX-dTA"/>
+                                    <constraint firstItem="ULK-wh-i9e" firstAttribute="width" secondItem="l8S-VJ-jdZ" secondAttribute="width" id="Mhd-GV-d1U"/>
+                                    <constraint firstItem="qwO-VV-8cW" firstAttribute="height" secondItem="l8S-VJ-jdZ" secondAttribute="height" id="Qh9-xW-F5e"/>
+                                    <constraint firstItem="WwQ-r9-k1Z" firstAttribute="height" secondItem="l8S-VJ-jdZ" secondAttribute="height" id="RKa-7L-kH8"/>
+                                    <constraint firstItem="qwO-VV-8cW" firstAttribute="width" secondItem="l8S-VJ-jdZ" secondAttribute="width" id="Va3-ph-dHd"/>
+                                    <constraint firstItem="lLC-X2-Rab" firstAttribute="width" secondItem="l8S-VJ-jdZ" secondAttribute="width" id="ZIW-rD-FYo"/>
+                                    <constraint firstItem="lLC-X2-Rab" firstAttribute="height" secondItem="l8S-VJ-jdZ" secondAttribute="height" id="eTh-4S-F02"/>
+                                    <constraint firstItem="WwQ-r9-k1Z" firstAttribute="width" secondItem="l8S-VJ-jdZ" secondAttribute="width" id="pMJ-LG-7Xw"/>
+                                    <constraint firstItem="UCV-8F-fF5" firstAttribute="width" secondItem="l8S-VJ-jdZ" secondAttribute="width" id="vtN-fc-xKR"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
