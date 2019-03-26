@@ -9,76 +9,95 @@
 #import "ViewController.h"
 #import "Firebase/Firebase.h"
 #import <Accengage/Accengage.h>
+#import "ACCCustomTagProvider.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *sharedID;
 
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.sharedID.text = [[Accengage shared] accengageId];
+    
 }
 
 - (IBAction)trackEventAction:(id)sender {
     
-    [FIRAnalytics logEventWithName:@"track_event" parameters:@{@"acc_event_id":@2000, @"prenom":@"Mouna", @"valeur":@20, @"date":[self stringFromDate:[NSDate date]], @"bool":@false}];
+    [FIRAnalytics logEventWithName:ACTION_TRACK_EVENT parameters:@{KEY_EVENT_ID:@2000, @"prenom":@"Mouna", @"valeur":@20, @"date":[ACCCustomTagProvider stringFromDate:[NSDate date]], @"bool":@false}];
     
 }
 
 - (IBAction)trackLeadAction:(id)sender {
-    [FIRAnalytics logEventWithName:@"track_lead" parameters:@{@"acc_lead_label":@"Instagram", @"acc_lead_value":@"OK"}];
+
+    
+//    [FIRAnalytics logEventWithName:ACTION_TRACK_LEAD parameters:@{KEY_LEAD_LABEL:@"Instagram", KEY_LEAD_VALUE:@"OK"}];
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Current password";
+        textField.secureTextEntry = YES;
+    }];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Current password %@", [[alertController textFields][0] text]);
+        //compare the current password and do action here
+        
+    }];
+    [alertController addAction:confirmAction];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Canelled");
+    }];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 
 }
 
 - (IBAction)trackAddToCartAction:(id)sender {
     
-    [FIRAnalytics logEventWithName:@"track_add_to_cart" parameters:@{@"acc_cart_id":@"12DQSD213", @"acc_item_id":@"6fbf6b83", @"acc_item_label":@"iphone", @"acc_item_category":@"iPhone 7+", @"acc_item_currency":@"EUR", @"acc_item_price":@909, @"acc_item_quantity":@1}];
+    [FIRAnalytics logEventWithName:ACTION_TRACK_ADD_TO_CART parameters:@{KEY_CART_ID:@"12DQSD213", KEY_ITEM_ID:@"6fbf6b83", KEY_ITEM_NAME:@"iphone", KEY_ITEM_CATEGORY:@"iPhone 7+", KEY_ITEM_CURRENCY:@"EUR", KEY_ITEM_PRICE:@909, KEY_ITEM_QUANTITY:@1}];
     
 }
 
 - (IBAction)trackPurshaceAction:(id)sender {
     
-    ACCCartItem *item = [ACCCartItem itemWithId:@"12DQSD213" name:@"iphone" brand:nil category:@"iPhone 7+" price:909 quantity:1];
-    [FIRAnalytics logEventWithName:@"track_purchase" parameters:@{@"acc_purchase_id":@"12DQSD213", @"acc_purchase_currency":@"EUR", @"acc_purchase_total_price":@1704, @"KEY_PURCHASE_ITEMS":@[item]}];
+    ACCCartItem *item = [ACCCartItem itemWithId:@"12DQSD213" name:@"12DQSD213" brand:nil category:@"iPhone 7+" price:909 quantity:1];
+    
+    NSString *jsonitems = [ACCCustomTagProvider jsonFromCartItems:@[item]] ? : @"";
+    
+    [FIRAnalytics logEventWithName:ACTION_TRACK_PURCHASE parameters:@{KEY_PURCHASE_ID:@"12DQSD213", KEY_PURCHASE_CURRENCY:@"EUR", KEY_PURCHASE_TOTAL_PRICE:@1704, KEY_PURCHASE_ITEMS:jsonitems}];
+    
 }
 
 - (IBAction)trackSetUdiAction:(id)sender {
     
-    [FIRAnalytics logEventWithName:@"set_udi" parameters:@{@"acc_udi_key":@"name", @"acc_udi_value":@"Mouna"}];
-    [FIRAnalytics logEventWithName:@"set_udi" parameters:@{@"acc_udi_key":@"entier", @"acc_udi_value":@1234}];
-    [FIRAnalytics logEventWithName:@"set_udi" parameters:@{@"acc_udi_key":@"date", @"acc_udi_value":[self stringFromDate:[NSDate date]]}];
+    [FIRAnalytics logEventWithName:ACTION_SET_UDI parameters:@{@"acc_udi_key":@"name", @"acc_udi_value":@"Mouna"}];
+    [FIRAnalytics logEventWithName:ACTION_SET_UDI parameters:@{@"acc_udi_key":@"entier", @"acc_udi_value":@1234}];
+    [FIRAnalytics logEventWithName:ACTION_SET_UDI parameters:@{@"acc_udi_key":@"date", @"acc_udi_value":[ACCCustomTagProvider stringFromDate:[NSDate date]]}];
     
 }
 
 - (IBAction)trackIncrementUdiAction:(id)sender {
     
     //increment new_udi_int field
-    [FIRAnalytics logEventWithName:@"increment_udi" parameters:@{@"acc_udi_increment_value":@3}];
+    [FIRAnalytics logEventWithName:ACTION_INCREMENT_UDI parameters:@{@"acc_udi_increment_value":@3}];
     
 }
 
 - (IBAction)trackDecrementUDIAction:(id)sender {
     
     //decrement new_udi_int field
-    [FIRAnalytics logEventWithName:@"decrement_udi" parameters:@{@"acc_udi_decrement_value":@1}];
+    [FIRAnalytics logEventWithName:ACTION_DECREMENT_UDI parameters:@{@"acc_udi_decrement_value":@1}];
     
 }
 
 - (IBAction)trackDeleteUdiAction:(id)sender {
     
-     [FIRAnalytics logEventWithName:@"delete_udi" parameters:@{@"acc_udi_delete_key":@"name"}];
-    
-}
-
-- (NSString *)stringFromDate:(NSDate *)date {
-    
-    // Convert to new Date Format
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
-    NSString *newDate = [dateFormatter stringFromDate:date];
-    return newDate;
+     [FIRAnalytics logEventWithName:ACTION_DELETE_UDI parameters:@{@"acc_udi_delete_key":@"name"}];
     
 }
 

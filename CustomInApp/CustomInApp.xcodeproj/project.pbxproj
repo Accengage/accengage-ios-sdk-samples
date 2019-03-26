@@ -515,7 +515,7 @@
 				INFOPLIST_FILE = CustomInApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.custom.inapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.app.recette;
 				PRODUCT_NAME = ACCCustomInApp;
 			};
 			name = Debug;
@@ -532,7 +532,7 @@
 				INFOPLIST_FILE = CustomInApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.custom.inapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.app.recette;
 				PRODUCT_NAME = ACCCustomInApp;
 			};
 			name = Release;

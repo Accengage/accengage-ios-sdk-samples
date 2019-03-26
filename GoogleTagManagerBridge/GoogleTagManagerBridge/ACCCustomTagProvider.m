@@ -29,7 +29,7 @@ NSString *const KEY_LEAD_VALUE = @"acc_lead_value";
 /* Track Add To Cart */
 NSString *const KEY_CART_ID = @"acc_cart_id";
 NSString *const KEY_ITEM_ID = @"acc_item_id";
-NSString *const KEY_ITEM_LABEL = @"acc_item_label";
+NSString *const KEY_ITEM_NAME = @"acc_item_label";
 NSString *const KEY_ITEM_CATEGORY = @"acc_item_category";
 NSString *const KEY_ITEM_CURRENCY = @"acc_item_currency";
 NSString *const KEY_ITEM_PRICE = @"acc_item_price";
@@ -42,6 +42,8 @@ NSString *const KEY_PURCHASE_CURRENCY = @"acc_purchase_currency";
 NSString *const KEY_PURCHASE_TOTAL_PRICE = @"acc_purchase_total_price";
 NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
 
+/* Accengage date format */
+NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
 
 @implementation ACCCustomTagProvider
 
@@ -52,13 +54,13 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
 - (NSObject*)executeWithParameters:(NSDictionary*)parameters {
     
     if (!parameters) {
-        NSLog(@"No parameters found");
+        NSLog(@"ACCCustomTagProvider | No parameters found");
         return nil;
     }
     
     NSString *acccengageAction = parameters[KEY_ACTION];
     if (!acccengageAction) {
-        NSLog(@"No Accengage action found in parameters");
+        NSLog(@"ACCCustomTagProvider | No Accengage action found in parameters");
         return nil;
     }
     
@@ -114,7 +116,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     
     NSNumber *type = parameters[KEY_EVENT_ID];
     if (!type) {
-        NSLog(@"No %@ found in parameters. Can't send %@ action", KEY_EVENT_ID, ACTION_TRACK_EVENT);
+        NSLog(@"ACCCustomTagProvider | No %@ found in parameters. Can't send %@ action", KEY_EVENT_ID, ACTION_TRACK_EVENT);
         return;
     }
     
@@ -122,7 +124,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
-            NSLog(@"The value of %@ is nil", key);
+            NSLog(@"ACCCustomTagProvider | The value of %@ is nil", key);
             return;
         }
         if ([key isEqualToString:KEY_EVENT_ID]) {
@@ -130,7 +132,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
         }
         
         if ([obj isKindOfClass:[NSString class]]) {
-            NSDate *date = [self dateFromString:obj];
+            NSDate *date = [ACCCustomTagProvider dateFromString:obj];
             if (date) {
                 [customEventParams setDate:date forKey:key];
             } else {
@@ -154,7 +156,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     NSString *value = parameters[KEY_LEAD_VALUE];
     
     if (!label || !value) {
-        NSLog(@"The Label and the Value are required %@ ", parameters);
+        NSLog(@"ACCCustomTagProvider | The Label and the Value are required %@ ", parameters);
         return;
     }
     
@@ -169,18 +171,18 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     NSString *cartId = parameters[KEY_CART_ID];
     NSString *currency = parameters[KEY_ITEM_CURRENCY];
     NSString *itemId = parameters[KEY_ITEM_ID];
-    NSString *itemLabel = parameters[KEY_ITEM_LABEL];
+    NSString *itemName = parameters[KEY_ITEM_NAME];
     NSString *itemCategory = parameters[KEY_ITEM_CATEGORY];
     NSNumber *itemPrice = parameters[KEY_ITEM_PRICE];
     NSNumber *itemQuantity = parameters[KEY_ITEM_QUANTITY];
     NSString *brand = parameters[KEY_ITEM_BRAND];
     
-    if (!cartId || !currency || !itemId || !itemLabel || !itemCategory  || !itemPrice || !itemQuantity) {
-        NSLog(@"The acc_cart_id, itemID, currency, item id, price, and quantity are required %@ ", parameters);
+    if (!cartId || !currency || !itemId || !itemName || !itemCategory  || !itemPrice || !itemQuantity) {
+        NSLog(@"ACCCustomTagProvider | The acc_cart_id, acc_item_currency, acc_item_id, acc_item_label, acc_item_category, acc_item_price, and acc_item_quantity are required %@ ", parameters);
         return;
     }
     
-    ACCCartItem *item = [ACCCartItem itemWithId:itemId name:itemLabel brand:brand category:itemCategory price:itemPrice.doubleValue quantity:itemQuantity.integerValue];
+    ACCCartItem *item = [ACCCartItem itemWithId:itemId name:itemName brand:brand category:itemCategory price:itemPrice.doubleValue quantity:itemQuantity.integerValue];
     
     [Accengage trackCart:cartId currency:currency item:item];
     
@@ -193,14 +195,19 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     NSString *purchaseId = parameters[KEY_PURCHASE_ID];
     NSString *currency = parameters[KEY_PURCHASE_CURRENCY];
     NSNumber *price = parameters[KEY_PURCHASE_TOTAL_PRICE];
-    NSArray *items = parameters[KEY_PURCHASE_ITEMS];
+    NSString *items = parameters[KEY_PURCHASE_ITEMS];
     
     if (!purchaseId || !currency || !price) {
-        NSLog(@"The purchaseId, currency and price are required %@ ", parameters);
+        NSLog(@"ACCCustomTagProvider | The acc_purchase_id, acc_purchase_currency and acc_purchase_total_price are required %@ ", parameters);
         return;
     }
     
-    [Accengage trackPurchase:purchaseId currency:currency items:items amount:price];
+    NSArray *cartItems = nil;
+    if (items) {
+        cartItems = [ACCCustomTagProvider cartItemsFromJson:items];
+    }
+    
+    [Accengage trackPurchase:purchaseId currency:currency items:cartItems amount:price];
     
 }
 
@@ -213,12 +220,12 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
-            NSLog(@"The value of %@ is nil", key);
+            NSLog(@"ACCCustomTagProvider | The value of %@ is nil", key);
             return;
         }
         
         if ([obj isKindOfClass:[NSString class]]) {
-            NSDate *date = [self dateFromString:obj];
+            NSDate *date = [ACCCustomTagProvider dateFromString:obj];
             if (date) {
                 [deviceInformationSet setDate:date forKey:key];
             } else {
@@ -232,7 +239,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
         if (error) {
-            NSLog(@"Set UDI error %@", error.localizedDescription);
+            NSLog(@"ACCCustomTagProvider | Set UDI error %@", error.localizedDescription);
         }
     }];
     
@@ -244,7 +251,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
-            NSLog(@"The value of %@ is nil", key);
+            NSLog(@"ACCCustomTagProvider | The value of %@ is nil", key);
             return;
         }
         
@@ -253,7 +260,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
         if (error) {
-            NSLog(@"Delete UDI error %@", error.localizedDescription);
+            NSLog(@"ACCCustomTagProvider | Delete UDI error %@", error.localizedDescription);
         }
     }];
     
@@ -265,12 +272,12 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
-            NSLog(@"The value of %@ is nil", key);
+            NSLog(@"ACCCustomTagProvider | The value of %@ is nil", key);
             return;
         }
         
         if (![obj isKindOfClass:[NSNumber class]]) {
-            NSLog(@"The value of %@ should be of type NSNumber", key);
+            NSLog(@"ACCCustomTagProvider | The value of %@ should be of type NSNumber", key);
         }
         [deviceInformationSet incrementValueBy:obj forKey:key];
         
@@ -278,7 +285,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
         if (error) {
-            NSLog(@"Increment UDI error %@", error.localizedDescription);
+            NSLog(@"ACCCustomTagProvider | Increment UDI error %@", error.localizedDescription);
         }
     }];
     
@@ -290,12 +297,12 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
-            NSLog(@"The value of %@ is nil", key);
+            NSLog(@"ACCCustomTagProvider | The value of %@ is nil", key);
             return;
         }
         
         if (![obj isKindOfClass:[NSNumber class]]) {
-            NSLog(@"The value of %@ should be of type NSNumber", key);
+            NSLog(@"ACCCustomTagProvider | The value of %@ should be of type NSNumber", key);
         }
         [deviceInformationSet decrementValueBy:obj forKey:key];
         
@@ -303,7 +310,7 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
     
     [[Accengage profile] updateDeviceInformation:deviceInformationSet withCompletionHandler:^(NSError * _Nullable error) {
         if (error) {
-            NSLog(@"Decrement UDI error %@", error.localizedDescription);
+            NSLog(@"ACCCustomTagProvider | Decrement UDI error %@", error.localizedDescription);
         }
     }];
     
@@ -313,18 +320,134 @@ NSString *const KEY_PURCHASE_ITEMS = @"acc_purchase_items";
 #pragma mark - Utils Methods -
 ///--------------------------------------
 
-
-/**
- * Convert a given NSString date to NSDate Format.
- 
- @param stringDate The given date in NSString format.
- @return the formatted date in NSDate format.
- */
-- (NSDate *)dateFromString:(NSString *)stringDate {
++ (NSString *)stringFromDate:(NSDate *)date {
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+    [dateFormatter setDateFormat:DATE_FORMAT];
+    return [dateFormatter stringFromDate:date];
+    
+}
+
++ (NSDate *)dateFromString:(NSString *)stringDate {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:DATE_FORMAT];
     return [dateFormatter dateFromString:stringDate];
+    
+}
+
++ (NSString *)jsonFromCartItems:(NSArray *)cartItems {
+    
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    
+    [cartItems enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if (![obj isKindOfClass:[ACCCartItem class]]) {
+            NSLog(@"ACCCustomTagProvider | The object is not an ACCCartItem objet");
+            return;
+        }
+        
+        ACCCartItem *cartItem = obj;
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        if (cartItem.identifier) {
+            [item setObject:cartItem.identifier forKey:KEY_ITEM_ID];
+        }
+        
+        if (cartItem.name) {
+            [item setObject:cartItem.name forKey:KEY_ITEM_NAME];
+        }
+        
+        if (cartItem.brand) {
+            [item setObject:cartItem.brand forKey:KEY_ITEM_BRAND];
+        }
+        
+        if (cartItem.category) {
+            [item setObject:cartItem.category forKey:KEY_ITEM_CATEGORY];
+        }
+        
+        if (cartItem.price) {
+            [item setObject:[NSNumber numberWithDouble:cartItem.price] forKey:KEY_ITEM_PRICE];
+        }
+        
+        if (cartItem.quantity) {
+            [item setObject:[NSNumber numberWithInteger:cartItem.quantity] forKey:KEY_ITEM_QUANTITY];
+        }
+        
+        [items addObject:item];
+        
+    }];
+    
+    
+    NSError *error = nil;
+    NSData *json;
+    NSString *jsonString = nil;
+    
+    if ([NSJSONSerialization isValidJSONObject:items]) {
+        
+        // Serialize the array
+        json = [NSJSONSerialization dataWithJSONObject:items options:NSJSONWritingPrettyPrinted error:&error];
+        
+        if (json != nil && error == nil) {
+            jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
+        }
+    }
+    
+    return jsonString;
+    
+}
+
++ (NSArray *)cartItemsFromJson:(NSString *)jsonString {
+    
+    NSError *error = nil;
+    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error:&error];
+    
+    if (!jsonArray) {
+        NSLog(@"ACCCustomTagProvider | Error parsing JSON: %@", error);
+    }
+    
+    
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    
+    [jsonArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if (![obj isKindOfClass:[NSDictionary class]]) {
+            NSLog(@"ACCCustomTagProvider | Object is not a dictionnary");
+            return;
+        }
+
+        NSDictionary *item = obj;
+        ACCCartItem *cartItem = [[ACCCartItem alloc] init];
+        if ([item objectForKey:KEY_CART_ID]) {
+            [cartItem setIdentifier:[item objectForKey:KEY_CART_ID]];
+        }
+        
+        if ([item objectForKey:KEY_ITEM_NAME]) {
+            [cartItem setName:[item objectForKey:KEY_ITEM_NAME]];
+        }
+        
+        if ([item objectForKey:KEY_ITEM_BRAND]) {
+            [cartItem setBrand:[item objectForKey:KEY_ITEM_BRAND]];
+        }
+        
+        if ([item objectForKey:KEY_ITEM_CATEGORY]) {
+            [cartItem setCategory:[item objectForKey:KEY_ITEM_CATEGORY]];
+        }
+        
+        if ([item objectForKey:KEY_ITEM_PRICE]) {
+            NSNumber *itemPrice = [item objectForKey:KEY_ITEM_PRICE];
+            [cartItem setPrice:itemPrice.doubleValue];
+        }
+        
+        if ([item objectForKey:KEY_ITEM_QUANTITY]) {
+            NSNumber *itemQuantity = [item objectForKey:KEY_ITEM_QUANTITY];
+            [cartItem setQuantity:itemQuantity.integerValue];
+        }
+        
+        [items addObject:cartItem];
+        
+    }];
+    
+    return items;
     
 }
 

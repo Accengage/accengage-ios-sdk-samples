@@ -1,9 +1,9 @@
 {
     
-    "fingerprint":"NA$0",
+    "fingerprint":"NQ$0",
     
     "resource": {
-        "version":"4",
+        "version":"5",
         "macros":[{
             "function":"__e",
             "instance_name":"Event Name"
@@ -111,6 +111,12 @@
             "vtp_key":"acc_purchase_total_price"
         },{
             "function":"__md",
+            "instance_name":"EventParameterAccPurchaceItems",
+            "vtp_setDefaultValue":false,
+            "vtp_eventType":"CUSTOM",
+            "vtp_key":"acc_purchase_items"
+        },{
+            "function":"__md",
             "instance_name":"EventParameterAccUdiKey",
             "vtp_setDefaultValue":false,
             "vtp_eventType":"CUSTOM",
@@ -170,31 +176,31 @@
         },{
             "function":"__funct",
             "once_per_event":true,
-            "vtp_functionArgument":["list",["map","key","acc_action","value","track_purchase"],["map","key","acc_purchase_id","value",["macro",15]],["map","key","acc_purchase_currency","value",["macro",16]],["map","key","acc_purchase_total_price","value",["macro",17]]],
+            "vtp_functionArgument":["list",["map","key","acc_action","value","track_purchase"],["map","key","acc_purchase_id","value",["macro",15]],["map","key","acc_purchase_currency","value",["macro",16]],["map","key","acc_purchase_total_price","value",["macro",17]],["map","key","acc_purchase_items","value",["macro",18]]],
             "vtp_classPath":"ACCCustomTagProvider",
             "tag_id":6
         },{
             "function":"__funct",
             "once_per_event":true,
-            "vtp_functionArgument":["list",["map","key","acc_action","value","set_udi"],["map","key",["macro",18],"value",["macro",19]]],
+            "vtp_functionArgument":["list",["map","key","acc_action","value","set_udi"],["map","key",["macro",19],"value",["macro",20]]],
             "vtp_classPath":"ACCCustomTagProvider",
             "tag_id":7
         },{
             "function":"__funct",
             "once_per_event":true,
-            "vtp_functionArgument":["list",["map","key","acc_action","value","increment_udi"],["map","key","new_udi_int","value",["macro",20]]],
+            "vtp_functionArgument":["list",["map","key","acc_action","value","increment_udi"],["map","key","new_udi_int","value",["macro",21]]],
             "vtp_classPath":"ACCCustomTagProvider",
             "tag_id":8
         },{
             "function":"__funct",
             "once_per_event":true,
-            "vtp_functionArgument":["list",["map","key","acc_action","value","delete_udi"],["map","key",["macro",21],"value",""]],
+            "vtp_functionArgument":["list",["map","key","acc_action","value","delete_udi"],["map","key",["macro",22],"value",""]],
             "vtp_classPath":"ACCCustomTagProvider",
             "tag_id":9
         },{
             "function":"__funct",
             "once_per_event":true,
-            "vtp_functionArgument":["list",["map","key","acc_action","value","decrement_udi"],["map","key","new_udi_int","value",["macro",22]]],
+            "vtp_functionArgument":["list",["map","key","acc_action","value","decrement_udi"],["map","key","new_udi_int","value",["macro",23]]],
             "vtp_classPath":"ACCCustomTagProvider",
             "tag_id":10
         }],
