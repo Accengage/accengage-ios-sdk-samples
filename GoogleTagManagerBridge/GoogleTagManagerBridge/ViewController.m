@@ -35,26 +35,8 @@
 
 - (IBAction)trackLeadAction:(id)sender {
 
+    [FIRAnalytics logEventWithName:ACTION_TRACK_LEAD parameters:@{KEY_LEAD_LABEL:@"Instagram", KEY_LEAD_VALUE:@"OK"}];
     
-//    [FIRAnalytics logEventWithName:ACTION_TRACK_LEAD parameters:@{KEY_LEAD_LABEL:@"Instagram", KEY_LEAD_VALUE:@"OK"}];
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        textField.placeholder = @"Current password";
-        textField.secureTextEntry = YES;
-    }];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"Current password %@", [[alertController textFields][0] text]);
-        //compare the current password and do action here
-        
-    }];
-    [alertController addAction:confirmAction];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"Canelled");
-    }];
-    [alertController addAction:cancelAction];
-    [self presentViewController:alertController animated:YES completion:nil];
-
 }
 
 - (IBAction)trackAddToCartAction:(id)sender {
