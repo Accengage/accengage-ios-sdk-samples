@@ -1,0 +1,776 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A8DDC718A2B09E1DC4AAB89 /* libPods-GoogleTagManagerBridge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 409D71F0452A379BE568082B /* libPods-GoogleTagManagerBridge.a */; };
+		76136B3D22400ED700350B7D /* GTM-W5JF7QW.json in Resources */ = {isa = PBXBuildFile; fileRef = 76136B3C22400ED600350B7D /* GTM-W5JF7QW.json */; };
+		76CFFC6C223FFC6800597C96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CFFC6B223FFC6800597C96 /* AppDelegate.m */; };
+		76CFFC6F223FFC6800597C96 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CFFC6E223FFC6800597C96 /* ViewController.m */; };
+		76CFFC72223FFC6800597C96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CFFC70223FFC6800597C96 /* Main.storyboard */; };
+		76CFFC74223FFC6900597C96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CFFC73223FFC6900597C96 /* Assets.xcassets */; };
+		76CFFC77223FFC6900597C96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CFFC75223FFC6900597C96 /* LaunchScreen.storyboard */; };
+		76CFFC7A223FFC6900597C96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CFFC79223FFC6900597C96 /* main.m */; };
+		76CFFC84223FFC6900597C96 /* GoogleTagManagerBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CFFC83223FFC6900597C96 /* GoogleTagManagerBridgeTests.m */; };
+		76CFFC8F223FFC6900597C96 /* GoogleTagManagerBridgeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CFFC8E223FFC6900597C96 /* GoogleTagManagerBridgeUITests.m */; };
+		76CFFC9E223FFF8F00597C96 /* ACCCustomTagProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CFFC9D223FFF8F00597C96 /* ACCCustomTagProvider.m */; };
+		76DEFCE92241013900AA1686 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76DEFCE82241013900AA1686 /* GoogleService-Info.plist */; };
+		7AF00014C255345D46B6E8F7 /* libPods-GoogleTagManagerBridgeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB4FF9609FF79A8C521150DC /* libPods-GoogleTagManagerBridgeUITests.a */; };
+		86F68F0149F3BA3E8EA0EEE7 /* libPods-GoogleTagManagerBridgeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AB3DD6B14C4EE74A4BF03B /* libPods-GoogleTagManagerBridgeTests.a */; };
+		870B9BAA2241423D00BDCF08 /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870B9BA92241423D00BDCF08 /* Accengage.framework */; };
+		870B9BAC2241425200BDCF08 /* Accengage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 870B9BA92241423D00BDCF08 /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		76CFFC80223FFC6900597C96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76CFFC5F223FFC6800597C96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76CFFC66223FFC6800597C96;
+			remoteInfo = GoogleTagManagerBridge;
+		};
+		76CFFC8B223FFC6900597C96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76CFFC5F223FFC6800597C96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76CFFC66223FFC6800597C96;
+			remoteInfo = GoogleTagManagerBridge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		870B9BAB2241424B00BDCF08 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				870B9BAC2241425200BDCF08 /* Accengage.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1947E357F2837C2AFC66D79A /* Pods-GoogleTagManagerBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridge/Pods-GoogleTagManagerBridge.debug.xcconfig"; sourceTree = "<group>"; };
+		2E66A2F7BF173681662EDB05 /* Pods-GoogleTagManagerBridgeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridgeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridgeUITests/Pods-GoogleTagManagerBridgeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		409D71F0452A379BE568082B /* libPods-GoogleTagManagerBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleTagManagerBridge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76136B3C22400ED600350B7D /* GTM-W5JF7QW.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "GTM-W5JF7QW.json"; sourceTree = "<group>"; };
+		76CFFC67223FFC6800597C96 /* GoogleTagManagerBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleTagManagerBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76CFFC6A223FFC6800597C96 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		76CFFC6B223FFC6800597C96 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		76CFFC6D223FFC6800597C96 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		76CFFC6E223FFC6800597C96 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		76CFFC71223FFC6800597C96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		76CFFC73223FFC6900597C96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76CFFC76223FFC6900597C96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		76CFFC78223FFC6900597C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76CFFC79223FFC6900597C96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		76CFFC7F223FFC6900597C96 /* GoogleTagManagerBridgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleTagManagerBridgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76CFFC83223FFC6900597C96 /* GoogleTagManagerBridgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleTagManagerBridgeTests.m; sourceTree = "<group>"; };
+		76CFFC85223FFC6900597C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76CFFC8A223FFC6900597C96 /* GoogleTagManagerBridgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleTagManagerBridgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76CFFC8E223FFC6900597C96 /* GoogleTagManagerBridgeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleTagManagerBridgeUITests.m; sourceTree = "<group>"; };
+		76CFFC90223FFC6900597C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76CFFC9C223FFF8F00597C96 /* ACCCustomTagProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACCCustomTagProvider.h; sourceTree = "<group>"; };
+		76CFFC9D223FFF8F00597C96 /* ACCCustomTagProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACCCustomTagProvider.m; sourceTree = "<group>"; };
+		76DEFCE82241013900AA1686 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		870B9BA92241423D00BDCF08 /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
+		B34861029675A3F2E6304C1A /* Pods-GoogleTagManagerBridgeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridgeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridgeUITests/Pods-GoogleTagManagerBridgeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5AB3DD6B14C4EE74A4BF03B /* libPods-GoogleTagManagerBridgeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleTagManagerBridgeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0A6293D546E03913CDB493 /* Pods-GoogleTagManagerBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridge.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridge/Pods-GoogleTagManagerBridge.release.xcconfig"; sourceTree = "<group>"; };
+		C3BCE3AD66A3421F1B7DC23E /* Pods-GoogleTagManagerBridgeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridgeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridgeTests/Pods-GoogleTagManagerBridgeTests.release.xcconfig"; sourceTree = "<group>"; };
+		DB4FF9609FF79A8C521150DC /* libPods-GoogleTagManagerBridgeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleTagManagerBridgeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B097D374950E0EACD531DF /* Pods-GoogleTagManagerBridgeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridgeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridgeTests/Pods-GoogleTagManagerBridgeTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76CFFC64223FFC6800597C96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A8DDC718A2B09E1DC4AAB89 /* libPods-GoogleTagManagerBridge.a in Frameworks */,
+				870B9BAA2241423D00BDCF08 /* Accengage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76CFFC7C223FFC6900597C96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86F68F0149F3BA3E8EA0EEE7 /* libPods-GoogleTagManagerBridgeTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76CFFC87223FFC6900597C96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AF00014C255345D46B6E8F7 /* libPods-GoogleTagManagerBridgeUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35103D2055B6EE6332CD9693 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1947E357F2837C2AFC66D79A /* Pods-GoogleTagManagerBridge.debug.xcconfig */,
+				BF0A6293D546E03913CDB493 /* Pods-GoogleTagManagerBridge.release.xcconfig */,
+				E6B097D374950E0EACD531DF /* Pods-GoogleTagManagerBridgeTests.debug.xcconfig */,
+				C3BCE3AD66A3421F1B7DC23E /* Pods-GoogleTagManagerBridgeTests.release.xcconfig */,
+				B34861029675A3F2E6304C1A /* Pods-GoogleTagManagerBridgeUITests.debug.xcconfig */,
+				2E66A2F7BF173681662EDB05 /* Pods-GoogleTagManagerBridgeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		76CFFC5E223FFC6800597C96 = {
+			isa = PBXGroup;
+			children = (
+				76DEFCE52240FF1100AA1686 /* container */,
+				76CFFC69223FFC6800597C96 /* GoogleTagManagerBridge */,
+				76CFFC82223FFC6900597C96 /* GoogleTagManagerBridgeTests */,
+				76CFFC8D223FFC6900597C96 /* GoogleTagManagerBridgeUITests */,
+				76CFFC68223FFC6800597C96 /* Products */,
+				35103D2055B6EE6332CD9693 /* Pods */,
+				D8468484E18D440685F4627F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		76CFFC68223FFC6800597C96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76CFFC67223FFC6800597C96 /* GoogleTagManagerBridge.app */,
+				76CFFC7F223FFC6900597C96 /* GoogleTagManagerBridgeTests.xctest */,
+				76CFFC8A223FFC6900597C96 /* GoogleTagManagerBridgeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76CFFC69223FFC6800597C96 /* GoogleTagManagerBridge */ = {
+			isa = PBXGroup;
+			children = (
+				870B9BA92241423D00BDCF08 /* Accengage.framework */,
+				76CFFC6A223FFC6800597C96 /* AppDelegate.h */,
+				76CFFC6B223FFC6800597C96 /* AppDelegate.m */,
+				76CFFC6D223FFC6800597C96 /* ViewController.h */,
+				76CFFC6E223FFC6800597C96 /* ViewController.m */,
+				76CFFC70223FFC6800597C96 /* Main.storyboard */,
+				76CFFC73223FFC6900597C96 /* Assets.xcassets */,
+				76CFFC75223FFC6900597C96 /* LaunchScreen.storyboard */,
+				76CFFC78223FFC6900597C96 /* Info.plist */,
+				76DEFCE82241013900AA1686 /* GoogleService-Info.plist */,
+				76CFFC79223FFC6900597C96 /* main.m */,
+				76CFFC9C223FFF8F00597C96 /* ACCCustomTagProvider.h */,
+				76CFFC9D223FFF8F00597C96 /* ACCCustomTagProvider.m */,
+			);
+			path = GoogleTagManagerBridge;
+			sourceTree = "<group>";
+		};
+		76CFFC82223FFC6900597C96 /* GoogleTagManagerBridgeTests */ = {
+			isa = PBXGroup;
+			children = (
+				76CFFC83223FFC6900597C96 /* GoogleTagManagerBridgeTests.m */,
+				76CFFC85223FFC6900597C96 /* Info.plist */,
+			);
+			path = GoogleTagManagerBridgeTests;
+			sourceTree = "<group>";
+		};
+		76CFFC8D223FFC6900597C96 /* GoogleTagManagerBridgeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				76CFFC8E223FFC6900597C96 /* GoogleTagManagerBridgeUITests.m */,
+				76CFFC90223FFC6900597C96 /* Info.plist */,
+			);
+			path = GoogleTagManagerBridgeUITests;
+			sourceTree = "<group>";
+		};
+		76DEFCE52240FF1100AA1686 /* container */ = {
+			isa = PBXGroup;
+			children = (
+				76136B3C22400ED600350B7D /* GTM-W5JF7QW.json */,
+			);
+			path = container;
+			sourceTree = "<group>";
+		};
+		D8468484E18D440685F4627F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				409D71F0452A379BE568082B /* libPods-GoogleTagManagerBridge.a */,
+				B5AB3DD6B14C4EE74A4BF03B /* libPods-GoogleTagManagerBridgeTests.a */,
+				DB4FF9609FF79A8C521150DC /* libPods-GoogleTagManagerBridgeUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		76CFFC66223FFC6800597C96 /* GoogleTagManagerBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76CFFC93223FFC6900597C96 /* Build configuration list for PBXNativeTarget "GoogleTagManagerBridge" */;
+			buildPhases = (
+				8D28837B3CE9DB3192196C97 /* [CP] Check Pods Manifest.lock */,
+				76CFFC63223FFC6800597C96 /* Sources */,
+				76CFFC64223FFC6800597C96 /* Frameworks */,
+				76CFFC65223FFC6800597C96 /* Resources */,
+				816962C617D2103B3C382D41 /* [CP] Copy Pods Resources */,
+				870B9BAB2241424B00BDCF08 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoogleTagManagerBridge;
+			productName = GoogleTagManagerBridge;
+			productReference = 76CFFC67223FFC6800597C96 /* GoogleTagManagerBridge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		76CFFC7E223FFC6900597C96 /* GoogleTagManagerBridgeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76CFFC96223FFC6900597C96 /* Build configuration list for PBXNativeTarget "GoogleTagManagerBridgeTests" */;
+			buildPhases = (
+				4EF9BF1280F4320291A77A93 /* [CP] Check Pods Manifest.lock */,
+				76CFFC7B223FFC6900597C96 /* Sources */,
+				76CFFC7C223FFC6900597C96 /* Frameworks */,
+				76CFFC7D223FFC6900597C96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76CFFC81223FFC6900597C96 /* PBXTargetDependency */,
+			);
+			name = GoogleTagManagerBridgeTests;
+			productName = GoogleTagManagerBridgeTests;
+			productReference = 76CFFC7F223FFC6900597C96 /* GoogleTagManagerBridgeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		76CFFC89223FFC6900597C96 /* GoogleTagManagerBridgeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76CFFC99223FFC6900597C96 /* Build configuration list for PBXNativeTarget "GoogleTagManagerBridgeUITests" */;
+			buildPhases = (
+				714A04915B0F4E6E22277533 /* [CP] Check Pods Manifest.lock */,
+				76CFFC86223FFC6900597C96 /* Sources */,
+				76CFFC87223FFC6900597C96 /* Frameworks */,
+				76CFFC88223FFC6900597C96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76CFFC8C223FFC6900597C96 /* PBXTargetDependency */,
+			);
+			name = GoogleTagManagerBridgeUITests;
+			productName = GoogleTagManagerBridgeUITests;
+			productReference = 76CFFC8A223FFC6900597C96 /* GoogleTagManagerBridgeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76CFFC5F223FFC6800597C96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = ACC;
+				TargetAttributes = {
+					76CFFC66223FFC6800597C96 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					76CFFC7E223FFC6900597C96 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 76CFFC66223FFC6800597C96;
+					};
+					76CFFC89223FFC6900597C96 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 76CFFC66223FFC6800597C96;
+					};
+				};
+			};
+			buildConfigurationList = 76CFFC62223FFC6800597C96 /* Build configuration list for PBXProject "GoogleTagManagerBridge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 76CFFC5E223FFC6800597C96;
+			productRefGroup = 76CFFC68223FFC6800597C96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76CFFC66223FFC6800597C96 /* GoogleTagManagerBridge */,
+				76CFFC7E223FFC6900597C96 /* GoogleTagManagerBridgeTests */,
+				76CFFC89223FFC6900597C96 /* GoogleTagManagerBridgeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		76CFFC65223FFC6800597C96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76CFFC77223FFC6900597C96 /* LaunchScreen.storyboard in Resources */,
+				76CFFC74223FFC6900597C96 /* Assets.xcassets in Resources */,
+				76DEFCE92241013900AA1686 /* GoogleService-Info.plist in Resources */,
+				76CFFC72223FFC6800597C96 /* Main.storyboard in Resources */,
+				76136B3D22400ED700350B7D /* GTM-W5JF7QW.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76CFFC7D223FFC6900597C96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76CFFC88223FFC6900597C96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EF9BF1280F4320291A77A93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoogleTagManagerBridgeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		714A04915B0F4E6E22277533 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoogleTagManagerBridgeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		816962C617D2103B3C382D41 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoogleTagManagerBridge/Pods-GoogleTagManagerBridge-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleTagManager/TagManagerResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TagManagerResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoogleTagManagerBridge/Pods-GoogleTagManagerBridge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D28837B3CE9DB3192196C97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoogleTagManagerBridge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76CFFC63223FFC6800597C96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76CFFC6F223FFC6800597C96 /* ViewController.m in Sources */,
+				76CFFC7A223FFC6900597C96 /* main.m in Sources */,
+				76CFFC9E223FFF8F00597C96 /* ACCCustomTagProvider.m in Sources */,
+				76CFFC6C223FFC6800597C96 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76CFFC7B223FFC6900597C96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76CFFC84223FFC6900597C96 /* GoogleTagManagerBridgeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76CFFC86223FFC6900597C96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76CFFC8F223FFC6900597C96 /* GoogleTagManagerBridgeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		76CFFC81223FFC6900597C96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76CFFC66223FFC6800597C96 /* GoogleTagManagerBridge */;
+			targetProxy = 76CFFC80223FFC6900597C96 /* PBXContainerItemProxy */;
+		};
+		76CFFC8C223FFC6900597C96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76CFFC66223FFC6800597C96 /* GoogleTagManagerBridge */;
+			targetProxy = 76CFFC8B223FFC6900597C96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		76CFFC70223FFC6800597C96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76CFFC71223FFC6800597C96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		76CFFC75223FFC6900597C96 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76CFFC76223FFC6900597C96 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		76CFFC91223FFC6900597C96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		76CFFC92223FFC6900597C96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76CFFC94223FFC6900597C96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1947E357F2837C2AFC66D79A /* Pods-GoogleTagManagerBridge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z56W3DXA37;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleTagManagerBridge",
+				);
+				INFOPLIST_FILE = GoogleTagManagerBridge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.GoogleTagManagerBridge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76CFFC95223FFC6900597C96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF0A6293D546E03913CDB493 /* Pods-GoogleTagManagerBridge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z56W3DXA37;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleTagManagerBridge",
+				);
+				INFOPLIST_FILE = GoogleTagManagerBridge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.GoogleTagManagerBridge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		76CFFC97223FFC6900597C96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6B097D374950E0EACD531DF /* Pods-GoogleTagManagerBridgeTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z56W3DXA37;
+				INFOPLIST_FILE = GoogleTagManagerBridgeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.GoogleTagManagerBridgeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoogleTagManagerBridge.app/GoogleTagManagerBridge";
+			};
+			name = Debug;
+		};
+		76CFFC98223FFC6900597C96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3BCE3AD66A3421F1B7DC23E /* Pods-GoogleTagManagerBridgeTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z56W3DXA37;
+				INFOPLIST_FILE = GoogleTagManagerBridgeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.GoogleTagManagerBridgeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoogleTagManagerBridge.app/GoogleTagManagerBridge";
+			};
+			name = Release;
+		};
+		76CFFC9A223FFC6900597C96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B34861029675A3F2E6304C1A /* Pods-GoogleTagManagerBridgeUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z56W3DXA37;
+				INFOPLIST_FILE = GoogleTagManagerBridgeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.GoogleTagManagerBridgeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoogleTagManagerBridge;
+			};
+			name = Debug;
+		};
+		76CFFC9B223FFC6900597C96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E66A2F7BF173681662EDB05 /* Pods-GoogleTagManagerBridgeUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z56W3DXA37;
+				INFOPLIST_FILE = GoogleTagManagerBridgeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.accengage.ios.sample.GoogleTagManagerBridgeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoogleTagManagerBridge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76CFFC62223FFC6800597C96 /* Build configuration list for PBXProject "GoogleTagManagerBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76CFFC91223FFC6900597C96 /* Debug */,
+				76CFFC92223FFC6900597C96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76CFFC93223FFC6900597C96 /* Build configuration list for PBXNativeTarget "GoogleTagManagerBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76CFFC94223FFC6900597C96 /* Debug */,
+				76CFFC95223FFC6900597C96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76CFFC96223FFC6900597C96 /* Build configuration list for PBXNativeTarget "GoogleTagManagerBridgeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76CFFC97223FFC6900597C96 /* Debug */,
+				76CFFC98223FFC6900597C96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76CFFC99223FFC6900597C96 /* Build configuration list for PBXNativeTarget "GoogleTagManagerBridgeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76CFFC9A223FFC6900597C96 /* Debug */,
+				76CFFC9B223FFC6900597C96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76CFFC5F223FFC6800597C96 /* Project object */;
+}
