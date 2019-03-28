@@ -23,6 +23,7 @@
 		86F68F0149F3BA3E8EA0EEE7 /* libPods-GoogleTagManagerBridgeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AB3DD6B14C4EE74A4BF03B /* libPods-GoogleTagManagerBridgeTests.a */; };
 		870B9BAA2241423D00BDCF08 /* Accengage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870B9BA92241423D00BDCF08 /* Accengage.framework */; };
 		870B9BAC2241425200BDCF08 /* Accengage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 870B9BA92241423D00BDCF08 /* Accengage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		87CFEC6A224CF14000576AB8 /* AccengageConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87CFEC69224CF13F00576AB8 /* AccengageConfig.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		76CFFC9D223FFF8F00597C96 /* ACCCustomTagProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACCCustomTagProvider.m; sourceTree = "<group>"; };
 		76DEFCE82241013900AA1686 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		870B9BA92241423D00BDCF08 /* Accengage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Accengage.framework; sourceTree = "<group>"; };
+		87CFEC69224CF13F00576AB8 /* AccengageConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AccengageConfig.plist; sourceTree = "<group>"; };
 		B34861029675A3F2E6304C1A /* Pods-GoogleTagManagerBridgeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridgeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridgeUITests/Pods-GoogleTagManagerBridgeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B5AB3DD6B14C4EE74A4BF03B /* libPods-GoogleTagManagerBridgeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoogleTagManagerBridgeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0A6293D546E03913CDB493 /* Pods-GoogleTagManagerBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleTagManagerBridge.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleTagManagerBridge/Pods-GoogleTagManagerBridge.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				76CFFC79223FFC6900597C96 /* main.m */,
 				76CFFC9C223FFF8F00597C96 /* ACCCustomTagProvider.h */,
 				76CFFC9D223FFF8F00597C96 /* ACCCustomTagProvider.m */,
+				87CFEC69224CF13F00576AB8 /* AccengageConfig.plist */,
 			);
 			path = GoogleTagManagerBridge;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76CFFC77223FFC6900597C96 /* LaunchScreen.storyboard in Resources */,
+				87CFEC6A224CF14000576AB8 /* AccengageConfig.plist in Resources */,
 				76CFFC74223FFC6900597C96 /* Assets.xcassets in Resources */,
 				76DEFCE92241013900AA1686 /* GoogleService-Info.plist in Resources */,
 				76CFFC72223FFC6800597C96 /* Main.storyboard in Resources */,
