@@ -58,45 +58,45 @@ NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
         return nil;
     }
     
-    NSString *acccengageAction = parameters[KEY_ACTION];
-    if (!acccengageAction) {
+    NSString *accengageAction = parameters[KEY_ACTION];
+    if (!accengageAction) {
         NSLog(@"ACCCustomTagProvider | No Accengage action found in parameters");
         return nil;
     }
     
     NSMutableDictionary *mutableDictionnary = [[NSMutableDictionary alloc] initWithDictionary:parameters];
     [mutableDictionnary removeObjectForKey:KEY_ACTION];
-    NSDictionary *accengageParamters = mutableDictionnary;
+    NSDictionary *accengageParamters = mutableDictionnary.copy;
     
-    if ([acccengageAction isEqualToString:ACTION_TRACK_EVENT]) {
+    if ([accengageAction isEqualToString:ACTION_TRACK_EVENT]) {
         
         [self parseTrackEventMessage:accengageParamters];
         
-    } else if([acccengageAction isEqualToString:ACTION_TRACK_LEAD]) {
+    } else if ([accengageAction isEqualToString:ACTION_TRACK_LEAD]) {
         
         [self parseTrackLeadMessage:accengageParamters];
         
-    } else if ([acccengageAction isEqualToString:ACTION_TRACK_ADD_TO_CART]) {
+    } else if ([accengageAction isEqualToString:ACTION_TRACK_ADD_TO_CART]) {
         
         [self parseTrackCartMessage:accengageParamters];
         
-    } else if([acccengageAction isEqualToString:ACTION_TRACK_PURCHASE]) {
+    } else if ([accengageAction isEqualToString:ACTION_TRACK_PURCHASE]) {
         
         [self parseTrackPurchaseMessage:accengageParamters];
         
-    } else if([acccengageAction isEqualToString:ACTION_SET_UDI]) {
+    } else if ([accengageAction isEqualToString:ACTION_SET_UDI]) {
         
         [self parseTrackSetUdi:accengageParamters];
         
-    } else if([acccengageAction isEqualToString:ACTION_INCREMENT_UDI]) {
+    } else if ([accengageAction isEqualToString:ACTION_INCREMENT_UDI]) {
         
         [self parseTrackIncrementUdi:accengageParamters];
         
-    } else if([acccengageAction isEqualToString:ACTION_DECREMENT_UDI]) {
+    } else if ([accengageAction isEqualToString:ACTION_DECREMENT_UDI]) {
         
         [self parseTrackDecrementUdi:accengageParamters];
         
-    } else if([acccengageAction isEqualToString:ACTION_DELETE_UDI]) {
+    } else if ([accengageAction isEqualToString:ACTION_DELETE_UDI]) {
         
         [self parseTrackDeleteUdi:accengageParamters];
         
@@ -215,7 +215,7 @@ NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
 
 - (void)parseTrackSetUdi:(NSDictionary *)parameters {
     
-    ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
+    ACCDeviceInformationSet *deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
     
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
@@ -348,7 +348,7 @@ NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
         }
         
         ACCCartItem *cartItem = obj;
-        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *item = @{}.mutableCopy;
         if (cartItem.identifier) {
             [item setObject:cartItem.identifier forKey:KEY_ITEM_ID];
         }
@@ -415,7 +415,7 @@ NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
             return;
         }
 
-        NSDictionary *item = obj;
+        NSDictionary *item = [NSDictionary dictionaryWithDictionary:obj];
         ACCCartItem *cartItem = [[ACCCartItem alloc] init];
         if ([item objectForKey:KEY_CART_ID]) {
             [cartItem setIdentifier:[item objectForKey:KEY_CART_ID]];

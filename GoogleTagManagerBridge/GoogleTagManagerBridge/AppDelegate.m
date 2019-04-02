@@ -1,10 +1,8 @@
-//
-//  AppDelegate.m
-//  GoogleTagManagerBridge
-//
-//  Created by Bastien MATTHAI on 18/03/2019.
-//  Copyright © 2019 ACC. All rights reserved.
-//
+/*!
+ * @file AppDelegate.h
+ * @author Accengage
+ * @copyright  © 2010 - present Accengage, Inc. All rights reserved.
+ */
 
 #import "AppDelegate.h"
 #import <Accengage/Accengage.h>

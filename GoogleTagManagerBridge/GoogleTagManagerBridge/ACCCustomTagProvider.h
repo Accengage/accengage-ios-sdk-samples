@@ -9,6 +9,7 @@
 #import "Firebase/Firebase.h"
 #import "GoogleTagManager/GoogleTagManager.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 /* Accengage Actions */
 FOUNDATION_EXPORT NSString *const ACTION_TRACK_EVENT;
@@ -42,8 +43,6 @@ FOUNDATION_EXPORT NSString *const KEY_PURCHASE_ID;
 FOUNDATION_EXPORT NSString *const KEY_PURCHASE_CURRENCY;
 FOUNDATION_EXPORT NSString *const KEY_PURCHASE_TOTAL_PRICE;
 FOUNDATION_EXPORT NSString *const KEY_PURCHASE_ITEMS;
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface ACCCustomTagProvider : NSObject <TAGCustomFunction>
 
