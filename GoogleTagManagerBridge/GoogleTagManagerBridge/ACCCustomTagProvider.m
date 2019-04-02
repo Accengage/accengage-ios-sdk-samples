@@ -175,14 +175,14 @@ NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
     NSString *itemCategory = parameters[KEY_ITEM_CATEGORY];
     NSNumber *itemPrice = parameters[KEY_ITEM_PRICE];
     NSNumber *itemQuantity = parameters[KEY_ITEM_QUANTITY];
-    NSString *brand = parameters[KEY_ITEM_BRAND];
+    NSString *itemBrand = parameters[KEY_ITEM_BRAND];
     
     if (!cartId || !currency || !itemId || !itemName || !itemCategory  || !itemPrice || !itemQuantity) {
         NSLog(@"ACCCustomTagProvider | The acc_cart_id, acc_item_currency, acc_item_id, acc_item_label, acc_item_category, acc_item_price, and acc_item_quantity are required %@ ", parameters);
         return;
     }
     
-    ACCCartItem *item = [ACCCartItem itemWithId:itemId name:itemName brand:brand category:itemCategory price:itemPrice.doubleValue quantity:itemQuantity.integerValue];
+    ACCCartItem *item = [ACCCartItem itemWithId:itemId name:itemName brand:itemBrand category:itemCategory price:itemPrice.doubleValue quantity:itemQuantity.integerValue];
     
     [Accengage trackCart:cartId currency:currency item:item];
     
