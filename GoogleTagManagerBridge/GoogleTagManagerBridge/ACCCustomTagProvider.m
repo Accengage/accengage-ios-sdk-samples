@@ -51,7 +51,7 @@ NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
 #pragma mark - TAGCustomFunction delegate -
 ///--------------------------------------
 
-- (NSObject*)executeWithParameters:(NSDictionary*)parameters {
+- (NSObject *)executeWithParameters:(NSDictionary *)parameters {
     
     if (!parameters) {
         NSLog(@"ACCCustomTagProvider | No parameters found");
@@ -66,39 +66,39 @@ NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
     
     NSMutableDictionary *mutableDictionnary = [[NSMutableDictionary alloc] initWithDictionary:parameters];
     [mutableDictionnary removeObjectForKey:KEY_ACTION];
-    NSDictionary *accengageParamters = mutableDictionnary.copy;
+    NSDictionary *accengageParameters = mutableDictionnary.copy;
     
     if ([accengageAction isEqualToString:ACTION_TRACK_EVENT]) {
         
-        [self parseTrackEventMessage:accengageParamters];
+        [self parseTrackEventMessage:accengageParameters];
         
     } else if ([accengageAction isEqualToString:ACTION_TRACK_LEAD]) {
         
-        [self parseTrackLeadMessage:accengageParamters];
+        [self parseTrackLeadMessage:accengageParameters];
         
     } else if ([accengageAction isEqualToString:ACTION_TRACK_ADD_TO_CART]) {
         
-        [self parseTrackCartMessage:accengageParamters];
+        [self parseTrackCartMessage:accengageParameters];
         
     } else if ([accengageAction isEqualToString:ACTION_TRACK_PURCHASE]) {
         
-        [self parseTrackPurchaseMessage:accengageParamters];
+        [self parseTrackPurchaseMessage:accengageParameters];
         
     } else if ([accengageAction isEqualToString:ACTION_SET_UDI]) {
         
-        [self parseTrackSetUdi:accengageParamters];
+        [self parseTrackSetUdi:accengageParameters];
         
     } else if ([accengageAction isEqualToString:ACTION_INCREMENT_UDI]) {
         
-        [self parseTrackIncrementUdi:accengageParamters];
+        [self parseTrackIncrementUdi:accengageParameters];
         
     } else if ([accengageAction isEqualToString:ACTION_DECREMENT_UDI]) {
         
-        [self parseTrackDecrementUdi:accengageParamters];
+        [self parseTrackDecrementUdi:accengageParameters];
         
     } else if ([accengageAction isEqualToString:ACTION_DELETE_UDI]) {
         
-        [self parseTrackDeleteUdi:accengageParamters];
+        [self parseTrackDeleteUdi:accengageParameters];
         
     }
     
@@ -247,7 +247,7 @@ NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
 
 - (void)parseTrackDeleteUdi:(NSDictionary *)parameters {
     
-    ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
+    ACCDeviceInformationSet *deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
@@ -268,7 +268,7 @@ NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
 
 - (void)parseTrackIncrementUdi:(NSDictionary *)parameters {
     
-    ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
+    ACCDeviceInformationSet *deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
@@ -293,7 +293,7 @@ NSString *const DATE_FORMAT = @"yyyy-MM-dd HH:mm:ss zzz";
 
 - (void)parseTrackDecrementUdi:(NSDictionary *)parameters {
     
-    ACCDeviceInformationSet * deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
+    ACCDeviceInformationSet *deviceInformationSet = [[ACCDeviceInformationSet alloc] init];
     [parameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if (!obj) {
