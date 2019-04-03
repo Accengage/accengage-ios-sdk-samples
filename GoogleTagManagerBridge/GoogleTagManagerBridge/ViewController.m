@@ -2,9 +2,7 @@
 //  ViewController.m
 //  GoogleTagManagerBridge
 //
-//  Created by Bastien MATTHAI on 18/03/2019.
-//  Copyright © 2019 ACC. All rights reserved.
-//
+
 
 #import "ViewController.h"
 #import "Firebase/Firebase.h"

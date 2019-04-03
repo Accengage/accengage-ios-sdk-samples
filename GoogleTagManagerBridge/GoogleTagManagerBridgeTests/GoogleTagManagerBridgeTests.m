@@ -2,9 +2,6 @@
 //  GoogleTagManagerBridgeTests.m
 //  GoogleTagManagerBridgeTests
 //
-//  Created by Bastien MATTHAI on 18/03/2019.
-//  Copyright © 2019 ACC. All rights reserved.
-//
 
 #import <XCTest/XCTest.h>
 
