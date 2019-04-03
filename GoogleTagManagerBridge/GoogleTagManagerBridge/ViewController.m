@@ -29,7 +29,7 @@
 
 - (IBAction)trackEventAction:(id)sender {
     
-    [FIRAnalytics logEventWithName:ACTION_TRACK_EVENT parameters:@{KEY_EVENT_ID:@2000, @"prenom":@"Mouna", @"valeur":@20, @"date":[ACCCustomTagProvider stringFromDate:[NSDate date]], @"bool":@false}];
+    [FIRAnalytics logEventWithName:ACTION_TRACK_EVENT parameters:@{KEY_EVENT_ID:@2000, @"prenom":@"Accengage", @"valeur":@20, @"date":[ACCCustomTagProvider stringFromDate:[NSDate date]], @"bool":@false}];
     
 }
 
@@ -57,7 +57,7 @@
 
 - (IBAction)trackSetUdiAction:(id)sender {
     
-    [FIRAnalytics logEventWithName:ACTION_SET_UDI parameters:@{@"acc_udi_key":@"name", @"acc_udi_value":@"Mouna"}];
+    [FIRAnalytics logEventWithName:ACTION_SET_UDI parameters:@{@"acc_udi_key":@"name", @"acc_udi_value":@"Accengage"}];
     [FIRAnalytics logEventWithName:ACTION_SET_UDI parameters:@{@"acc_udi_key":@"entier", @"acc_udi_value":@1234}];
     [FIRAnalytics logEventWithName:ACTION_SET_UDI parameters:@{@"acc_udi_key":@"date", @"acc_udi_value":[ACCCustomTagProvider stringFromDate:[NSDate date]]}];
     
