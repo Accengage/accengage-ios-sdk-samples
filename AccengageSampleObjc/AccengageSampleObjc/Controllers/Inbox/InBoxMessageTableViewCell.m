@@ -35,15 +35,27 @@
   self.category.backgroundColor =
       [InboxTools colorForCategory:categorie];
 
-  if (msg.isRead) {
-    (self.subject).textColor = [UIColor colorWithWhite:0.4f alpha:1.0f];
-    (self.content).textColor = [UIColor colorWithWhite:0.4f alpha:1.0f];
-    (self.statusMessage).backgroundColor = [UIColor whiteColor];
-  } else {
-    (self.subject).textColor = [UIColor blackColor];
-    (self.content).textColor = [UIColor blackColor];
-    [self.statusMessage setBackgroundColor:BLUE_COLOR];
-  }
+    if (msg.isRead) {
+        if (@available(iOS 13.0, *)) {
+            (self.subject).textColor = [UIColor secondaryLabelColor];
+            (self.content).textColor = [UIColor secondaryLabelColor];
+        } else {
+            // Fallback on earlier versions
+            (self.subject).textColor = [UIColor colorWithWhite:0.4f alpha:1.0f];
+            (self.content).textColor = [UIColor colorWithWhite:0.4f alpha:1.0f];
+        }
+        (self.statusMessage).backgroundColor = [UIColor whiteColor];
+    } else {
+        if (@available(iOS 13.0, *)) {
+            (self.subject).textColor = [UIColor labelColor];
+            (self.content).textColor = [UIColor labelColor];
+        } else {
+            // Fallback on earlier versions
+            (self.subject).textColor = [UIColor blackColor];
+            (self.content).textColor = [UIColor blackColor];
+        }
+        [self.statusMessage setBackgroundColor:[UIColor systemBlueColor]];
+    }
 
   if ([msg isArchived])
     (self.statusMessage).backgroundColor = [UIColor redColor];
