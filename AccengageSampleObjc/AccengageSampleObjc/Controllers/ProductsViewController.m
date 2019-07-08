@@ -6,6 +6,7 @@
 //
 
 #import "ProductsViewController.h"
+#import "SettingsCell.h"
 
 static NSString * const reuseIdentifier = @"Cell";
 
@@ -17,7 +18,17 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 100; i++)
+    {
+        NSDictionary *userName = @{cellTypeKey: @(SettingsCellTypeSample),
+                                   cellTitleKey: @"Product", cellDetailsKey:[NSString stringWithFormat:@"%d", i]};
+        [array addObject:userName];
+    }
 
+    self.settings = array;
+    
     self.accengageAlias = @"PRODUCTS";
 }
 
