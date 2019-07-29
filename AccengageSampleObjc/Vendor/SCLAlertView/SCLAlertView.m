@@ -247,10 +247,17 @@ SCLTimerDisplay *buttonTimer;
     [self.view addSubview:_labelTitle];
     
     // Colors
-    self.backgroundViewColor = [UIColor whiteColor];
-    _labelTitle.textColor = UIColorFromHEX(0x4D4D4D); //Dark Grey
-    _viewText.textColor = UIColorFromHEX(0x4D4D4D); //Dark Grey
-    _contentView.layer.borderColor = UIColorFromHEX(0xCCCCCC).CGColor; //Light Grey
+    if (@available(iOS 13.0, *)) {
+        self.backgroundViewColor = [UIColor tertiarySystemGroupedBackgroundColor];
+        _labelTitle.textColor = [UIColor labelColor]; //Dark Grey
+        _viewText.textColor = [UIColor labelColor]; //Dark Grey
+        _contentView.layer.borderColor = [UIColor systemGrayColor].CGColor; //Light Grey
+    } else {
+        self.backgroundViewColor = [UIColor whiteColor];
+        _labelTitle.textColor = UIColorFromHEX(0x4D4D4D); //Dark Grey
+        _viewText.textColor = UIColorFromHEX(0x4D4D4D); //Dark Grey
+        _contentView.layer.borderColor = UIColorFromHEX(0xCCCCCC).CGColor; //Light Grey
+    }
 }
 
 - (void)setupNewWindow
